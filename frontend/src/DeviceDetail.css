@@ -1,0 +1,146 @@
+.device-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.device-detail-container {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.device-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  background-color: #1e1e1e;
+  z-index: 10;
+}
+
+.device-detail-header h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #fff;
+}
+
+.device-detail-content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.device-basic-info {
+  margin-bottom: 30px;
+  background-color: #252525;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.hardware-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px;
+}
+
+.detail-section {
+  background-color: #252525;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.detail-section h3 {
+  margin-top: 0;
+  color: #4caf50;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.sub-section {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #333;
+}
+
+.sub-section h4, .sub-section h5 {
+  margin-top: 0;
+  color: #2196f3;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  color: #ccc;
+  font-weight: 600;
+}
+
+td:first-child {
+  font-weight: 500;
+  color: #bbb;
+  width: 40%;
+}
+
+.no-hardware-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #252525;
+  border-radius: 6px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .hardware-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .device-detail-container {
+    width: 95%;
+    max-height: 95vh;
+  }
+}
