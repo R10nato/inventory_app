@@ -49,6 +49,9 @@ Este guia detalhado explica como instalar, configurar e usar o Sistema de Invent
 7. **Inicie o servidor API**:
    ```
    uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+   ou 
+   python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
    ```
 
 8. **Verifique se a API está funcionando**:
