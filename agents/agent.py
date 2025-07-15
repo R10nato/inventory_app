@@ -453,42 +453,59 @@ def check_nmap_installed():
                 return True
     return False
 
+logger = logging.getLogger("inventory_agent")
 
 def get_cidr_network_range():
     """
-    Detecta o IP local e a máscara, e retorna a rede em formato CIDR (ex: 192.168.0.0/23).
-    Compatível com redes classe A, B, C e máscaras /20 a /24.
+    Detecta a interface com gateway ativo e retorna a faixa da rede em CIDR.
+    Também detecta domínio AD (sufixo DNS) se presente.
     """
     try:
-        preferidas = ['192.', '10.']  # Priorizar IPs privados reais
-
-        for iface in netifaces.interfaces():
-            if 'vEthernet' in iface or 'Virtual' in iface or 'VPN' in iface:
-                continue  # Pular interfaces virtuais
-
+        gateways = netifaces.gateways()
+        default_gateway = gateways.get('default', {}).get(netifaces.AF_INET)
+        
+        if default_gateway:
+            gw_ip, iface = default_gateway
             addrs = netifaces.ifaddresses(iface)
             if netifaces.AF_INET in addrs:
                 for addr in addrs[netifaces.AF_INET]:
                     ip = addr.get('addr')
                     netmask = addr.get('netmask')
+                    if ip and netmask:
+                        network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
+                        logger.info(f"Interface com gateway: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
 
-                    if not ip or ip.startswith(('127.', '169.254')):
-                        continue  # Ignorar loopback e link-local
+                        # Tenta detectar domínio AD pela configuração de DNS
+                        dns_suffix = get_dns_suffix()
+                        if dns_suffix:
+                            logger.info(f"Sufixo DNS detectado: {dns_suffix}")
+                        else:
+                            logger.warning("Nenhum sufixo DNS detectado (pode não haver AD configurado).")
 
-                    # Verificar se é uma rede preferida (ex: 192.168.x.x)
-                    if any(ip.startswith(pref) for pref in preferidas):
-                        try:
-                            network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
-                            logger.info(f"Interface selecionada: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
-                            return str(network)
-                        except Exception as e:
-                            logger.warning(f"Erro ao converter IP/máscara: {ip}/{netmask}: {e}")
+                        return str(network)
 
-        logger.warning("Nenhuma interface preferida encontrada. Usando fallback padrão.")
+        logger.warning("Não foi possível detectar a interface de rede com gateway ativo.")
+
     except Exception as e:
         logger.error(f"Erro ao detectar faixa CIDR: {e}")
 
-    return "192.168.1.0/24"  # Fallback padrão
+    # Fallback para rede local comum
+    return "192.168.1.0/24"
+
+def get_dns_suffix():
+    """
+    Tenta obter o sufixo DNS (domínio) da interface com gateway.
+    Funciona apenas em Windows.
+    """
+    try:
+        import subprocess
+        output = subprocess.check_output("ipconfig /all", shell=True, encoding="utf-8")
+        for line in output.splitlines():
+            if "Sufixo DNS específico de conexão" in line or "DNS Suffix" in line:
+                return line.split(":")[-1].strip()
+    except Exception as e:
+        logger.warning(f"Erro ao tentar detectar sufixo DNS: {e}")
+    return None
 
 def discover_devices(network_range=None):
     """
