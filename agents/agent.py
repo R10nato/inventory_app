@@ -11,6 +11,12 @@ import argparse
 import sqlite3
 import datetime
 import logging
+import wmi
+import psutil
+import nmap
+import netifaces
+import shutil
+import ipaddress
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -201,8 +207,7 @@ def get_windows_details():
         "installed_software": []
     }
     try:
-        import wmi
-        import psutil
+        
         c = wmi.WMI()
 
         # OS
@@ -429,17 +434,14 @@ def get_hardware_details():
         logger.warning(f"Unsupported OS: {system}")
         return {"os": system}
 
+logger = logging.getLogger("inventory_agent")
+
 def check_nmap_installed():
-    """Check if nmap is installed and accessible."""
-    import subprocess
-    import shutil
-    
-    # First check if nmap is in PATH
+    """Verifica se o nmap está instalado e acessível."""
     nmap_path = shutil.which("nmap")
     if nmap_path:
         return True
-    
-    # On Windows, check common installation paths
+
     if platform.system() == "Windows":
         common_paths = [
             "C:\\Program Files (x86)\\Nmap\\nmap.exe",
@@ -447,104 +449,95 @@ def check_nmap_installed():
         ]
         for path in common_paths:
             if os.path.exists(path):
-                # Add to PATH for this session
                 os.environ["PATH"] += os.pathsep + os.path.dirname(path)
                 return True
-    
     return False
 
-def get_network_range():
-    """Determine the network range to scan based on local IP."""
-    try:
-        # Get local IP address
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        # Doesn't need to be reachable
-        s.connect(('10.255.255.255', 1))
-        local_ip = s.getsockname()[0]
-        s.close()
-        
-        # Skip link-local addresses (169.254.x.x)
-        if local_ip.startswith('169.254'):
-            logger.warning("Detected link-local address (169.254.x.x). This typically indicates no DHCP server.")
-            logger.warning("Network discovery may not work correctly on this network.")
-            # Return a common private network range as fallback
-            return "192.168.1.0/24"
-        
-        # Extract network prefix
-        ip_parts = local_ip.split('.')
-        network_prefix = '.'.join(ip_parts[0:3])
-        return f"{network_prefix}.0/24"
-    except Exception as e:
-        logger.error(f"Could not determine network range: {e}")
-        return "192.168.1.0/24"  # Default fallback
 
-# --- Network Discovery --- 
-def discover_devices():
-    """Discovers devices on the local network using nmap."""
-    devices = []
-    
-    # Check if nmap is installed
-    if not check_nmap_installed():
-        logger.error("ERROR: nmap is not installed or not found in PATH.")
-        logger.error("Please install nmap:")
-        if platform.system() == "Windows":
-            logger.error("  - Download from: https://nmap.org/download.html")
-            logger.error("  - Install and ensure it's added to your PATH")
-        else:
-            logger.error("  - Linux: sudo apt-get install nmap")
-            logger.error("  - macOS: brew install nmap")
-        return devices
-    
+def get_cidr_network_range():
+    """
+    Detecta o IP local e a máscara, e retorna a rede em formato CIDR (ex: 192.168.0.0/23).
+    Compatível com redes privadas e ignora interfaces virtuais/VPN.
+    """
     try:
-        import nmap
-        nm = nmap.PortScanner()
-        
-        # Determine network range
-        network_range = args.network if args.network else get_network_range()
-        logger.info(f"Scanning network: {network_range}...")
-        
-        try:
-            # Use safer scan options
-            nm.scan(hosts=network_range, arguments='-sn --host-timeout 10s')
-            
-            for host in nm.all_hosts():
-                if nm[host].state() == 'up':
-                    try:
-                        mac = nm[host]['addresses'].get('mac', None)
-                        vendor = nm[host]['vendor'].get(mac, 'Unknown') if mac and 'vendor' in nm[host] else 'Unknown'
-                        device_type = 'computer'  # Basic assumption
-                        if vendor and 'printer' in vendor.lower(): 
-                            device_type = 'printer'
-                            
-                        devices.append({
-                            "ip_address": host,
-                            "mac_address": mac,
-                            "status": "online",
-                            "name": nm[host].hostname() if hasattr(nm[host], 'hostname') and callable(nm[host].hostname) else host,
-                            "device_type": device_type
-                        })
-                    except Exception as e:
-                        logger.error(f"Error processing host {host}: {e}")
+        for iface in netifaces.interfaces():
+            addrs = netifaces.ifaddresses(iface)
+            if netifaces.AF_INET in addrs:
+                for addr in addrs[netifaces.AF_INET]:
+                    ip = addr.get('addr')
+                    netmask = addr.get('netmask')
+
+                    # Ignora loopback, link-local e IPs fora da faixa privada
+                    if not ip or ip.startswith(('127.', '169.254')):
                         continue
-                        
-            logger.info(f"Discovery finished. Found {len(devices)} online devices.")
-            
-        except Exception as e:
-            logger.error(f"Error during nmap scan: {e}")
-            logger.error("This could be due to:")
-            logger.error("  - Network restrictions or firewall settings")
-            logger.error("  - Insufficient permissions (try running as administrator/root)")
-            logger.error("  - Incompatible nmap version")
-            
-    except ImportError:
-        logger.error("python-nmap not found. Please install it: pip install python-nmap")
+                    if not ip.startswith(('10.', '172.', '192.168.')):
+                        continue  # ignora IPs públicos ou não locais
+
+                    # Calcula a rede CIDR com base na máscara
+                    network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
+                    logger.info(f"Interface selecionada: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
+
+                    return str(network)
+
     except Exception as e:
-        logger.error(f"Error during network discovery: {e}")
-        logger.error("For troubleshooting:")
-        logger.error("  - Ensure nmap is correctly installed")
-        logger.error("  - Check network connectivity")
-        logger.error("  - Try running with administrator/root privileges")
-        
+        logger.error(f"Erro ao detectar faixa CIDR: {e}")
+
+    # Fallback padrão
+    logger.warning("Não foi possível detectar a rede correta. Usando fallback 192.168.1.0/24")
+    return "192.168.1.0/24"
+
+def discover_devices(network_range=None):
+    """
+    Descobre dispositivos na rede local usando Nmap.
+    Usa -sn (ping scan) e, se necessário, tenta novamente com -sn -Pn.
+    """
+    devices = []
+
+    if not check_nmap_installed():
+        logger.error("nmap não está instalado ou fora do PATH.")
+        logger.error("Instale via: https://nmap.org/download.html ou 'sudo apt install nmap'")
+        return devices
+
+    try:
+        nm = nmap.PortScanner()
+        range_to_scan = network_range or get_cidr_network_range()
+        logger.info(f"Varredura de rede iniciada: {range_to_scan}")
+
+        # Primeira tentativa: scan rápido tipo ping
+        nm.scan(hosts=range_to_scan, arguments='-sn --host-timeout 10s')
+        hosts = nm.all_hosts()
+
+        # Se nada for detectado, tentar varredura mais forçada
+        if not hosts:
+            logger.warning("Nenhum host detectado. Tentando novamente com '-sn -Pn'.")
+            nm.scan(hosts=range_to_scan, arguments='-sn -Pn --host-timeout 10s')
+            hosts = nm.all_hosts()
+
+        for host in hosts:
+            if nm[host].state() == 'up':
+                try:
+                    mac = nm[host]['addresses'].get('mac', None)
+                    vendor = nm[host]['vendor'].get(mac, 'Unknown') if mac and 'vendor' in nm[host] else 'Unknown'
+                    device_type = 'printer' if vendor and 'printer' in vendor.lower() else 'computer'
+
+                    devices.append({
+                        "ip_address": host,
+                        "mac_address": mac,
+                        "status": "online",
+                        "name": nm[host].hostname() or host,
+                        "device_type": device_type
+                    })
+                except Exception as e:
+                    logger.error(f"Erro ao processar host {host}: {e}")
+
+        logger.info(f"Varredura finalizada. {len(devices)} dispositivo(s) encontrados.")
+        return devices
+
+    except ImportError:
+        logger.error("Módulo python-nmap não encontrado. Instale com: pip install python-nmap")
+    except Exception as e:
+        logger.error(f"Erro durante descoberta de rede: {e}")
+
     return devices
 
 def store_data_locally(device_id, data):
