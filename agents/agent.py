@@ -457,34 +457,38 @@ def check_nmap_installed():
 def get_cidr_network_range():
     """
     Detecta o IP local e a máscara, e retorna a rede em formato CIDR (ex: 192.168.0.0/23).
-    Compatível com redes privadas e ignora interfaces virtuais/VPN.
+    Compatível com redes classe A, B, C e máscaras /20 a /24.
     """
     try:
+        preferidas = ['192.', '10.']  # Priorizar IPs privados reais
+
         for iface in netifaces.interfaces():
+            if 'vEthernet' in iface or 'Virtual' in iface or 'VPN' in iface:
+                continue  # Pular interfaces virtuais
+
             addrs = netifaces.ifaddresses(iface)
             if netifaces.AF_INET in addrs:
                 for addr in addrs[netifaces.AF_INET]:
                     ip = addr.get('addr')
                     netmask = addr.get('netmask')
 
-                    # Ignora loopback, link-local e IPs fora da faixa privada
                     if not ip or ip.startswith(('127.', '169.254')):
-                        continue
-                    if not ip.startswith(('10.', '172.', '192.168.')):
-                        continue  # ignora IPs públicos ou não locais
+                        continue  # Ignorar loopback e link-local
 
-                    # Calcula a rede CIDR com base na máscara
-                    network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
-                    logger.info(f"Interface selecionada: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
+                    # Verificar se é uma rede preferida (ex: 192.168.x.x)
+                    if any(ip.startswith(pref) for pref in preferidas):
+                        try:
+                            network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
+                            logger.info(f"Interface selecionada: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
+                            return str(network)
+                        except Exception as e:
+                            logger.warning(f"Erro ao converter IP/máscara: {ip}/{netmask}: {e}")
 
-                    return str(network)
-
+        logger.warning("Nenhuma interface preferida encontrada. Usando fallback padrão.")
     except Exception as e:
         logger.error(f"Erro ao detectar faixa CIDR: {e}")
 
-    # Fallback padrão
-    logger.warning("Não foi possível detectar a rede correta. Usando fallback 192.168.1.0/24")
-    return "192.168.1.0/24"
+    return "192.168.1.0/24"  # Fallback padrão
 
 def discover_devices(network_range=None):
     """
