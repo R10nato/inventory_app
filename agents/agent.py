@@ -22,7 +22,8 @@ from dotenv import load_dotenv
 
 # Configurar logging
 logging.basicConfig(
-    level=logging.INFO,
+    #level=logging.INFO,
+    level=logging.DEBUG,  # Ativa logs de debug para diagnóstico
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("inventory_agent.log"),
@@ -99,7 +100,7 @@ def get_linux_details():
     # Placeholder for Linux collection logic using psutil, subprocess (lshw, dmidecode), etc.
     # Example using psutil (needs more detailed implementation)
     try:
-        import psutil
+        
         # CPU
         details["cpu_info"] = {
             "model": platform.processor(),
@@ -437,7 +438,7 @@ def get_hardware_details():
 logger = logging.getLogger("inventory_agent")
 
 def check_nmap_installed():
-    """Verifica se o nmap está instalado e acessível."""
+    """Verifica se o nmap está instalado e acessível no PATH."""
     nmap_path = shutil.which("nmap")
     if nmap_path:
         return True
@@ -453,44 +454,6 @@ def check_nmap_installed():
                 return True
     return False
 
-logger = logging.getLogger("inventory_agent")
-
-def get_cidr_network_range():
-    """
-    Detecta a interface com gateway ativo e retorna a faixa da rede em CIDR.
-    Também detecta domínio AD (sufixo DNS) se presente.
-    """
-    try:
-        gateways = netifaces.gateways()
-        default_gateway = gateways.get('default', {}).get(netifaces.AF_INET)
-        
-        if default_gateway:
-            gw_ip, iface = default_gateway
-            addrs = netifaces.ifaddresses(iface)
-            if netifaces.AF_INET in addrs:
-                for addr in addrs[netifaces.AF_INET]:
-                    ip = addr.get('addr')
-                    netmask = addr.get('netmask')
-                    if ip and netmask:
-                        network = ipaddress.IPv4Network(f"{ip}/{netmask}", strict=False)
-                        logger.info(f"Interface com gateway: {iface} -> IP: {ip} / {netmask} -> Rede: {network}")
-
-                        # Tenta detectar domínio AD pela configuração de DNS
-                        dns_suffix = get_dns_suffix()
-                        if dns_suffix:
-                            logger.info(f"Sufixo DNS detectado: {dns_suffix}")
-                        else:
-                            logger.warning("Nenhum sufixo DNS detectado (pode não haver AD configurado).")
-
-                        return str(network)
-
-        logger.warning("Não foi possível detectar a interface de rede com gateway ativo.")
-
-    except Exception as e:
-        logger.error(f"Erro ao detectar faixa CIDR: {e}")
-
-    # Fallback para rede local comum
-    return "192.168.1.0/24"
 
 def get_dns_suffix():
     """
@@ -498,7 +461,6 @@ def get_dns_suffix():
     Funciona apenas em Windows.
     """
     try:
-        import subprocess
         output = subprocess.check_output("ipconfig /all", shell=True, encoding="utf-8")
         for line in output.splitlines():
             if "Sufixo DNS específico de conexão" in line or "DNS Suffix" in line:
@@ -507,60 +469,46 @@ def get_dns_suffix():
         logger.warning(f"Erro ao tentar detectar sufixo DNS: {e}")
     return None
 
-def discover_devices(network_range=None):
-    """
-    Descobre dispositivos na rede local usando Nmap.
-    Usa -sn (ping scan) e, se necessário, tenta novamente com -sn -Pn.
-    """
-    devices = []
 
-    if not check_nmap_installed():
-        logger.error("nmap não está instalado ou fora do PATH.")
-        logger.error("Instale via: https://nmap.org/download.html ou 'sudo apt install nmap'")
-        return devices
-
+def get_network_info():
+    """
+    Retorna IP, gateway e sufixo DNS da interface com gateway ativo.
+    """
     try:
-        nm = nmap.PortScanner()
-        range_to_scan = network_range or get_cidr_network_range()
-        logger.info(f"Varredura de rede iniciada: {range_to_scan}")
+        gateways = netifaces.gateways()
+        logger.debug(f"Gateways detectados: {gateways}")
 
-        # Primeira tentativa: scan rápido tipo ping
-        nm.scan(hosts=range_to_scan, arguments='-sn --host-timeout 10s')
-        hosts = nm.all_hosts()
+        default_gateway = gateways.get('default', {}).get(netifaces.AF_INET)
+        if default_gateway:
+            gw_ip, iface = default_gateway
+            logger.info(f"Gateway padrão detectado: {gw_ip} via interface: {iface}")
 
-        # Se nada for detectado, tentar varredura mais forçada
-        if not hosts:
-            logger.warning("Nenhum host detectado. Tentando novamente com '-sn -Pn'.")
-            nm.scan(hosts=range_to_scan, arguments='-sn -Pn --host-timeout 10s')
-            hosts = nm.all_hosts()
+            addrs = netifaces.ifaddresses(iface)
+            ipv4 = addrs.get(netifaces.AF_INET, [{}])[0]
+            ip = ipv4.get('addr')
 
-        for host in hosts:
-            if nm[host].state() == 'up':
-                try:
-                    mac = nm[host]['addresses'].get('mac', None)
-                    vendor = nm[host]['vendor'].get(mac, 'Unknown') if mac and 'vendor' in nm[host] else 'Unknown'
-                    device_type = 'printer' if vendor and 'printer' in vendor.lower() else 'computer'
+            dns_suffix = get_dns_suffix()
 
-                    devices.append({
-                        "ip_address": host,
-                        "mac_address": mac,
-                        "status": "online",
-                        "name": nm[host].hostname() or host,
-                        "device_type": device_type
-                    })
-                except Exception as e:
-                    logger.error(f"Erro ao processar host {host}: {e}")
+            logger.info(f"Endereço IP da interface ativa: {ip}")
+            if dns_suffix:
+                logger.info(f"Sufixo DNS detectado: {dns_suffix}")
+            else:
+                logger.info("Nenhum sufixo DNS detectado.")
 
-        logger.info(f"Varredura finalizada. {len(devices)} dispositivo(s) encontrados.")
-        return devices
+            return {
+                "interface": iface,
+                "ip_address": ip,
+                "gateway": gw_ip,
+                "dns_suffix": dns_suffix
+            }
 
-    except ImportError:
-        logger.error("Módulo python-nmap não encontrado. Instale com: pip install python-nmap")
+        else:
+            logger.warning("Nenhum gateway padrão detectado.")
+            return {}
+
     except Exception as e:
-        logger.error(f"Erro durante descoberta de rede: {e}")
-
-    return devices
-
+        logger.error(f"Erro ao obter informações de rede: {e}")
+        return {}
 def store_data_locally(device_id, data):
     """Armazena dados de inventário localmente para sincronização posterior."""
     conn = sqlite3.connect(DB_PATH)
@@ -759,7 +707,7 @@ def get_local_network_info():
     local_mac = None
     
     try:
-        import psutil
+        
         net_if_addrs = psutil.net_if_addrs()
         
         # First try: Find non-loopback interfaces with IPv4 addresses
@@ -804,8 +752,8 @@ def get_local_network_info():
 def get_machine_id():
     """Gera um ID único para a máquina baseado em hardware."""
     try:
+
         if platform.system() == "Windows":
-            import wmi
             c = wmi.WMI()
             # Combinar informações de hardware para criar um ID único
             cpu = c.Win32_Processor()[0]
