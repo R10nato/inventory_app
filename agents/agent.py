@@ -809,6 +809,7 @@ def run_agent():
         # Gerar ID único para a máquina
         machine_id = get_machine_id()
         
+        network_info = get_network_info()
         payload = {
             "ip_address": local_ip,
             "mac_address": local_mac,
@@ -818,7 +819,8 @@ def run_agent():
             "status": "online",
             "hardware_details": local_details,
             "machine_id": machine_id,  # Adicionar ID único da máquina
-            "last_seen": datetime.datetime.now().isoformat()
+            "last_seen": datetime.datetime.now().isoformat(),
+            "network_info": network_info
         }
         
         logger.info(f"Reporting local machine ({local_ip})...")
