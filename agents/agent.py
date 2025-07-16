@@ -17,6 +17,7 @@ import nmap
 import netifaces
 import shutil
 import ipaddress
+import subprocess
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -455,60 +456,145 @@ def check_nmap_installed():
     return False
 
 
-def get_dns_suffix():
+def guid_to_interface_name(guid):
     """
-    Tenta obter o sufixo DNS (domínio) da interface com gateway.
-    Funciona apenas em Windows.
+    Mapeia o GUID da interface (ex: {B7B1...}) para o nome/descrição legível (ex: Wi-Fi).
+    Funciona apenas no Windows.
     """
     try:
-        output = subprocess.check_output("ipconfig /all", shell=True, encoding="utf-8")
-        for line in output.splitlines():
-            if "Sufixo DNS específico de conexão" in line or "DNS Suffix" in line:
-                return line.split(":")[-1].strip()
+        guid = guid.strip("{}").lower()
+        w = wmi.WMI()
+        for iface in w.Win32_NetworkAdapterConfiguration(IPEnabled=True):
+            if iface.SettingID and guid in iface.SettingID.lower():
+                return iface.Description or iface.Caption
     except Exception as e:
-        logger.warning(f"Erro ao tentar detectar sufixo DNS: {e}")
-    return None
+        logger.warning(f"Falha ao mapear GUID para nome legível: {e}")
+    return guid  # fallback para GUID
 
+def get_dns_suffix_for_interface(interface_name):
+    """
+    Retorna o sufixo DNS de uma interface com base no nome legível (ex: Wi-Fi) usando `ipconfig`.
+    Funciona apenas no Windows.
+    """
+    try:
+        output = subprocess.check_output("ipconfig /all", shell=True, encoding="utf-8", errors="ignore")
+        adapters = output.split("\r\n\r\n")
+        for adapter in adapters:
+            if interface_name.lower() in adapter.lower():
+                for line in adapter.splitlines():
+                    if "sufixo dns específico de conexão" in line.lower() or "dns suffix" in line.lower():
+                        return line.split(":")[-1].strip()
+    except Exception as e:
+        logger.warning(f"Erro ao executar ipconfig para obter sufixo DNS: {e}")
+    return None
 
 def get_network_info():
     """
-    Retorna IP, gateway e sufixo DNS da interface com gateway ativo.
+    Detecta IP, MAC, gateway e sufixo DNS da interface ativa com IP válido e gateway.
     """
     try:
+        best_interface = None
+        best_ip = None
+        best_mac = None
+        best_gw = None
+
         gateways = netifaces.gateways()
         logger.debug(f"Gateways detectados: {gateways}")
 
-        default_gateway = gateways.get('default', {}).get(netifaces.AF_INET)
-        if default_gateway:
-            gw_ip, iface = default_gateway
-            logger.info(f"Gateway padrão detectado: {gw_ip} via interface: {iface}")
-
+        for iface in netifaces.interfaces():
             addrs = netifaces.ifaddresses(iface)
-            ipv4 = addrs.get(netifaces.AF_INET, [{}])[0]
-            ip = ipv4.get('addr')
 
-            dns_suffix = get_dns_suffix()
+            ipv4_info = addrs.get(netifaces.AF_INET)
+            mac_info = addrs.get(netifaces.AF_LINK)
 
-            logger.info(f"Endereço IP da interface ativa: {ip}")
+            if ipv4_info and mac_info:
+                ip = ipv4_info[0].get("addr")
+                mac = mac_info[0].get("addr")
+
+                if ip and not ip.startswith("169.254") and ip != "127.0.0.1":
+                    # Verifica se essa interface tem gateway associado
+                    for af, gw_list in gateways.items():
+                        if af == netifaces.AF_INET:
+                            for gw in gw_list:
+                                if gw[1] == iface:
+                                    best_interface = iface
+                                    best_ip = ip
+                                    best_mac = mac
+                                    best_gw = gw[0]
+                                    break
+
+        if best_interface and best_ip:
+            # Mapeia o nome legível da interface
+            interface_name = guid_to_interface_name(best_interface)
+            dns_suffix = get_dns_suffix_for_interface(interface_name)
+
+            logger.info(f"Interface ativa: {interface_name}")
+            logger.info(f"Endereço IP da interface ativa: {best_ip}")
+            logger.info(f"MAC da interface ativa: {best_mac}")
+            logger.info(f"Gateway: {best_gw}")
             if dns_suffix:
                 logger.info(f"Sufixo DNS detectado: {dns_suffix}")
             else:
                 logger.info("Nenhum sufixo DNS detectado.")
 
             return {
-                "interface": iface,
-                "ip_address": ip,
-                "gateway": gw_ip,
+                "interface": interface_name,
+                "ip_address": best_ip,
+                "mac_address": best_mac,
+                "gateway": best_gw,
                 "dns_suffix": dns_suffix
             }
 
-        else:
-            logger.warning("Nenhum gateway padrão detectado.")
-            return {}
+        logger.warning("Não foi possível determinar interface ativa com IP válido.")
+        return {}
 
     except Exception as e:
         logger.error(f"Erro ao obter informações de rede: {e}")
         return {}
+    
+def get_local_network_info():
+    """Fallback: obtém IP e MAC da primeira interface válida, sem gateway."""
+    local_ip = "127.0.0.1"
+    local_mac = None
+
+    try:
+        net_if_addrs = psutil.net_if_addrs()
+        for iface, addresses in net_if_addrs.items():
+            is_loopback = "loopback" in iface.lower() or iface.startswith("lo")
+            if not is_loopback:
+                ipv4 = None
+                mac = None
+
+                for addr in addresses:
+                    if addr.family == socket.AF_INET:
+                        ipv4 = addr.address
+                    elif addr.family == socket.AF_LINK:
+                        mac = addr.address
+
+                if ipv4 and not ipv4.startswith("169.254"):
+                    local_ip = ipv4
+                    local_mac = mac
+                    break
+
+        # Tenta aceitar link-local se não encontrar melhor
+        if local_ip == "127.0.0.1":
+            for iface, addresses in net_if_addrs.items():
+                if "loopback" not in iface.lower():
+                    for addr in addresses:
+                        if addr.family == socket.AF_INET:
+                            local_ip = addr.address
+                        if addr.family == socket.AF_LINK:
+                            local_mac = addr.address
+                    if local_ip != "127.0.0.1":
+                        break
+
+    except Exception as e:
+        logger.error(f"Não foi possível determinar IP/MAC local confiável: {e}")
+        logger.error("Usando endereço de loopback (127.0.0.1) como fallback.")
+
+    return local_ip, local_mac
+
+
 def store_data_locally(device_id, data):
     """Armazena dados de inventário localmente para sincronização posterior."""
     conn = sqlite3.connect(DB_PATH)
@@ -701,54 +787,6 @@ def report_data(data):
         logger.error(f"Please check if the API server is running at {API_ENDPOINT}")
         return False
 
-def get_local_network_info():
-    """Get local IP and MAC address information."""
-    local_ip = "127.0.0.1"  # Default
-    local_mac = None
-    
-    try:
-        
-        net_if_addrs = psutil.net_if_addrs()
-        
-        # First try: Find non-loopback interfaces with IPv4 addresses
-        for interface_name, interface_addresses in net_if_addrs.items():
-            is_loopback = "loopback" in interface_name.lower() or interface_name.startswith("lo")
-            if not is_loopback:
-                ipv4_address = None
-                mac_address = None
-                
-                for address in interface_addresses:
-                    if "AF_INET" in str(address.family):  # IPv4
-                        ipv4_address = address.address
-                    elif "AF_LINK" in str(address.family) or "AF_PACKET" in str(address.family):  # MAC
-                        mac_address = address.address
-                
-                if ipv4_address and not ipv4_address.startswith("169.254"):  # Avoid link-local
-                    local_ip = ipv4_address
-                    local_mac = mac_address
-                    break
-        
-        # Second try: If no suitable interface found, accept link-local addresses
-        if local_ip == "127.0.0.1":
-            for interface_name, interface_addresses in net_if_addrs.items():
-                if "loopback" not in interface_name.lower() and not interface_name.startswith("lo"):
-                    for address in interface_addresses:
-                        if "AF_INET" in str(address.family):
-                            local_ip = address.address
-                            # Find corresponding MAC
-                            for addr in interface_addresses:
-                                if "AF_LINK" in str(addr.family) or "AF_PACKET" in str(addr.family):
-                                    local_mac = addr.address
-                            break
-                    if local_ip != "127.0.0.1":
-                        break
-    
-    except Exception as e:
-        logger.error(f"Could not reliably determine local IP/MAC: {e}")
-        logger.error("Using loopback address (127.0.0.1) as fallback.")
-    
-    return local_ip, local_mac
-
 def get_machine_id():
     """Gera um ID único para a máquina baseado em hardware."""
     try:
@@ -781,35 +819,50 @@ def get_machine_id():
         return str(uuid.getnode())
 
 def run_agent():
-    """Runs the agent tasks: discovery and/or self-reporting."""
+    """Executa as tarefas do agente: descoberta e/ou envio dos dados locais."""
+
     # Configurar banco de dados local
     setup_local_db()
-    
-    # Determinar o que executar com base nos argumentos de linha de comando
+
+    # Determinar o que executar com base nos argumentos
     discover = not args.self_only
     report_self = not args.discover_only
     offline_mode = args.offline
     sync_mode = args.sync
-    
-    # Sincronizar dados armazenados localmente, se solicitado
+
+    # Sincronizar dados locais, se solicitado
     if sync_mode:
         logger.info("Starting sync of locally stored data...")
         synced_count = sync_local_data()
         logger.info(f"Sync complete: {synced_count} records synchronized")
         if not report_self and not discover:
             return
-    
+
     if report_self:
         logger.info("Collecting local hardware details...")
         local_details = get_hardware_details()
-        
-        # Get local IP and MAC
-        local_ip, local_mac = get_local_network_info()
-        
-        # Gerar ID único para a máquina
+
+        # Gerar ID único da máquina
         machine_id = get_machine_id()
-        
+
+        # Tenta obter informações completas da rede
         network_info = get_network_info()
+
+        if not network_info or not network_info.get("ip_address"):
+            logger.warning("Falha ao obter rede com gateway padrão. Usando fallback...")
+            fallback_ip, fallback_mac = get_local_network_info()
+            network_info = {
+                "interface": None,
+                "ip_address": fallback_ip,
+                "mac_address": fallback_mac,
+                "gateway": None,
+                "dns_suffix": None
+            }
+
+        # Preencher IP e MAC principais
+        local_ip = network_info.get("ip_address", "127.0.0.1")
+        local_mac = network_info.get("mac_address", None)
+
         payload = {
             "ip_address": local_ip,
             "mac_address": local_mac,
@@ -818,13 +871,13 @@ def run_agent():
             "device_type": "computer",
             "status": "online",
             "hardware_details": local_details,
-            "machine_id": machine_id,  # Adicionar ID único da máquina
+            "machine_id": machine_id,
             "last_seen": datetime.datetime.now().isoformat(),
             "network_info": network_info
         }
-        
+
         logger.info(f"Reporting local machine ({local_ip})...")
-        
+
         if offline_mode:
             # Armazenar dados localmente
             store_data_locally(machine_id, payload)
@@ -835,37 +888,7 @@ def run_agent():
                 # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
                 logger.info("Failed to report data to server, storing locally...")
                 store_data_locally(machine_id, payload)
-
-    if discover:
-        logger.info("Starting network discovery...")
-        discovered_devices = discover_devices()
-        logger.info(f"Reporting {len(discovered_devices)} discovered devices...")
-        
-        for device in discovered_devices:
-            # Avoid reporting self again if already done
-            if report_self and device["ip_address"] == local_ip:
-                continue
                 
-            # Gerar ID para o dispositivo descoberto
-            import hashlib
-            device_id = hashlib.md5(f"{device['ip_address']}_{device.get('mac_address', '')}".encode()).hexdigest()
-            device["machine_id"] = device_id
-            device["last_seen"] = datetime.datetime.now().isoformat()
-            
-            # For discovered devices, we don't have hardware details yet
-            device_payload = {k: v for k, v in device.items() if k != 'vendor'}  # Remove temporary vendor info
-            
-            if offline_mode:
-                # Armazenar dados localmente
-                store_data_locally(device_id, device_payload)
-            else:
-                # Enviar dados diretamente para o servidor
-                success = report_data(device_payload)
-                if not success and not args.offline:
-                    # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
-                    logger.info(f"Failed to report device {device['ip_address']} to server, storing locally...")
-                    store_data_locally(device_id, device_payload)
-
 def print_help():
     """Print help information about the agent."""
     print("\nInventory Hardware Agent Help")

@@ -199,3 +199,76 @@
 2025-07-16 11:07:49,084 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
 2025-07-16 11:07:49,090 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
 2025-07-16 11:07:49,090 - inventory_agent - INFO - Starting network discovery...
+2025-07-16 11:17:18,644 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 11:17:18,647 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 11:17:18,647 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 11:17:55,902 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-16 11:17:55,908 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
+2025-07-16 11:17:55,925 - inventory_agent - WARNING - Erro ao tentar detectar sufixo DNS: name 'subprocess' is not defined
+2025-07-16 11:17:55,926 - inventory_agent - INFO - Endereço IP da interface ativa: None
+2025-07-16 11:17:55,926 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 11:17:55,926 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
+2025-07-16 11:17:55,931 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 11:17:58,331 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
+2025-07-16 11:17:58,332 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
+2025-07-16 11:17:58,332 - inventory_agent - INFO - Starting network discovery...
+2025-07-16 11:57:56,535 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 11:57:56,538 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 11:57:56,538 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 11:58:34,900 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-16 11:58:34,902 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
+2025-07-16 11:58:35,051 - inventory_agent - INFO - Endereço IP da interface ativa: None
+2025-07-16 11:58:35,052 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
+2025-07-16 11:58:35,053 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 11:58:35,058 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
+2025-07-16 11:58:35,074 - inventory_agent - ERROR - Não foi possível determinar IP/MAC local confiável: module 'psutil' has no attribute 'AF_INET'
+2025-07-16 11:58:35,075 - inventory_agent - ERROR - Usando endereço de loopback (127.0.0.1) como fallback.
+2025-07-16 11:58:35,076 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
+2025-07-16 11:58:35,084 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 11:58:37,641 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
+2025-07-16 11:58:37,643 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
+2025-07-16 11:58:37,646 - inventory_agent - INFO - Agent run finished.
+2025-07-16 14:03:27,549 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 14:03:27,553 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 14:03:27,559 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 14:04:15,251 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-16 14:04:15,258 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
+2025-07-16 14:04:15,513 - inventory_agent - INFO - Endereço IP da interface ativa: None
+2025-07-16 14:04:15,513 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
+2025-07-16 14:04:15,514 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 14:04:15,514 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
+2025-07-16 14:04:15,531 - inventory_agent - ERROR - Não foi possível determinar IP/MAC local confiável: module 'psutil' has no attribute 'AF_INET'
+2025-07-16 14:04:15,532 - inventory_agent - ERROR - Usando endereço de loopback (127.0.0.1) como fallback.
+2025-07-16 14:04:15,532 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
+2025-07-16 14:04:15,542 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 14:04:18,029 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1551
+2025-07-16 14:04:18,030 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
+2025-07-16 14:04:18,031 - inventory_agent - INFO - Agent run finished.
+2025-07-16 14:08:41,567 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 14:08:41,571 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 14:08:41,574 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 14:09:16,505 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-16 14:09:16,519 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
+2025-07-16 14:09:16,850 - inventory_agent - INFO - Endereço IP da interface ativa: None
+2025-07-16 14:09:16,850 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
+2025-07-16 14:09:16,851 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 14:09:16,855 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
+2025-07-16 14:09:16,882 - inventory_agent - INFO - Reporting local machine (172.26.176.1)...
+2025-07-16 14:09:16,888 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 14:09:19,280 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1547
+2025-07-16 14:09:19,281 - inventory_agent - INFO - Successfully reported data for 172.26.176.1. Status: 201
+2025-07-16 14:09:19,282 - inventory_agent - INFO - Agent run finished.
+2025-07-16 14:35:19,344 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 14:35:19,346 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 14:35:19,346 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 14:35:55,994 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-16 14:35:56,406 - inventory_agent - INFO - Interface ativa: {241811CC-3D5F-412F-9CE3-89549CAE85DB}
+2025-07-16 14:35:56,407 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.99
+2025-07-16 14:35:56,408 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-16 14:35:56,409 - inventory_agent - INFO - Gateway: 192.168.0.2
+2025-07-16 14:35:56,411 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 14:35:56,412 - inventory_agent - INFO - Reporting local machine (192.168.0.99)...
+2025-07-16 14:35:56,418 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 14:35:58,933 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1562
+2025-07-16 14:35:58,935 - inventory_agent - INFO - Successfully reported data for 192.168.0.99. Status: 201
+2025-07-16 14:35:58,936 - inventory_agent - INFO - Agent run finished.
