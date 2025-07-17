@@ -42,8 +42,11 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
         db.flush()  # garante que o db_device.id esteja disponível
 
         if hardware_data:
-            db_hardware = models.HardwareDetail(**hardware_data.model_dump(), device_id=db_device.id)
+            hw_data_dict = hardware_data.model_dump(exclude_unset=True)
+            hw_data_dict["device_id"] = db_device.id
+            db_hardware = models.HardwareDetail(**hw_data_dict)
             db.add(db_hardware)
+
 
     try:
         db.commit()
