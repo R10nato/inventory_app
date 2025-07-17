@@ -45,27 +45,27 @@ class HistoryLog(HistoryLogBase):
 
 # --- Device Schemas ---
 class DeviceBase(BaseModel):
-    machine_id: Optional[str] = None  # Novo campo
     name: Optional[str] = None
     ip_address: str
     mac_address: Optional[str] = None
     device_type: Optional[str] = Field(default="unknown")
     os: Optional[str] = None
     status: Optional[str] = Field(default="unknown")
-    network_info: Optional[Dict[str, Any]] = None  # Novo campo
+    machine_id: Optional[str] = None  # novo campo
+    network_info: Optional[List[Dict[str, Any]]] = None  # novo campo
 
 class DeviceCreate(DeviceBase):
     hardware_details: Optional[HardwareDetailCreate] = None
 
 class DeviceUpdate(BaseModel):
-    machine_id: Optional[str] = None
     name: Optional[str] = None
     ip_address: Optional[str] = None
     mac_address: Optional[str] = None
     device_type: Optional[str] = None
     os: Optional[str] = None
     status: Optional[str] = None
-    network_info: Optional[Dict[str, Any]] = None
+    machine_id: Optional[str] = None
+    network_info: Optional[List[Dict[str, Any]]] = None
     hardware_details: Optional[HardwareDetailCreate] = None
 
 class Device(DeviceBase):
