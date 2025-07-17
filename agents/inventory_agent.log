@@ -646,3 +646,101 @@
 2025-07-17 16:14:05,341 - inventory_agent - INFO - Failed to report data to server, storing locally...
 2025-07-17 16:14:05,348 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
 2025-07-17 16:14:05,349 - inventory_agent - INFO - Agent run finished.
+2025-07-17 16:22:55,454 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-17 16:22:55,456 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-17 16:22:55,456 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-17 16:23:28,784 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-17 16:23:29,275 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-17 16:23:29,276 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-17 16:23:29,277 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.113
+2025-07-17 16:23:29,281 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-17 16:23:29,282 - inventory_agent - INFO - Gateway: 192.168.0.200
+2025-07-17 16:23:29,282 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-17 16:23:29,285 - inventory_agent - INFO - Reporting local machine (192.168.1.113)...
+2025-07-17 16:23:29,286 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.113",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.05,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 249.13,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.113",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-07-17T16:23:29.285039"
+}
+2025-07-17 16:23:29,294 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-17 16:23:31,438 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1571
+2025-07-17 16:23:31,438 - inventory_agent - INFO - Successfully reported data for 192.168.1.113. Status: 201
+2025-07-17 16:23:31,441 - inventory_agent - INFO - Agent run finished.
