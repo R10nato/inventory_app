@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+import traceback
 from typing import List
 
 import crud, models, schemas, database
@@ -28,7 +29,7 @@ def create_or_update_device_endpoint(device: schemas.DeviceCreate, db: Session =
         db_device = crud.create_or_update_device(db=db, device=device)
         return db_device
     except Exception as e:
-        # Log the exception e
+        traceback.print_exc()  # Mostra a linha exata e traceback no terminal
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Internal server error: {str(e)}")
 
 @router.get("/", response_model=List[schemas.Device])
