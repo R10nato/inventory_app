@@ -2,7 +2,6 @@ from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 
-# --- Hardware Detail Schemas ---
 class HardwareDetailBase(BaseModel):
     cpu_info: Optional[Dict[str, Any]] = None
     ram_info: Optional[Dict[str, Any]] = None
@@ -24,7 +23,6 @@ class HardwareDetail(HardwareDetailBase):
     class Config:
         from_attributes = True
 
-# --- History Log Schemas ---
 class HistoryLogBase(BaseModel):
     component: str
     change_description: str
@@ -43,16 +41,13 @@ class HistoryLog(HistoryLogBase):
     class Config:
         from_attributes = True
 
-# --- Device Schemas ---
 class DeviceBase(BaseModel):
     name: Optional[str] = None
     ip_address: str
     mac_address: Optional[str] = None
     device_type: Optional[str] = Field(default="unknown")
     os: Optional[str] = None
-    status: Optional[str] = Field(default="unknown")
-    machine_id: Optional[str] = None  # novo campo
-    network_info: Optional[List[Dict[str, Any]]] = None  # novo campo
+    status: Optional[str] = Field(default="online")
 
 class DeviceCreate(DeviceBase):
     hardware_details: Optional[HardwareDetailCreate] = None
@@ -64,8 +59,6 @@ class DeviceUpdate(BaseModel):
     device_type: Optional[str] = None
     os: Optional[str] = None
     status: Optional[str] = None
-    machine_id: Optional[str] = None
-    network_info: Optional[List[Dict[str, Any]]] = None
     hardware_details: Optional[HardwareDetailCreate] = None
 
 class Device(DeviceBase):

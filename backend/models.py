@@ -10,17 +10,14 @@ class Device(Base):
     name = Column(String, index=True)
     ip_address = Column(String, unique=True, index=True)
     mac_address = Column(String, unique=True, index=True, nullable=True)
-    device_type = Column(String, index=True)  # e.g., 'computer', 'printer', 'smartphone'
+    device_type = Column(String, index=True)
     os = Column(String, nullable=True)
-    status = Column(String, default="unknown")  # e.g., 'online', 'offline', 'unknown'
-    machine_id = Column(String, nullable=True, index=True)  # novo campo
-    network_info = Column(JSON, nullable=True)  # novo campo
+    status = Column(String, default="unknown")
     last_seen = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     hardware_details = relationship("HardwareDetail", back_populates="device", uselist=False, cascade="all, delete-orphan")
     history_logs = relationship("HistoryLog", back_populates="device", cascade="all, delete-orphan")
-
 
 class HardwareDetail(Base):
     __tablename__ = "hardware_details"
@@ -39,7 +36,6 @@ class HardwareDetail(Base):
     custom_notes = Column(Text, nullable=True)
 
     device = relationship("Device", back_populates="hardware_details")
-
 
 class HistoryLog(Base):
     __tablename__ = "history_logs"
