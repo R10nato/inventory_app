@@ -35,16 +35,16 @@ logger = logging.getLogger("inventory_agent")
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Inventory Hardware Agent')
-parser.add_argument("--self-only", action="store_true", help="Only collect and report local machine data, skip network discovery")
-parser.add_argument("--discover-only", action="store_true", help="Only perform network discovery, skip local machine data collection")
-parser.add_argument("--network", type=str, help="Specify network range for discovery (e.g., 192.168.1.0/24)")
-parser.add_argument("--offline", action="store_true", help="Run in offline mode, store data locally for later sync")
-parser.add_argument("--sync", action="store_true", help="Sync locally stored data to the server")
+parser.add_argument('--self-only', action='store_true', help='Only collect and report local machine data, skip network discovery')
+parser.add_argument('--discover-only', action='store_true', help='Only perform network discovery, skip local machine data collection')
+parser.add_argument('--network', type=str, help='Specify network range for discovery (e.g., 192.168.1.0/24)')
+parser.add_argument('--offline', action='store_true', help='Run in offline mode, store data locally for later sync')
+parser.add_argument('--sync', action='store_true', help='Sync locally stored data to the server')
 args = parser.parse_args()
 
 # Load environment variables (e.g., API endpoint)
 load_dotenv()
-API_ENDPOINT = os.getenv("API_ENDPOINT", "https://8000-icaevqvt6t558ljaxl9pk-15911c2d.manusvm.computer") # Default to localhost if not set
+API_ENDPOINT = os.getenv("API_ENDPOINT", "http://localhost:8000") # Default to localhost if not set
 API_TOKEN = os.getenv("API_TOKEN", "")  # API token for authentication
 
 # Configuração do banco de dados local
@@ -56,7 +56,7 @@ def setup_local_db():
     cursor = conn.cursor()
     
     # Tabela para armazenar dados de inventário
-    cursor.execute("""
+    cursor.execute('''
     CREATE TABLE IF NOT EXISTS inventory_data (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         device_id TEXT,
@@ -64,10 +64,10 @@ def setup_local_db():
         timestamp TEXT,
         synced INTEGER DEFAULT 0
     )
-    """)
+    ''')
     
     # Tabela para armazenar histórico de alterações
-    cursor.execute("""
+    cursor.execute('''
     CREATE TABLE IF NOT EXISTS inventory_changes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         device_id TEXT,
@@ -77,7 +77,7 @@ def setup_local_db():
         timestamp TEXT,
         synced INTEGER DEFAULT 0
     )
-    """)
+    ''')
     
     conn.commit()
     conn.close()
@@ -135,16 +135,17 @@ def get_linux_details():
         net_if_addrs = psutil.net_if_addrs()
         for interface_name, interface_addresses in net_if_addrs.items():
             for address in interface_addresses:
-                if str(address.family) == "AddressFamily.AF_PACKET":
+                if str(address.family) == 'AddressFamily.AF_PACKET':
                      details["network_info"].append({
                          "type": "Ethernet/Wireless", # Simplification
                          "name": interface_name,
                          "mac": address.address
                      })
                      
-         # USB Devices (usando lsusb)
+        # USB Devices (usando lsusb)
         try:
-            result = subprocess.run(["lsusb"], capture_output=True, text=True)
+            import subprocess
+            result = subprocess.run(['lsusb'], capture_output=True, text=True)
             if result.returncode == 0:
                 for line in result.stdout.splitlines():
                     if line.strip():
@@ -352,7 +353,7 @@ def get_windows_details():
                 registry_software = []
                 try:
                     aReg = winreg.ConnectRegistry(None, hive)
-                    aKey = winreg.OpenKey(aReg, r"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, winreg.KEY_READ | flag)
+                    aKey = winreg.OpenKey(aReg, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", 0, winreg.KEY_READ | flag)
                     
                     count_subkey = winreg.QueryInfoKey(aKey)[0]
                     
@@ -482,7 +483,7 @@ def get_dns_suffix_for_interface(interface_name):
         interfaces = output.split("Configurações de interface")
         for block in interfaces:
             if interface_name.lower() in block.lower():
-                match = re.search(r"Sufixo DNS específico de conexão\\s*: (.+)", block)
+                match = re.search(r"Sufixo DNS específico de conexão\s*: (.+)", block)
                 if match:
                     dns_suffix = match.group(1).strip()
                     return dns_suffix if dns_suffix else "N/A"
@@ -746,11 +747,9 @@ def report_data(data):
     }
     api_url = f"{API_ENDPOINT}/devices/"
     try:
-        logger.debug(f"Payload enviado:{json.dumps(data, indent=2)}")
         response = requests.post(api_url, headers=headers, data=json.dumps(data), timeout=15)
         response.raise_for_status() # Raise an exception for bad status codes (4xx or 5xx)
-        #logger.info(f"Successfully reported data for {data.get(\'ip_address\', \'unknown IP\')}. Status: {response.status_code}")
-        logger.info(f"Successfully reported data for {data.get('ip_address', 'unknown IP')}. Status: {response.status_code}")                                              
+        logger.info(f"Successfully reported data for {data.get('ip_address', 'unknown IP')}. Status: {response.status_code}")
         return True
     except requests.exceptions.RequestException as e:
         logger.error(f"Error reporting data to {api_url}: {e}")
@@ -833,44 +832,31 @@ def run_agent():
         local_ip = network_info.get("ip_address", "127.0.0.1")
         local_mac = network_info.get("mac_address", None)
 
-        
-    # Construção segura do payload com base nos campos válidos
-    hardware_details = {
-        "cpu_info": local_details.get("cpu_info"),
-        "ram_info": local_details.get("ram_info"),
-        "disk_info": local_details.get("disk_info"),
-        "gpu_info": local_details.get("gpu_info"),
-        "motherboard_info": local_details.get("motherboard_info"),
-        "network_info": local_details.get("network_info"),
-        "temperature_info": local_details.get("temperature_info"),
-        "power_supply_info": local_details.get("power_supply_info"),
-        "custom_notes": local_details.get("custom_notes")
-    }
+        payload = {
+            "ip_address": local_ip,
+            "mac_address": local_mac,
+            "name": platform.node(),
+            "os": local_details.pop("os", platform.system()),
+            "device_type": "computer",
+            "status": "online",
+            "hardware_details": local_details,
+            "machine_id": machine_id,
+            "last_seen": datetime.datetime.now().isoformat(),
+            "network_info": network_info
+        }
 
-    payload = {
-        "ip_address": local_ip,
-        "mac_address": local_mac,
-        "name": platform.node(),
-        "os": local_details.get("os", platform.system()),
-        "device_type": "computer",
-        "status": "online",
-        "hardware_details": hardware_details,
-        "last_seen": datetime.datetime.now().isoformat()
-    }
+        logger.info(f"Reporting local machine ({local_ip})...")
 
-
-    logger.info(f"Reporting local machine ({local_ip})...")
-
-    if offline_mode:
-        # Armazenar dados localmente
-        store_data_locally(machine_id, payload)
-    else:
-        # Enviar dados diretamente para o servidor
-        success = report_data(payload)
-        if not success and not args.offline:
-            # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
-            logger.info("Failed to report data to server, storing locally...")
+        if offline_mode:
+            # Armazenar dados localmente
             store_data_locally(machine_id, payload)
+        else:
+            # Enviar dados diretamente para o servidor
+            success = report_data(payload)
+            if not success and not args.offline:
+                # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
+                logger.info("Failed to report data to server, storing locally...")
+                store_data_locally(machine_id, payload)
                 
 def print_help():
     """Print help information about the agent."""
@@ -905,4 +891,3 @@ if __name__ == "__main__":
     logger.info("Starting Inventory Agent...")
     run_agent()
     logger.info("Agent run finished.")
-
