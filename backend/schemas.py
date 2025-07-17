@@ -22,7 +22,7 @@ class HardwareDetail(HardwareDetailBase):
     device_id: int
 
     class Config:
-        from_attributes = True # Changed from orm_mode = True for Pydantic v2
+        from_attributes = True
 
 # --- History Log Schemas ---
 class HistoryLogBase(BaseModel):
@@ -45,24 +45,28 @@ class HistoryLog(HistoryLogBase):
 
 # --- Device Schemas ---
 class DeviceBase(BaseModel):
+    machine_id: Optional[str] = None  # Novo campo
     name: Optional[str] = None
     ip_address: str
     mac_address: Optional[str] = None
     device_type: Optional[str] = Field(default="unknown")
     os: Optional[str] = None
     status: Optional[str] = Field(default="unknown")
+    network_info: Optional[Dict[str, Any]] = None  # Novo campo
+
 class DeviceCreate(DeviceBase):
-    # Include hardware details optionally during creation or update
     hardware_details: Optional[HardwareDetailCreate] = None
 
 class DeviceUpdate(BaseModel):
+    machine_id: Optional[str] = None
     name: Optional[str] = None
     ip_address: Optional[str] = None
     mac_address: Optional[str] = None
     device_type: Optional[str] = None
     os: Optional[str] = None
     status: Optional[str] = None
-    hardware_details: Optional[HardwareDetailCreate] = None # Allow updating hardware details
+    network_info: Optional[Dict[str, Any]] = None
+    hardware_details: Optional[HardwareDetailCreate] = None
 
 class Device(DeviceBase):
     id: int
@@ -73,4 +77,3 @@ class Device(DeviceBase):
 
     class Config:
         from_attributes = True
-
