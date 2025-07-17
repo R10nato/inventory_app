@@ -7,24 +7,20 @@ class Device(Base):
     __tablename__ = "devices"
 
     id = Column(Integer, primary_key=True, index=True)
-    machine_id = Column(String, unique=True, index=True, nullable=True)  # Novo campo
     name = Column(String, index=True)
     ip_address = Column(String, unique=True, index=True)
     mac_address = Column(String, unique=True, index=True, nullable=True)
     device_type = Column(String, index=True)  # e.g., 'computer', 'printer', 'smartphone'
     os = Column(String, nullable=True)
     status = Column(String, default="unknown")  # e.g., 'online', 'offline', 'unknown'
+    machine_id = Column(String, nullable=True, index=True)  # novo campo
+    network_info = Column(JSON, nullable=True)  # novo campo
     last_seen = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    network_info = Column(JSON, nullable=True)  # Novo campo: informações da rede (interface, gateway, dns, etc.)
+    hardware_details = relationship("HardwareDetail", back_populates="device", uselist=False, cascade="all, delete-orphan")
+    history_logs = relationship("HistoryLog", back_populates="device", cascade="all, delete-orphan")
 
-    hardware_details = relationship(
-        "HardwareDetail", back_populates="device", uselist=False, cascade="all, delete-orphan"
-    )
-    history_logs = relationship(
-        "HistoryLog", back_populates="device", cascade="all, delete-orphan"
-    )
 
 class HardwareDetail(Base):
     __tablename__ = "hardware_details"
@@ -43,6 +39,7 @@ class HardwareDetail(Base):
     custom_notes = Column(Text, nullable=True)
 
     device = relationship("Device", back_populates="hardware_details")
+
 
 class HistoryLog(Base):
     __tablename__ = "history_logs"
