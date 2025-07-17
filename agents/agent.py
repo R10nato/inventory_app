@@ -471,21 +471,33 @@ def guid_to_interface_name(guid):
         logger.warning(f"Falha ao mapear GUID para nome legível: {e}")
     return guid  # fallback para GUID
 
+import re
+
 def get_dns_suffix_for_interface(interface_name):
     """
-    Retorna o sufixo DNS de uma interface com base no nome legível (ex: Wi-Fi) usando `ipconfig`.
-    Funciona apenas no Windows.
+    Obtém o sufixo DNS específico de uma interface usando `netsh`.
     """
     try:
-        output = subprocess.check_output("ipconfig /all", shell=True, encoding="utf-8", errors="ignore")
-        adapters = output.split("\r\n\r\n")
-        for adapter in adapters:
-            if interface_name.lower() in adapter.lower():
-                for line in adapter.splitlines():
-                    if "sufixo dns específico de conexão" in line.lower() or "dns suffix" in line.lower():
-                        return line.split(":")[-1].strip()
+        output = subprocess.check_output(["netsh", "interface", "ip", "show", "config"], encoding="utf-8")
+        # Divide por blocos de interface
+        interfaces = output.split("Configurações de interface")
+        for block in interfaces:
+            if interface_name.lower() in block.lower():
+                match = re.search(r"Sufixo DNS específico de conexão\s*: (.+)", block)
+                if match:
+                    dns_suffix = match.group(1).strip()
+                    return dns_suffix if dns_suffix else "N/A"
+        return "N/A"
     except Exception as e:
-        logger.warning(f"Erro ao executar ipconfig para obter sufixo DNS: {e}")
+        logger.warning(f"Falha ao obter sufixo DNS da interface {interface_name}: {e}")
+        return "N/A"
+
+def get_domain_from_dns_suffix(suffix):
+    """
+    Se o sufixo DNS indicar um domínio AD, retorna o nome do domínio.
+    """
+    if suffix and suffix != "N/A":
+        return suffix.lower()
     return None
 
 def get_network_info():
@@ -512,7 +524,6 @@ def get_network_info():
                 mac = mac_info[0].get("addr")
 
                 if ip and not ip.startswith("169.254") and ip != "127.0.0.1":
-                    # Verifica se essa interface tem gateway associado
                     for af, gw_list in gateways.items():
                         if af == netifaces.AF_INET:
                             for gw in gw_list:
@@ -524,25 +535,25 @@ def get_network_info():
                                     break
 
         if best_interface and best_ip:
-            # Mapeia o nome legível da interface
             interface_name = guid_to_interface_name(best_interface)
             dns_suffix = get_dns_suffix_for_interface(interface_name)
+            domain_name = get_domain_from_dns_suffix(dns_suffix)
 
             logger.info(f"Interface ativa: {interface_name}")
             logger.info(f"Endereço IP da interface ativa: {best_ip}")
             logger.info(f"MAC da interface ativa: {best_mac}")
             logger.info(f"Gateway: {best_gw}")
-            if dns_suffix:
-                logger.info(f"Sufixo DNS detectado: {dns_suffix}")
-            else:
-                logger.info("Nenhum sufixo DNS detectado.")
+            logger.info(f"Sufixo DNS detectado: {dns_suffix}")
+            if domain_name:
+                logger.info(f"Domínio detectado (AD): {domain_name}")
 
             return {
                 "interface": interface_name,
                 "ip_address": best_ip,
                 "mac_address": best_mac,
                 "gateway": best_gw,
-                "dns_suffix": dns_suffix
+                "dns_suffix": dns_suffix,
+                "domain": domain_name
             }
 
         logger.warning("Não foi possível determinar interface ativa com IP válido.")
@@ -551,48 +562,6 @@ def get_network_info():
     except Exception as e:
         logger.error(f"Erro ao obter informações de rede: {e}")
         return {}
-    
-def get_local_network_info():
-    """Fallback: obtém IP e MAC da primeira interface válida, sem gateway."""
-    local_ip = "127.0.0.1"
-    local_mac = None
-
-    try:
-        net_if_addrs = psutil.net_if_addrs()
-        for iface, addresses in net_if_addrs.items():
-            is_loopback = "loopback" in iface.lower() or iface.startswith("lo")
-            if not is_loopback:
-                ipv4 = None
-                mac = None
-
-                for addr in addresses:
-                    if addr.family == socket.AF_INET:
-                        ipv4 = addr.address
-                    elif addr.family == socket.AF_LINK:
-                        mac = addr.address
-
-                if ipv4 and not ipv4.startswith("169.254"):
-                    local_ip = ipv4
-                    local_mac = mac
-                    break
-
-        # Tenta aceitar link-local se não encontrar melhor
-        if local_ip == "127.0.0.1":
-            for iface, addresses in net_if_addrs.items():
-                if "loopback" not in iface.lower():
-                    for addr in addresses:
-                        if addr.family == socket.AF_INET:
-                            local_ip = addr.address
-                        if addr.family == socket.AF_LINK:
-                            local_mac = addr.address
-                    if local_ip != "127.0.0.1":
-                        break
-
-    except Exception as e:
-        logger.error(f"Não foi possível determinar IP/MAC local confiável: {e}")
-        logger.error("Usando endereço de loopback (127.0.0.1) como fallback.")
-
-    return local_ip, local_mac
 
 
 def store_data_locally(device_id, data):

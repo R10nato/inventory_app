@@ -272,3 +272,74 @@
 2025-07-16 14:35:58,933 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1562
 2025-07-16 14:35:58,935 - inventory_agent - INFO - Successfully reported data for 192.168.0.99. Status: 201
 2025-07-16 14:35:58,936 - inventory_agent - INFO - Agent run finished.
+2025-07-16 21:56:07,403 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 21:56:07,410 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 21:56:07,410 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 21:56:50,982 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-07-16 21:56:51,618 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-16 21:56:51,625 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
+2025-07-16 21:56:51,626 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-16 21:56:51,627 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-07-16 21:56:51,627 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
+2025-07-16 21:56:51,628 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
+2025-07-16 21:56:51,650 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 21:56:54,131 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
+2025-07-16 21:56:54,153 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-16 21:56:54,155 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-16 21:56:54,156 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-16 21:56:54,163 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-16 21:56:54,171 - inventory_agent - INFO - Agent run finished.
+2025-07-16 22:25:59,047 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 22:25:59,051 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 22:25:59,051 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 22:26:34,238 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-07-16 22:26:35,048 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-16 22:26:35,049 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-16 22:26:35,050 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
+2025-07-16 22:26:35,053 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-16 22:26:35,054 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-07-16 22:26:35,054 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-16 22:26:35,055 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
+2025-07-16 22:26:35,066 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 22:26:37,441 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
+2025-07-16 22:26:37,453 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-16 22:26:37,454 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-16 22:26:37,455 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-16 22:26:37,468 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-16 22:26:37,469 - inventory_agent - INFO - Agent run finished.
+2025-07-16 23:07:33,577 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 23:07:33,581 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 23:07:33,582 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 23:08:19,430 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-07-16 23:08:20,003 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-16 23:08:20,003 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-16 23:08:20,004 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
+2025-07-16 23:08:20,004 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-16 23:08:20,004 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-07-16 23:08:20,004 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-16 23:08:20,005 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
+2025-07-16 23:08:20,013 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 23:08:22,291 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
+2025-07-16 23:08:22,292 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-16 23:08:22,292 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-16 23:08:22,293 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-16 23:08:22,300 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-16 23:08:22,303 - inventory_agent - INFO - Agent run finished.
+2025-07-16 23:16:31,362 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-16 23:16:31,365 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-16 23:16:31,365 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-16 23:17:18,509 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-07-16 23:17:19,045 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-16 23:17:19,046 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-16 23:17:19,048 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
+2025-07-16 23:17:19,048 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-16 23:17:19,049 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-07-16 23:17:19,049 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-16 23:17:19,049 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
+2025-07-16 23:17:19,056 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-16 23:17:21,574 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
+2025-07-16 23:17:21,575 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-16 23:17:21,576 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-16 23:17:21,576 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-16 23:17:21,584 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-16 23:17:21,588 - inventory_agent - INFO - Agent run finished.
