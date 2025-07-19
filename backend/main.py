@@ -27,8 +27,10 @@ def read_root():
 # Placeholder for future routers/endpoints
 from routers import devices # Example: Routers will be added later
 app.include_router(devices.router)
-# app.include_router(history.router)
+from routers import history_logs
+app.include_router(history_logs.router)
 
 # Note: Pydantic schemas (schemas.py) need to be created for request/response validation.
 # Note: Routers for specific functionalities (devices, history, etc.) will be added in the next steps.
+
 
