@@ -4,7 +4,10 @@ import json
 from models import HistoryLog, HardwareDetail
 import models, schemas
 from datetime import datetime
-from typing import Optional
+from models import Device
+from schemas import HistoryLogCreate
+from typing import List, Optional
+
 
 def get_device_by_id(db: Session, device_id: int):
     return db.query(models.Device).filter(models.Device.id == device_id).first()
@@ -120,3 +123,36 @@ def compare_and_log_hardware_changes(db: Session, device: models.Device, new_hw_
                 user=user
             )
             db.add(log)
+
+
+def create_history_log(db: Session, device_id: int, log: HistoryLogCreate) -> HistoryLog:
+    """
+    Cria um novo registro de histórico para um dispositivo.
+    """
+    db_log = HistoryLog(
+        device_id=device_id,
+        component=log.component,
+        change_description=log.change_description,
+        details_before=log.details_before,
+        details_after=log.details_after,
+        user=log.user
+    )
+    db.add(db_log)
+    db.commit()
+    db.refresh(db_log)
+    return db_log
+
+
+def get_all_history_logs(db: Session, skip: int = 0, limit: int = 100) -> List[HistoryLog]:
+    """
+    Retorna todos os registros de histórico no banco de dados.
+    """
+    return db.query(HistoryLog).offset(skip).limit(limit).all()
+
+
+def get_history_logs_for_device(db: Session, device_id: int) -> Optional[List[HistoryLog]]:
+    """
+    Retorna os logs de histórico para um determinado dispositivo.
+    """
+    return db.query(HistoryLog).filter(HistoryLog.device_id == device_id).order_by(HistoryLog.timestamp.desc()).all()
+
