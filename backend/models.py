@@ -50,3 +50,5 @@ class HistoryLog(Base):
     user = Column(String, nullable=True)
 
     device = relationship("Device", back_populates="history_logs")
+
+    

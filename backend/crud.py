@@ -1,5 +1,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
+import json
+from models import HistoryLog, HardwareDetail
 import models, schemas
 from datetime import datetime
 from typing import Optional
@@ -29,6 +31,7 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
         for key, value in update_data.items():
             if key == "hardware_details" and value is not None:
                 if db_device.hardware_details:
+                    compare_and_log_hardware_changes(db, db_device, value)
                     for hw_key, hw_value in value.items():
                         setattr(db_device.hardware_details, hw_key, hw_value)
                 else:
@@ -68,6 +71,7 @@ def update_device_manual(db: Session, device_id: int, device_update: schemas.Dev
     for key, value in update_data.items():
         if key == "hardware_details" and value is not None:
             if db_device.hardware_details:
+                compare_and_log_hardware_changes(db, db_device, value, user="manual")
                 for hw_key, hw_value in value.items():
                     setattr(db_device.hardware_details, hw_key, hw_value)
             else:
@@ -92,3 +96,27 @@ def delete_device(db: Session, device_id: int):
         db.commit()
         return True
     return False
+
+def compare_and_log_hardware_changes(db: Session, device: models.Device, new_hw_data: dict, user: str = "agent"):
+    """
+    Compara os dados de hardware antigos com os novos e registra logs de alterações.
+    """
+    if not device.hardware_details:
+        return
+
+    old_hw = device.hardware_details
+    for key, new_value in new_hw_data.items():
+        if key.startswith("_") or not hasattr(old_hw, key):
+            continue
+
+        old_value = getattr(old_hw, key)
+        if old_value != new_value:
+            log = HistoryLog(
+                device_id=device.id,
+                component=key,
+                change_description=f"Alteração detectada no componente '{key}'.",
+                details_before=json.dumps(old_value, default=str),
+                details_after=json.dumps(new_value, default=str),
+                user=user
+            )
+            db.add(log)
