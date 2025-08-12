@@ -1,32 +1,60 @@
+import { useState } from 'react'
+import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Button } from '@/components/ui/button.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
 import { Progress } from '@/components/ui/progress.jsx'
 import { Separator } from '@/components/ui/separator.jsx'
+import DeviceEditDialog from './DeviceEditDialog.jsx'
 import { 
-  ArrowLeft,
+  ArrowLeft, 
   Monitor, 
   Laptop, 
   Smartphone, 
-  Printer, 
-  Cpu, 
-  MemoryStick, 
-  HardDrive, 
+  Printer,
+  Cpu,
+  MemoryStick,
+  HardDrive,
   Wifi,
+  Clock,
   Thermometer,
-  Zap,
-  Usb,
   Package,
+  Network,
   History,
+  Edit,
   Info,
   Activity,
-  Clock,
   User,
-  ChevronRight
+  Usb
 } from 'lucide-react'
+import { format } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 const DeviceDetail = ({ device, onBack }) => {
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+
+  const handleSaveDevice = async (updatedDevice) => {
+    try {
+      // A chamada da API já foi feita no DeviceEditDialog
+      // Aqui apenas atualizamos o estado local e mostramos feedback
+      console.log('Dispositivo atualizado:', updatedDevice)
+      
+      // Atualizar o dispositivo local (em uma implementação real, você recarregaria os dados)
+      Object.assign(device, updatedDevice)
+      
+      // Mostrar feedback de sucesso
+      alert('Dispositivo atualizado com sucesso!')
+      
+      // Em uma implementação real, você poderia:
+      // 1. Recarregar os dados do dispositivo da API
+      // 2. Atualizar o estado global da aplicação
+      // 3. Mostrar uma notificação toast em vez de alert
+      
+    } catch (error) {
+      console.error('Erro ao processar atualização do dispositivo:', error)
+      throw error
+    }
+  }
   const getDeviceIcon = (type) => {
     switch (type) {
       case 'computer': return <Monitor className="h-8 w-8" />
@@ -80,7 +108,11 @@ const DeviceDetail = ({ device, onBack }) => {
             <p className="text-muted-foreground">{device.ip_address}</p>
           </div>
         </div>
-        <div className="ml-auto">
+        <div className="ml-auto flex items-center gap-2">
+          <Button variant="outline" size="sm" onClick={() => setIsEditDialogOpen(true)}>
+            <Edit className="h-4 w-4 mr-2" />
+            Editar
+          </Button>
           <Badge variant={device.status === 'online' ? 'default' : 'secondary'} className="text-sm">
             {device.status}
           </Badge>
@@ -190,29 +222,33 @@ const DeviceDetail = ({ device, onBack }) => {
                 <CardContent className="space-y-3">
                   <div>
                     <span className="text-sm text-muted-foreground">Total:</span>
-                    <p className="font-medium">{hardware.ram_info.total_gb} GB</p>
+                    <p className="font-medium">{hardware.ram_info.total_gb ?? "N/A"} GB</p>
                   </div>
                   <div>
                     <span className="text-sm text-muted-foreground">Em uso:</span>
-                    <p className="font-medium">{hardware.ram_info.used_gb} GB</p>
+                    <p className="font-medium">{hardware.ram_info.used_gb ?? "N/A"} GB</p>
                   </div>
                   <div>
                     <span className="text-sm text-muted-foreground">Uso:</span>
                     <div className="space-y-1">
                       <div className="flex justify-between text-sm">
-                        <span>{((hardware.ram_info.used_gb / hardware.ram_info.total_gb) * 100).toFixed(1)}%</span>
+                        <span>
+                          {hardware.ram_info.used_gb && hardware.ram_info.total_gb? `${((hardware.ram_info.used_gb / hardware.ram_info.total_gb) * 100).toFixed(1)}%`: "N/A"}
+                        </span>
                       </div>
-                      <Progress 
-                        value={(hardware.ram_info.used_gb / hardware.ram_info.total_gb) * 100}
+                      <Progress
+                        value={hardware.ram_info.used_gb && hardware.ram_info.total_gb? (hardware.ram_info.used_gb / hardware.ram_info.total_gb) * 100: 0}
                         className="h-2"
                       />
                     </div>
                   </div>
+
+                  {/* Slots */}
                   {hardware.ram_info.slots_total && (
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <span className="text-sm text-muted-foreground">Slots usados:</span>
-                        <p className="font-medium">{hardware.ram_info.slots_used || 0}</p>
+                        <p className="font-medium">{hardware.ram_info.slots_used ?? 0}</p>
                       </div>
                       <div>
                         <span className="text-sm text-muted-foreground">Slots total:</span>
@@ -220,9 +256,29 @@ const DeviceDetail = ({ device, onBack }) => {
                       </div>
                     </div>
                   )}
+
+                  {/* Tipo da RAM */}
+                  {hardware.ram_info.modules && hardware.ram_info.modules.length > 0 && (
+                    <div>
+                      <span className="text-sm text-muted-foreground">Tipo:</span>
+                      <p className="font-medium">
+                        {
+                          {
+                            20: "DDR",
+                            21: "DDR2",
+                            22: "DDR2 FB-DIMM",
+                            24: "DDR3",
+                            25: "FBD2",
+                            26: "DDR4",
+                            27: "DDR5",
+                          }[hardware.ram_info.modules[0].type] ?? "Desconhecido"}
+                      </p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
+
           </div>
 
           {/* Temperaturas */}
@@ -586,6 +642,14 @@ const DeviceDetail = ({ device, onBack }) => {
           </Card>
         </TabsContent>
       </Tabs>
+
+      {/* Dialog de Edição */}
+      <DeviceEditDialog
+        device={device}
+        open={isEditDialogOpen}
+        onOpenChange={setIsEditDialogOpen}
+        onSave={handleSaveDevice}
+      />
     </div>
   )
 }

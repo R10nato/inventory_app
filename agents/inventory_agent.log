@@ -1,361 +1,50 @@
-2025-07-09 00:17:56,544 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-09 00:17:56,558 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-09 00:17:56,558 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-09 00:17:56,860 - inventory_agent - ERROR - WMI or psutil not found. Please install them (pip install wmi psutil pywin32)
-2025-07-09 00:17:57,048 - inventory_agent - ERROR - Error generating machine ID: No module named 'wmi'
-2025-07-09 00:17:57,052 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-09 00:17:59,213 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-09 00:17:59,213 - inventory_agent - INFO - Starting network discovery...
-2025-07-09 00:17:59,226 - inventory_agent - ERROR - python-nmap not found. Please install it: pip install python-nmap
-2025-07-09 00:17:59,226 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-09 00:17:59,226 - inventory_agent - INFO - Agent run finished.
-2025-07-09 00:21:13,693 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-09 00:21:13,698 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-09 00:21:13,699 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-09 00:21:22,587 - inventory_agent - ERROR - Error collecting USB devices: argument of type 'NoneType' is not iterable
-2025-07-09 00:21:55,128 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-09 00:21:57,211 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-09 00:21:57,213 - inventory_agent - INFO - Starting network discovery...
-2025-07-09 00:21:58,096 - inventory_agent - INFO - Scanning network: 192.168.15.0/24...
-2025-07-09 00:24:01,581 - inventory_agent - INFO - Discovery finished. Found 6 online devices.
-2025-07-09 00:24:01,582 - inventory_agent - INFO - Reporting 6 discovered devices...
-2025-07-09 00:24:03,651 - inventory_agent - INFO - Successfully reported data for 192.168.15.1. Status: 201
-2025-07-09 00:24:05,725 - inventory_agent - INFO - Successfully reported data for 192.168.15.10. Status: 201
-2025-07-09 00:24:07,793 - inventory_agent - INFO - Successfully reported data for 192.168.15.11. Status: 201
-2025-07-09 00:24:09,841 - inventory_agent - INFO - Successfully reported data for 192.168.15.2. Status: 201
-2025-07-09 00:24:11,948 - inventory_agent - INFO - Successfully reported data for 192.168.15.6. Status: 201
-2025-07-09 00:24:14,005 - inventory_agent - INFO - Successfully reported data for 192.168.15.9. Status: 201
-2025-07-09 00:24:14,007 - inventory_agent - INFO - Agent run finished.
-2025-07-09 00:37:29,354 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-09 00:37:29,358 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-09 00:37:29,361 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-09 00:38:03,450 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-09 00:38:05,887 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-09 00:38:05,887 - inventory_agent - INFO - Starting network discovery...
-2025-07-09 00:38:06,005 - inventory_agent - INFO - Scanning network: 192.168.15.0/24...
-2025-07-09 00:40:14,905 - inventory_agent - INFO - Discovery finished. Found 5 online devices.
-2025-07-09 00:40:14,905 - inventory_agent - INFO - Reporting 5 discovered devices...
-2025-07-09 00:40:16,973 - inventory_agent - INFO - Successfully reported data for 192.168.15.1. Status: 201
-2025-07-09 00:40:19,056 - inventory_agent - INFO - Successfully reported data for 192.168.15.11. Status: 201
-2025-07-09 00:40:21,122 - inventory_agent - INFO - Successfully reported data for 192.168.15.2. Status: 201
-2025-07-09 00:40:23,186 - inventory_agent - INFO - Successfully reported data for 192.168.15.6. Status: 201
-2025-07-09 00:40:25,261 - inventory_agent - INFO - Successfully reported data for 192.168.15.9. Status: 201
-2025-07-09 00:40:25,262 - inventory_agent - INFO - Agent run finished.
-2025-07-10 18:07:33,114 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-10 18:07:33,122 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-10 18:07:33,122 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-10 18:08:15,891 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-10 18:08:18,265 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-10 18:08:18,265 - inventory_agent - INFO - Starting network discovery...
-2025-07-10 18:08:20,497 - inventory_agent - INFO - Scanning network: 192.168.1.0/24...
-2025-07-10 18:08:32,306 - inventory_agent - ERROR - Error during nmap scan: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Thu Jul 10 18:08:20 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24" start="1752185300" startstr="Thu Jul 10 18:08:20 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-10 18:08:32,307 - inventory_agent - ERROR - This could be due to:
-2025-07-10 18:08:32,309 - inventory_agent - ERROR -   - Network restrictions or firewall settings
-2025-07-10 18:08:32,309 - inventory_agent - ERROR -   - Insufficient permissions (try running as administrator/root)
-2025-07-10 18:08:32,310 - inventory_agent - ERROR -   - Incompatible nmap version
-2025-07-10 18:08:32,310 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-10 18:08:32,310 - inventory_agent - INFO - Agent run finished.
-2025-07-10 18:15:23,191 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-10 18:15:23,194 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-10 18:15:23,194 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-10 18:15:57,559 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-10 18:15:59,773 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-10 18:15:59,775 - inventory_agent - INFO - Starting network discovery...
-2025-07-10 18:15:59,896 - inventory_agent - INFO - Scanning network: 192.168.1.0/24...
-2025-07-10 18:16:10,067 - inventory_agent - ERROR - Error during nmap scan: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Thu Jul 10 18:15:59 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24" start="1752185759" startstr="Thu Jul 10 18:15:59 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-10 18:16:10,067 - inventory_agent - ERROR - This could be due to:
-2025-07-10 18:16:10,070 - inventory_agent - ERROR -   - Network restrictions or firewall settings
-2025-07-10 18:16:10,074 - inventory_agent - ERROR -   - Insufficient permissions (try running as administrator/root)
-2025-07-10 18:16:10,075 - inventory_agent - ERROR -   - Incompatible nmap version
-2025-07-10 18:16:10,076 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-10 18:16:10,077 - inventory_agent - INFO - Agent run finished.
-2025-07-10 15:23:48,557 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-10 15:23:48,559 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-10 15:23:48,559 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-10 15:24:22,203 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-10 15:24:24,588 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-10 15:24:24,588 - inventory_agent - INFO - Starting network discovery...
-2025-07-10 15:24:24,789 - inventory_agent - INFO - Scanning network: 192.168.1.0/24...
-2025-07-10 15:24:52,772 - inventory_agent - ERROR - Error during nmap scan: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Thu Jul 10 15:24:24 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24" start="1752175464" startstr="Thu Jul 10 15:24:24 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-10 15:24:52,772 - inventory_agent - ERROR - This could be due to:
-2025-07-10 15:24:52,773 - inventory_agent - ERROR -   - Network restrictions or firewall settings
-2025-07-10 15:24:52,773 - inventory_agent - ERROR -   - Insufficient permissions (try running as administrator/root)
-2025-07-10 15:24:52,774 - inventory_agent - ERROR -   - Incompatible nmap version
-2025-07-10 15:24:52,774 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-10 15:24:52,774 - inventory_agent - INFO - Agent run finished.
-2025-07-10 16:16:27,433 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-10 16:16:27,437 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-10 16:16:27,437 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-10 16:18:03,915 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-10 16:18:06,352 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-10 16:18:06,353 - inventory_agent - INFO - Starting network discovery...
-2025-07-10 16:38:35,958 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-10 16:38:35,964 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-10 16:38:35,965 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-10 16:40:21,121 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-10 16:40:23,466 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-10 16:40:23,486 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:02:30,233 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 15:02:30,240 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 15:02:30,240 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 15:03:17,977 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 15:03:20,309 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 15:03:20,309 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:03:21,473 - inventory_agent - ERROR - Erro ao detectar faixa CIDR: name 'ipaddress' is not defined
-2025-07-15 15:03:21,473 - inventory_agent - INFO - Varredura de rede iniciada: 192.168.1.0/24
-2025-07-15 15:03:37,369 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Tue Jul 15 15:03:21 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24" start="1752606201" startstr="Tue Jul 15 15:03:21 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-15 15:03:37,370 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-15 15:03:37,372 - inventory_agent - INFO - Agent run finished.
-2025-07-15 15:23:07,839 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 15:23:07,843 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 15:23:07,844 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 15:23:46,018 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 15:23:48,337 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 15:23:48,338 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:23:48,548 - inventory_agent - INFO - Varredura de rede iniciada: 172.26.176.0/20
-2025-07-15 15:42:43,497 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 15:42:43,503 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 15:42:43,504 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 15:43:25,957 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 15:43:28,199 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 15:43:28,200 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:43:28,466 - inventory_agent - INFO - Varredura de rede iniciada: 172.26.176.0/20
-2025-07-15 15:46:08,728 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 15:46:08,732 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 15:46:08,732 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 15:46:51,029 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 15:46:53,411 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 15:46:53,412 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:46:53,682 - inventory_agent - INFO - Detectada rede: 172.26.176.1 / 255.255.240.0 -> 172.26.176.0/20
-2025-07-15 15:46:53,684 - inventory_agent - INFO - Varredura de rede iniciada: 172.26.176.0/20
-2025-07-15 15:49:59,441 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Tue Jul 15 15:46:53 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 172.26.176.0/20 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 172.26.176.0/20" start="1752608813" startstr="Tue Jul 15 15:46:53 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-15 15:49:59,442 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-15 15:49:59,442 - inventory_agent - INFO - Agent run finished.
-2025-07-15 15:59:02,792 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 15:59:02,795 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 15:59:02,795 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 15:59:46,721 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 15:59:49,145 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 15:59:49,147 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 15:59:49,345 - inventory_agent - INFO - Varredura de rede iniciada: 172.26.176.0/20
-2025-07-15 16:03:30,049 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Tue Jul 15 15:59:49 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 172.26.176.0/20 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 172.26.176.0/20" start="1752609589" startstr="Tue Jul 15 15:59:49 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-15 16:03:30,053 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-15 16:03:30,059 - inventory_agent - INFO - Agent run finished.
-2025-07-15 16:07:19,863 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 16:07:19,867 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 16:07:19,870 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 16:08:10,111 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 16:08:12,637 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 16:08:12,638 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 16:08:13,653 - inventory_agent - INFO - Interface selecionada: {7099C44D-C82F-49F7-AC49-0333ECD37D87} -> IP: 192.168.153.1 / 255.255.255.0 -> Rede: 192.168.153.0/24
-2025-07-15 16:08:13,703 - inventory_agent - INFO - Varredura de rede iniciada: 192.168.153.0/24
-2025-07-15 16:08:33,717 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Tue Jul 15 16:08:14 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.153.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.153.0/24" start="1752610094" startstr="Tue Jul 15 16:08:14 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-15 16:08:33,726 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-15 16:08:33,730 - inventory_agent - INFO - Agent run finished.
-2025-07-15 16:20:46,221 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-15 16:20:46,224 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-15 16:20:46,228 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-15 16:21:29,830 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-15 16:21:32,175 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-15 16:21:32,177 - inventory_agent - INFO - Starting network discovery...
-2025-07-15 16:21:32,445 - inventory_agent - WARNING - Não foi possível detectar a interface de rede com gateway ativo.
-2025-07-15 16:21:32,447 - inventory_agent - INFO - Varredura de rede iniciada: 192.168.1.0/24
-2025-07-15 16:21:51,425 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Tue Jul 15 16:21:32 2025 as: nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -&#45;host-timeout 10s 192.168.1.0/24" start="1752610892" startstr="Tue Jul 15 16:21:32 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-15 16:21:51,426 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-15 16:21:51,429 - inventory_agent - INFO - Agent run finished.
-2025-07-16 10:36:30,941 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 10:36:30,945 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 10:36:30,946 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 10:37:11,853 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 10:37:14,150 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 10:37:14,151 - inventory_agent - INFO - Starting network discovery...
-2025-07-16 10:37:14,327 - inventory_agent - WARNING - Não foi possível detectar a interface de rede com gateway ativo.
-2025-07-16 10:37:14,328 - inventory_agent - INFO - Varredura de rede iniciada: 192.168.1.0/24
-2025-07-16 10:37:32,897 - inventory_agent - ERROR - Erro durante descoberta de rede: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Wed Jul 16 10:37:14 2025 as: nmap -oX - -sn -T4 -&#45;host-timeout 30s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -T4 -&#45;host-timeout 30s 192.168.1.0/24" start="1752676634" startstr="Wed Jul 16 10:37:14 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-16 10:37:32,898 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-16 10:37:32,898 - inventory_agent - INFO - Agent run finished.
-2025-07-16 10:50:32,813 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 10:50:32,815 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 10:50:32,815 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 10:51:14,129 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 10:51:14,140 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 10:51:16,715 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
-2025-07-16 10:51:16,718 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 10:51:16,719 - inventory_agent - INFO - Starting network discovery...
-2025-07-16 10:51:16,868 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 10:51:16,869 - inventory_agent - DEBUG - Gateway padrão: 192.168.1.1 via interface {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
-2025-07-16 10:51:16,887 - inventory_agent - DEBUG - Endereços da interface {B7B1CED4-34BB-466A-A2F7-909B135AAB29}: {-1000: [{'addr': '98:83:89:79:c0:cc'}]}
-2025-07-16 10:51:16,888 - inventory_agent - WARNING - Não foi possível detectar a interface de rede com gateway ativo.
-2025-07-16 10:51:16,888 - inventory_agent - INFO - Varredura de rede iniciada: 192.168.1.0/24
-2025-07-16 10:51:26,141 - inventory_agent - ERROR - Erro ao executar scan inicial: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Wed Jul 16 10:51:16 2025 as: nmap -oX - -sn -T4 -&#45;host-timeout 60s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -T4 -&#45;host-timeout 60s 192.168.1.0/24" start="1752677476" startstr="Wed Jul 16 10:51:16 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-16 10:51:26,142 - inventory_agent - DEBUG - Saída bruta do Nmap: b'<?xml version="1.0" encoding="UTF-8"?>\r\n<!DOCTYPE nmaprun>\r\n<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>\r\n<!-- Nmap 7.97 scan initiated Wed Jul 16 10:51:16 2025 as: nmap -oX - -sn -T4 -&#45;host-timeout 60s 192.168.1.0/24 -->\r\n<nmaprun scanner="nmap" args="nmap -oX - -sn -T4 -&#45;host-timeout 60s 192.168.1.0/24" start="1752677476" startstr="Wed Jul 16 10:51:16 2025" version="7.97" xmloutputversion="1.05">\r\n'
-2025-07-16 10:51:26,146 - inventory_agent - INFO - Reporting 0 discovered devices...
-2025-07-16 10:51:26,147 - inventory_agent - INFO - Agent run finished.
-2025-07-16 11:07:07,087 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 11:07:07,113 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 11:07:07,120 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 11:07:46,556 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 11:07:46,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 11:07:49,084 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
-2025-07-16 11:07:49,090 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 11:07:49,090 - inventory_agent - INFO - Starting network discovery...
-2025-07-16 11:17:18,644 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 11:17:18,647 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 11:17:18,647 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 11:17:55,902 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 11:17:55,908 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
-2025-07-16 11:17:55,925 - inventory_agent - WARNING - Erro ao tentar detectar sufixo DNS: name 'subprocess' is not defined
-2025-07-16 11:17:55,926 - inventory_agent - INFO - Endereço IP da interface ativa: None
-2025-07-16 11:17:55,926 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 11:17:55,926 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 11:17:55,931 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 11:17:58,331 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
-2025-07-16 11:17:58,332 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 11:17:58,332 - inventory_agent - INFO - Starting network discovery...
-2025-07-16 11:57:56,535 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 11:57:56,538 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 11:57:56,538 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 11:58:34,900 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 11:58:34,902 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
-2025-07-16 11:58:35,051 - inventory_agent - INFO - Endereço IP da interface ativa: None
-2025-07-16 11:58:35,052 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
-2025-07-16 11:58:35,053 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 11:58:35,058 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
-2025-07-16 11:58:35,074 - inventory_agent - ERROR - Não foi possível determinar IP/MAC local confiável: module 'psutil' has no attribute 'AF_INET'
-2025-07-16 11:58:35,075 - inventory_agent - ERROR - Usando endereço de loopback (127.0.0.1) como fallback.
-2025-07-16 11:58:35,076 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 11:58:35,084 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 11:58:37,641 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1552
-2025-07-16 11:58:37,643 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 11:58:37,646 - inventory_agent - INFO - Agent run finished.
-2025-07-16 14:03:27,549 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 14:03:27,553 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 14:03:27,559 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 14:04:15,251 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 14:04:15,258 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
-2025-07-16 14:04:15,513 - inventory_agent - INFO - Endereço IP da interface ativa: None
-2025-07-16 14:04:15,513 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
-2025-07-16 14:04:15,514 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 14:04:15,514 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
-2025-07-16 14:04:15,531 - inventory_agent - ERROR - Não foi possível determinar IP/MAC local confiável: module 'psutil' has no attribute 'AF_INET'
-2025-07-16 14:04:15,532 - inventory_agent - ERROR - Usando endereço de loopback (127.0.0.1) como fallback.
-2025-07-16 14:04:15,532 - inventory_agent - INFO - Reporting local machine (127.0.0.1)...
-2025-07-16 14:04:15,542 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 14:04:18,029 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1551
-2025-07-16 14:04:18,030 - inventory_agent - INFO - Successfully reported data for 127.0.0.1. Status: 201
-2025-07-16 14:04:18,031 - inventory_agent - INFO - Agent run finished.
-2025-07-16 14:08:41,567 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 14:08:41,571 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 14:08:41,574 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 14:09:16,505 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 14:09:16,519 - inventory_agent - INFO - Gateway padrão detectado: 192.168.1.1 via interface: {B7B1CED4-34BB-466A-A2F7-909B135AAB29}
-2025-07-16 14:09:16,850 - inventory_agent - INFO - Endereço IP da interface ativa: None
-2025-07-16 14:09:16,850 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:79:c0:cc
-2025-07-16 14:09:16,851 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 14:09:16,855 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
-2025-07-16 14:09:16,882 - inventory_agent - INFO - Reporting local machine (172.26.176.1)...
-2025-07-16 14:09:16,888 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 14:09:19,280 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1547
-2025-07-16 14:09:19,281 - inventory_agent - INFO - Successfully reported data for 172.26.176.1. Status: 201
-2025-07-16 14:09:19,282 - inventory_agent - INFO - Agent run finished.
-2025-07-16 14:35:19,344 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 14:35:19,346 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 14:35:19,346 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 14:35:55,994 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-16 14:35:56,406 - inventory_agent - INFO - Interface ativa: {241811CC-3D5F-412F-9CE3-89549CAE85DB}
-2025-07-16 14:35:56,407 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.99
-2025-07-16 14:35:56,408 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-16 14:35:56,409 - inventory_agent - INFO - Gateway: 192.168.0.2
-2025-07-16 14:35:56,411 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 14:35:56,412 - inventory_agent - INFO - Reporting local machine (192.168.0.99)...
-2025-07-16 14:35:56,418 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 14:35:58,933 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1562
-2025-07-16 14:35:58,935 - inventory_agent - INFO - Successfully reported data for 192.168.0.99. Status: 201
-2025-07-16 14:35:58,936 - inventory_agent - INFO - Agent run finished.
-2025-07-16 21:56:07,403 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 21:56:07,410 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 21:56:07,410 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 21:56:50,982 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
-2025-07-16 21:56:51,618 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-16 21:56:51,625 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
-2025-07-16 21:56:51,626 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-16 21:56:51,627 - inventory_agent - INFO - Gateway: 192.168.15.1
-2025-07-16 21:56:51,627 - inventory_agent - INFO - Nenhum sufixo DNS detectado.
-2025-07-16 21:56:51,628 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
-2025-07-16 21:56:51,650 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 21:56:54,131 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
-2025-07-16 21:56:54,153 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-16 21:56:54,155 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-16 21:56:54,156 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-16 21:56:54,163 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-16 21:56:54,171 - inventory_agent - INFO - Agent run finished.
-2025-07-16 22:25:59,047 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 22:25:59,051 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 22:25:59,051 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 22:26:34,238 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
-2025-07-16 22:26:35,048 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-16 22:26:35,049 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-16 22:26:35,050 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
-2025-07-16 22:26:35,053 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-16 22:26:35,054 - inventory_agent - INFO - Gateway: 192.168.15.1
-2025-07-16 22:26:35,054 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-16 22:26:35,055 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
-2025-07-16 22:26:35,066 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 22:26:37,441 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
-2025-07-16 22:26:37,453 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-16 22:26:37,454 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-16 22:26:37,455 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-16 22:26:37,468 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-16 22:26:37,469 - inventory_agent - INFO - Agent run finished.
-2025-07-16 23:07:33,577 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 23:07:33,581 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 23:07:33,582 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 23:08:19,430 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
-2025-07-16 23:08:20,003 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-16 23:08:20,003 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-16 23:08:20,004 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
-2025-07-16 23:08:20,004 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-16 23:08:20,004 - inventory_agent - INFO - Gateway: 192.168.15.1
-2025-07-16 23:08:20,004 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-16 23:08:20,005 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
-2025-07-16 23:08:20,013 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 23:08:22,291 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
-2025-07-16 23:08:22,292 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-16 23:08:22,292 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-16 23:08:22,293 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-16 23:08:22,300 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-16 23:08:22,303 - inventory_agent - INFO - Agent run finished.
-2025-07-16 23:16:31,362 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-16 23:16:31,365 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-16 23:16:31,365 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-16 23:17:18,509 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
-2025-07-16 23:17:19,045 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-16 23:17:19,046 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-16 23:17:19,048 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.4
-2025-07-16 23:17:19,048 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-16 23:17:19,049 - inventory_agent - INFO - Gateway: 192.168.15.1
-2025-07-16 23:17:19,049 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-16 23:17:19,049 - inventory_agent - INFO - Reporting local machine (192.168.15.4)...
-2025-07-16 23:17:19,056 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-16 23:17:21,574 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 447
-2025-07-16 23:17:21,575 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-16 23:17:21,576 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-16 23:17:21,576 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-16 23:17:21,584 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-16 23:17:21,588 - inventory_agent - INFO - Agent run finished.
-2025-07-17 15:07:55,870 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-17 15:07:55,872 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-17 15:07:55,872 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-17 15:08:30,987 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-17 15:08:31,753 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-17 15:08:31,754 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-17 15:08:31,758 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.113
-2025-07-17 15:08:31,758 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-17 15:08:31,759 - inventory_agent - INFO - Gateway: 192.168.0.200
-2025-07-17 15:08:31,759 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-17 15:08:31,759 - inventory_agent - INFO - Reporting local machine (192.168.1.113)...
-2025-07-17 15:08:31,760 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.1.113",
+2025-07-15 14:14:18,997 - inventory_agent - INFO - Local database setup complete at /home/ubuntu/inventory_app/agents/inventory_data.db
+2025-07-15 14:14:18,997 - inventory_agent - INFO - Starting local machine inventory collection (self-only)...
+2025-07-15 14:14:19,009 - inventory_agent - WARNING - Not running as root, skipping detailed RAM info that requires dmidecode
+2025-07-15 14:14:19,010 - inventory_agent - ERROR - Error getting GPU info: [Errno 2] No such file or directory: 'lspci'
+2025-07-15 14:14:19,015 - inventory_agent - ERROR - Error getting monitor info: Command '['xrandr']' returned non-zero exit status 1.
+2025-07-15 14:14:19,015 - inventory_agent - WARNING - Not running as root, skipping motherboard info that requires dmidecode
+2025-07-15 14:14:19,015 - inventory_agent - ERROR - Error getting audio info: [Errno 2] No such file or directory: 'lspci'
+2025-07-15 14:14:19,016 - inventory_agent - ERROR - Error getting audio info with aplay: [Errno 2] No such file or directory: 'aplay'
+2025-07-15 14:14:19,017 - inventory_agent - ERROR - Error collecting USB devices: [Errno 2] No such file or directory: 'lsusb'
+2025-07-16 09:49:44,207 - inventory_agent - INFO - Local database setup complete at /home/ubuntu/inventory_app/agents/inventory_data.db
+2025-07-16 09:49:44,208 - inventory_agent - INFO - Starting local machine inventory collection (self-only)...
+2025-07-16 09:49:44,223 - inventory_agent - ERROR - Error getting GPU info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:49:44,224 - inventory_agent - ERROR - Error getting monitor info: Command '['xrandr']' returned non-zero exit status 1.
+2025-07-16 09:49:44,227 - inventory_agent - ERROR - Error getting audio info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:49:44,248 - inventory_agent - ERROR - Error sending data to server: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /devices/inventory (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f4d557bed10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-07-16 09:49:44,248 - inventory_agent - WARNING - Failed to send local machine data to server. Saving locally.
+2025-07-16 09:49:44,250 - inventory_agent - INFO - Data saved locally to inventory_data for device 6ba805b70d07
+2025-07-16 09:49:44,250 - inventory_agent - INFO - Inventory agent finished.
+2025-07-16 09:50:06,536 - inventory_agent - INFO - Local database setup complete at /home/ubuntu/inventory_app/agents/inventory_data.db
+2025-07-16 09:50:06,536 - inventory_agent - INFO - Starting local machine inventory collection (self-only)...
+2025-07-16 09:50:06,551 - inventory_agent - ERROR - Error getting GPU info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:50:06,553 - inventory_agent - ERROR - Error getting monitor info: Command '['xrandr']' returned non-zero exit status 1.
+2025-07-16 09:50:06,555 - inventory_agent - ERROR - Error getting audio info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:50:06,609 - inventory_agent - ERROR - Error sending data to server: 502 Server Error: Bad Gateway for url: https://8000-icaevqvt6t558ljaxl9pk-15911c2d.manusvm.computer/devices/inventory
+2025-07-16 09:50:06,610 - inventory_agent - WARNING - Failed to send local machine data to server. Saving locally.
+2025-07-16 09:50:06,612 - inventory_agent - INFO - Data saved locally to inventory_data for device 6ba805b70d07
+2025-07-16 09:50:06,612 - inventory_agent - INFO - Inventory agent finished.
+2025-07-16 09:50:57,923 - inventory_agent - INFO - Local database setup complete at /home/ubuntu/inventory_app/agents/inventory_data.db
+2025-07-16 09:50:57,923 - inventory_agent - INFO - Starting local machine inventory collection (self-only)...
+2025-07-16 09:50:57,937 - inventory_agent - ERROR - Error getting GPU info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:50:57,939 - inventory_agent - ERROR - Error getting monitor info: Command '['xrandr']' returned non-zero exit status 1.
+2025-07-16 09:50:57,941 - inventory_agent - ERROR - Error getting audio info: Command '['lspci']' returned non-zero exit status 1.
+2025-07-16 09:50:57,988 - inventory_agent - INFO - Data sent successfully to https://8000-icaevqvt6t558ljaxl9pk-15911c2d.manusvm.computer. Response: 200
+2025-07-16 09:50:57,988 - inventory_agent - INFO - Inventory agent finished.
+2025-07-28 00:51:54,822 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-28 00:51:54,824 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-28 00:51:54,825 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-28 00:52:28,733 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-07-28 00:52:29,250 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-28 00:52:29,250 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-28 00:52:29,252 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.11
+2025-07-28 00:52:29,253 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-28 00:52:29,253 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-07-28 00:52:29,253 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-28 00:52:29,254 - inventory_agent - INFO - Reporting local machine (192.168.15.11)...
+2025-07-28 00:52:29,254 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.15.11",
   "mac_address": "98:83:89:d0:b2:79",
   "name": "DESKTOP-VUDLI0B",
   "os": "Microsoft Windows 11 Pro (64 bits)",
@@ -371,7 +60,7 @@
     },
     "ram_info": {
       "total_gb": 15.91,
-      "used_gb": 7.21,
+      "used_gb": 8.27,
       "modules": [
         {
           "capacity_gb": 16.0,
@@ -403,7 +92,7 @@
           {
             "drive_letter": "C:",
             "total_gb": 446.43,
-            "free_gb": 249.38,
+            "free_gb": 251.64,
             "fstype": "NTFS"
           }
         ]
@@ -426,411 +115,10 @@
         "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
         "mac": "98:83:89:D0:B2:79",
         "ip_addresses": [
-          "192.168.1.113",
-          "fe80::48ca:46ab:9528:d7d8"
-        ]
-      }
-    ],
-    "temperature_info": {},
-    "power_supply_info": null,
-    "custom_notes": null
-  },
-  "last_seen": "2025-07-17T15:08:31.759524"
-}
-2025-07-17 15:08:31,769 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-17 15:08:34,087 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 693
-2025-07-17 15:08:34,089 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-17 15:08:34,091 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-17 15:08:34,093 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-17 15:08:34,101 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-17 15:08:34,107 - inventory_agent - INFO - Agent run finished.
-2025-07-17 15:59:13,433 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-17 15:59:13,435 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-17 15:59:13,435 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-17 15:59:52,951 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-17 15:59:53,764 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-17 15:59:53,766 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-17 15:59:53,767 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.113
-2025-07-17 15:59:53,767 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-17 15:59:53,767 - inventory_agent - INFO - Gateway: 192.168.0.200
-2025-07-17 15:59:53,767 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-17 15:59:53,769 - inventory_agent - INFO - Reporting local machine (192.168.1.113)...
-2025-07-17 15:59:53,806 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.1.113",
-  "mac_address": "98:83:89:d0:b2:79",
-  "name": "DESKTOP-VUDLI0B",
-  "os": "Microsoft Windows 11 Pro (64 bits)",
-  "device_type": "computer",
-  "status": "online",
-  "hardware_details": {
-    "cpu_info": {
-      "brand": "GenuineIntel",
-      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
-      "cores": 2,
-      "threads": 2,
-      "frequency_mhz": 1800
-    },
-    "ram_info": {
-      "total_gb": 15.91,
-      "used_gb": 7.09,
-      "modules": [
-        {
-          "capacity_gb": 16.0,
-          "type": 0,
-          "speed_mhz": 2133,
-          "manufacturer": "04CB",
-          "part_number": "AD4S3200316G22-BHYD "
-        }
-      ],
-      "slots_total": 4,
-      "slots_used": 1
-    },
-    "disk_info": [
-      {
-        "name": "NGFF SSD 128GB",
-        "type": "Fixed hard disk media",
-        "model": "NGFF SSD 128GB",
-        "serial_number": "202212310009",
-        "total_gb": 119.24,
-        "partitions": []
-      },
-      {
-        "name": "HFS480G3H2X069N",
-        "type": "Fixed hard disk media",
-        "model": "HFS480G3H2X069N",
-        "serial_number": "EJC8N4983I1008G2R",
-        "total_gb": 447.13,
-        "partitions": [
-          {
-            "drive_letter": "C:",
-            "total_gb": 446.43,
-            "free_gb": 249.13,
-            "fstype": "NTFS"
-          }
-        ]
-      }
-    ],
-    "gpu_info": {
-      "brand": "Intel Corporation",
-      "model": "Intel(R) HD Graphics 610",
-      "vram_mb": 1024.0,
-      "driver_version": "27.20.100.7988"
-    },
-    "motherboard_info": {
-      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
-      "model": "NP350XAA-KDBBR",
-      "serial_number": "123490EN400015"
-    },
-    "network_info": [
-      {
-        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "mac": "98:83:89:D0:B2:79",
-        "ip_addresses": [
-          "192.168.1.113",
-          "fe80::48ca:46ab:9528:d7d8"
-        ]
-      }
-    ],
-    "temperature_info": {},
-    "power_supply_info": null,
-    "custom_notes": null
-  },
-  "last_seen": "2025-07-17T15:59:53.768671"
-}
-2025-07-17 15:59:53,814 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-17 15:59:56,259 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 448
-2025-07-17 15:59:56,260 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-17 15:59:56,260 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-17 15:59:56,261 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-17 15:59:56,267 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-17 15:59:56,268 - inventory_agent - INFO - Agent run finished.
-2025-07-17 16:13:28,276 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-17 16:13:28,278 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-17 16:13:28,278 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-17 16:14:02,385 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-17 16:14:02,869 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-17 16:14:02,869 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-17 16:14:02,870 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.113
-2025-07-17 16:14:02,870 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-17 16:14:02,870 - inventory_agent - INFO - Gateway: 192.168.0.200
-2025-07-17 16:14:02,871 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-17 16:14:02,871 - inventory_agent - INFO - Reporting local machine (192.168.1.113)...
-2025-07-17 16:14:02,871 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.1.113",
-  "mac_address": "98:83:89:d0:b2:79",
-  "name": "DESKTOP-VUDLI0B",
-  "os": "Microsoft Windows 11 Pro (64 bits)",
-  "device_type": "computer",
-  "status": "online",
-  "hardware_details": {
-    "cpu_info": {
-      "brand": "GenuineIntel",
-      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
-      "cores": 2,
-      "threads": 2,
-      "frequency_mhz": 1800
-    },
-    "ram_info": {
-      "total_gb": 15.91,
-      "used_gb": 6.96,
-      "modules": [
-        {
-          "capacity_gb": 16.0,
-          "type": 0,
-          "speed_mhz": 2133,
-          "manufacturer": "04CB",
-          "part_number": "AD4S3200316G22-BHYD "
-        }
-      ],
-      "slots_total": 4,
-      "slots_used": 1
-    },
-    "disk_info": [
-      {
-        "name": "NGFF SSD 128GB",
-        "type": "Fixed hard disk media",
-        "model": "NGFF SSD 128GB",
-        "serial_number": "202212310009",
-        "total_gb": 119.24,
-        "partitions": []
-      },
-      {
-        "name": "HFS480G3H2X069N",
-        "type": "Fixed hard disk media",
-        "model": "HFS480G3H2X069N",
-        "serial_number": "EJC8N4983I1008G2R",
-        "total_gb": 447.13,
-        "partitions": [
-          {
-            "drive_letter": "C:",
-            "total_gb": 446.43,
-            "free_gb": 249.13,
-            "fstype": "NTFS"
-          }
-        ]
-      }
-    ],
-    "gpu_info": {
-      "brand": "Intel Corporation",
-      "model": "Intel(R) HD Graphics 610",
-      "vram_mb": 1024.0,
-      "driver_version": "27.20.100.7988"
-    },
-    "motherboard_info": {
-      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
-      "model": "NP350XAA-KDBBR",
-      "serial_number": "123490EN400015"
-    },
-    "network_info": [
-      {
-        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "mac": "98:83:89:D0:B2:79",
-        "ip_addresses": [
-          "192.168.1.113",
-          "fe80::48ca:46ab:9528:d7d8"
-        ]
-      }
-    ],
-    "temperature_info": {},
-    "power_supply_info": null,
-    "custom_notes": null
-  },
-  "last_seen": "2025-07-17T16:14:02.871391"
-}
-2025-07-17 16:14:02,878 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-17 16:14:05,336 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 448
-2025-07-17 16:14:05,337 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
-2025-07-17 16:14:05,338 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
-2025-07-17 16:14:05,341 - inventory_agent - INFO - Failed to report data to server, storing locally...
-2025-07-17 16:14:05,348 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
-2025-07-17 16:14:05,349 - inventory_agent - INFO - Agent run finished.
-2025-07-17 16:22:55,454 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-17 16:22:55,456 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-17 16:22:55,456 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-17 16:23:28,784 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-17 16:23:29,275 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-17 16:23:29,276 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-17 16:23:29,277 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.113
-2025-07-17 16:23:29,281 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-17 16:23:29,282 - inventory_agent - INFO - Gateway: 192.168.0.200
-2025-07-17 16:23:29,282 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-17 16:23:29,285 - inventory_agent - INFO - Reporting local machine (192.168.1.113)...
-2025-07-17 16:23:29,286 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.1.113",
-  "mac_address": "98:83:89:d0:b2:79",
-  "name": "DESKTOP-VUDLI0B",
-  "os": "Microsoft Windows 11 Pro (64 bits)",
-  "device_type": "computer",
-  "status": "online",
-  "hardware_details": {
-    "cpu_info": {
-      "brand": "GenuineIntel",
-      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
-      "cores": 2,
-      "threads": 2,
-      "frequency_mhz": 1800
-    },
-    "ram_info": {
-      "total_gb": 15.91,
-      "used_gb": 7.05,
-      "modules": [
-        {
-          "capacity_gb": 16.0,
-          "type": 0,
-          "speed_mhz": 2133,
-          "manufacturer": "04CB",
-          "part_number": "AD4S3200316G22-BHYD "
-        }
-      ],
-      "slots_total": 4,
-      "slots_used": 1
-    },
-    "disk_info": [
-      {
-        "name": "NGFF SSD 128GB",
-        "type": "Fixed hard disk media",
-        "model": "NGFF SSD 128GB",
-        "serial_number": "202212310009",
-        "total_gb": 119.24,
-        "partitions": []
-      },
-      {
-        "name": "HFS480G3H2X069N",
-        "type": "Fixed hard disk media",
-        "model": "HFS480G3H2X069N",
-        "serial_number": "EJC8N4983I1008G2R",
-        "total_gb": 447.13,
-        "partitions": [
-          {
-            "drive_letter": "C:",
-            "total_gb": 446.43,
-            "free_gb": 249.13,
-            "fstype": "NTFS"
-          }
-        ]
-      }
-    ],
-    "gpu_info": {
-      "brand": "Intel Corporation",
-      "model": "Intel(R) HD Graphics 610",
-      "vram_mb": 1024.0,
-      "driver_version": "27.20.100.7988"
-    },
-    "motherboard_info": {
-      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
-      "model": "NP350XAA-KDBBR",
-      "serial_number": "123490EN400015"
-    },
-    "network_info": [
-      {
-        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "mac": "98:83:89:D0:B2:79",
-        "ip_addresses": [
-          "192.168.1.113",
-          "fe80::48ca:46ab:9528:d7d8"
-        ]
-      }
-    ],
-    "temperature_info": {},
-    "power_supply_info": null,
-    "custom_notes": null
-  },
-  "last_seen": "2025-07-17T16:23:29.285039"
-}
-2025-07-17 16:23:29,294 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-17 16:23:31,438 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 1571
-2025-07-17 16:23:31,438 - inventory_agent - INFO - Successfully reported data for 192.168.1.113. Status: 201
-2025-07-17 16:23:31,441 - inventory_agent - INFO - Agent run finished.
-2025-07-22 09:41:07,174 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-22 09:41:07,181 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-22 09:41:07,181 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-22 09:41:51,942 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-22 09:41:52,913 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-22 09:41:52,914 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-22 09:41:52,915 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.199
-2025-07-22 09:41:52,915 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-22 09:41:52,915 - inventory_agent - INFO - Gateway: 192.168.0.10
-2025-07-22 09:41:52,916 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-22 09:41:52,916 - inventory_agent - INFO - Reporting local machine (192.168.0.199)...
-2025-07-22 09:41:52,917 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.0.199",
-  "mac_address": "98:83:89:d0:b2:79",
-  "name": "DESKTOP-VUDLI0B",
-  "os": "Microsoft Windows 11 Pro (64 bits)",
-  "device_type": "computer",
-  "status": "online",
-  "hardware_details": {
-    "cpu_info": {
-      "brand": "GenuineIntel",
-      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
-      "cores": 2,
-      "threads": 2,
-      "frequency_mhz": 1800
-    },
-    "ram_info": {
-      "total_gb": 15.91,
-      "used_gb": 8.52,
-      "modules": [
-        {
-          "capacity_gb": 16.0,
-          "type": 0,
-          "speed_mhz": 2133,
-          "manufacturer": "04CB",
-          "part_number": "AD4S3200316G22-BHYD "
-        }
-      ],
-      "slots_total": 4,
-      "slots_used": 1
-    },
-    "disk_info": [
-      {
-        "name": "NGFF SSD 128GB",
-        "type": "Fixed hard disk media",
-        "model": "NGFF SSD 128GB",
-        "serial_number": "202212310009",
-        "total_gb": 119.24,
-        "partitions": []
-      },
-      {
-        "name": "HFS480G3H2X069N",
-        "type": "Fixed hard disk media",
-        "model": "HFS480G3H2X069N",
-        "serial_number": "EJC8N4983I1008G2R",
-        "total_gb": 447.13,
-        "partitions": [
-          {
-            "drive_letter": "C:",
-            "total_gb": 446.43,
-            "free_gb": 254.13,
-            "fstype": "NTFS"
-          }
-        ]
-      }
-    ],
-    "gpu_info": {
-      "brand": "Intel Corporation",
-      "model": "Intel(R) HD Graphics 610",
-      "vram_mb": 1024.0,
-      "driver_version": "27.20.100.7988"
-    },
-    "motherboard_info": {
-      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
-      "model": "NP350XAA-KDBBR",
-      "serial_number": "123490EN400015"
-    },
-    "network_info": [
-      {
-        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
-        "mac": "98:83:89:D0:B2:79",
-        "ip_addresses": [
-          "192.168.0.199",
+          "192.168.15.11",
           "fe80::48ca:46ab:9528:d7d8",
-          "fdd3:5cf:e62a:711c:4422:8351:18:cb74",
-          "fdd3:5cf:e62a:711c:86fc:d5ee:e884:3a62"
+          "2804:1b2:f146:9419:3491:7b6:88b2:36d5",
+          "2804:1b2:f146:9419:9be0:d5d4:263e:76e8"
         ]
       }
     ],
@@ -838,25 +126,25 @@
     "power_supply_info": null,
     "custom_notes": null
   },
-  "last_seen": "2025-07-22T09:41:52.916554"
+  "last_seen": "2025-07-28T00:52:29.254166"
 }
-2025-07-22 09:41:52,930 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-22 09:41:55,152 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 4189
-2025-07-22 09:41:55,153 - inventory_agent - INFO - Successfully reported data for 192.168.0.199. Status: 201
-2025-07-22 09:41:55,155 - inventory_agent - INFO - Agent run finished.
-2025-07-24 10:22:43,210 - inventory_agent - INFO - Starting Inventory Agent...
-2025-07-24 10:22:43,218 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
-2025-07-24 10:22:43,246 - inventory_agent - INFO - Collecting local hardware details...
-2025-07-24 10:23:52,285 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
-2025-07-24 10:23:54,137 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
-2025-07-24 10:23:54,140 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-24 10:23:54,141 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.170
-2025-07-24 10:23:54,142 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
-2025-07-24 10:23:54,143 - inventory_agent - INFO - Gateway: 192.168.0.10
-2025-07-24 10:23:54,144 - inventory_agent - INFO - Sufixo DNS detectado: N/A
-2025-07-24 10:23:54,149 - inventory_agent - INFO - Reporting local machine (192.168.0.170)...
-2025-07-24 10:23:54,150 - inventory_agent - DEBUG - Payload enviado:{
-  "ip_address": "192.168.0.170",
+2025-07-28 00:52:29,262 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-28 00:52:31,543 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1645
+2025-07-28 00:52:31,544 - inventory_agent - INFO - Successfully reported data for 192.168.15.11. Status: 200
+2025-07-28 00:52:31,546 - inventory_agent - INFO - Agent run finished.
+2025-07-28 09:00:58,476 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-28 09:00:58,484 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-28 09:00:58,484 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-28 09:01:33,787 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-28 09:01:34,551 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-28 09:01:34,552 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-28 09:01:34,554 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:01:34,555 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-28 09:01:34,555 - inventory_agent - INFO - Gateway: 192.168.1.2
+2025-07-28 09:01:34,555 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-28 09:01:34,555 - inventory_agent - INFO - Reporting local machine (192.168.1.150)...
+2025-07-28 09:01:34,556 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.150",
   "mac_address": "98:83:89:d0:b2:79",
   "name": "DESKTOP-VUDLI0B",
   "os": "Microsoft Windows 11 Pro (64 bits)",
@@ -872,7 +160,7 @@
     },
     "ram_info": {
       "total_gb": 15.91,
-      "used_gb": 7.93,
+      "used_gb": 7.96,
       "modules": [
         {
           "capacity_gb": 16.0,
@@ -904,7 +192,7 @@
           {
             "drive_letter": "C:",
             "total_gb": 446.43,
-            "free_gb": 254.03,
+            "free_gb": 251.59,
             "fstype": "NTFS"
           }
         ]
@@ -927,7 +215,7 @@
         "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
         "mac": "98:83:89:D0:B2:79",
         "ip_addresses": [
-          "192.168.0.170",
+          "192.168.1.150",
           "fe80::48ca:46ab:9528:d7d8"
         ]
       }
@@ -936,9 +224,518 @@
     "power_supply_info": null,
     "custom_notes": null
   },
-  "last_seen": "2025-07-24T10:23:54.149100"
+  "last_seen": "2025-07-28T09:01:34.555898"
 }
-2025-07-24 10:23:54,214 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2025-07-24 10:23:56,936 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 201 6648
-2025-07-24 10:23:56,938 - inventory_agent - INFO - Successfully reported data for 192.168.0.170. Status: 201
-2025-07-24 10:23:56,940 - inventory_agent - INFO - Agent run finished.
+2025-07-28 09:01:34,568 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-28 09:01:36,979 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 21
+2025-07-28 09:01:36,980 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-28 09:01:36,990 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-28 09:01:36,996 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-28 09:01:37,027 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-28 09:01:37,027 - inventory_agent - INFO - Agent run finished.
+2025-07-28 09:14:14,250 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-28 09:14:14,253 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-28 09:14:14,253 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-28 09:14:47,843 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-28 09:14:48,309 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-28 09:14:48,309 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-28 09:14:48,313 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:14:48,314 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-28 09:14:48,314 - inventory_agent - INFO - Gateway: 192.168.1.2
+2025-07-28 09:14:48,314 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-28 09:14:48,314 - inventory_agent - INFO - Reporting local machine (192.168.1.150)...
+2025-07-28 09:14:48,315 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.150",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.89,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 251.63,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.150",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-07-28T09:14:48.314885"
+}
+2025-07-28 09:14:48,321 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-28 09:14:50,810 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 21
+2025-07-28 09:14:50,835 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-28 09:14:50,837 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-28 09:14:50,843 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-28 09:14:50,855 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-28 09:14:50,856 - inventory_agent - INFO - Agent run finished.
+2025-07-28 09:22:38,743 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-28 09:22:38,745 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-28 09:22:38,745 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-28 09:23:13,702 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-28 09:23:14,218 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-28 09:23:14,220 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-28 09:23:14,226 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:23:14,227 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-28 09:23:14,228 - inventory_agent - INFO - Gateway: 192.168.1.2
+2025-07-28 09:23:14,230 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-28 09:23:14,231 - inventory_agent - INFO - Reporting local machine (192.168.1.150)...
+2025-07-28 09:23:14,232 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.150",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 8.03,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 251.63,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.150",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-07-28T09:23:14.231403"
+}
+2025-07-28 09:23:14,240 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-28 09:23:16,655 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 21
+2025-07-28 09:23:16,656 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-28 09:23:16,657 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-28 09:23:16,662 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-28 09:23:16,670 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-28 09:23:16,673 - inventory_agent - INFO - Agent run finished.
+2025-07-28 09:42:45,771 - inventory_agent - INFO - Starting Inventory Agent...
+2025-07-28 09:42:45,776 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-07-28 09:42:45,777 - inventory_agent - INFO - Collecting local hardware details...
+2025-07-28 09:43:26,975 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-07-28 09:43:32,047 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-07-28 09:43:32,053 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-07-28 09:43:32,059 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:43:32,060 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-07-28 09:43:32,061 - inventory_agent - INFO - Gateway: 192.168.1.2
+2025-07-28 09:43:32,062 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-07-28 09:43:32,063 - inventory_agent - INFO - Reporting local machine (192.168.1.150)...
+2025-07-28 09:43:32,064 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.150",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 8.21,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 251.62,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.150",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-07-28T09:43:32.062844"
+}
+2025-07-28 09:43:32,070 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-07-28 09:43:34,937 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 21
+2025-07-28 09:43:34,993 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-07-28 09:43:34,994 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-07-28 09:43:34,999 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-07-28 09:43:35,006 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-07-28 09:43:35,009 - inventory_agent - INFO - Agent run finished.
+2025-08-11 22:27:29,775 - inventory_agent - INFO - Starting Inventory Agent...
+2025-08-11 22:27:29,782 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-08-11 22:27:29,782 - inventory_agent - INFO - Collecting local hardware details...
+2025-08-11 22:28:09,344 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-08-11 22:28:10,671 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-08-11 22:28:10,672 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-08-11 22:28:10,672 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.9
+2025-08-11 22:28:10,675 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-08-11 22:28:10,676 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-08-11 22:28:10,676 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-08-11 22:28:10,676 - inventory_agent - INFO - Reporting local machine (192.168.15.9)...
+2025-08-11 22:28:10,677 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.15.9",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.85,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 247.13,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.15.9",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:1b2:f146:6cb1:157f:12d9:7768:ce33",
+          "2804:1b2:f146:6cb1:d432:124c:4fe:c8e5"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-08-11T22:28:10.676904"
+}
+2025-08-11 22:28:10,691 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-08-11 22:28:13,140 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 409 40
+2025-08-11 22:28:13,141 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 409 Client Error: Conflict for url: http://localhost:8000/devices/
+2025-08-11 22:28:13,147 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-08-11 22:28:13,149 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-08-11 22:28:13,167 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-08-11 22:28:13,168 - inventory_agent - INFO - Agent run finished.
+2025-08-11 23:30:53,000 - inventory_agent - INFO - Starting Inventory Agent...
+2025-08-11 23:30:53,002 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-08-11 23:30:53,003 - inventory_agent - INFO - Collecting local hardware details...
+2025-08-11 23:32:33,310 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-08-11 23:32:33,899 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-08-11 23:32:33,905 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-08-11 23:32:33,908 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.9
+2025-08-11 23:32:33,909 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-08-11 23:32:33,910 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-08-11 23:32:33,911 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-08-11 23:32:33,912 - inventory_agent - INFO - Reporting local machine (192.168.15.9)...
+2025-08-11 23:32:33,913 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.15.9",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.99,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 247.05,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.15.9",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:1b2:f146:6cb1:28ea:a9a2:e2b2:9cf3",
+          "2804:1b2:f146:6cb1:d432:124c:4fe:c8e5"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-08-11T23:32:33.911834"
+}
+2025-08-11 23:32:33,922 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-08-11 23:32:36,706 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1650
+2025-08-11 23:32:36,721 - inventory_agent - INFO - Successfully reported data for 192.168.15.9. Status: 200
+2025-08-11 23:32:36,742 - inventory_agent - INFO - Agent run finished.

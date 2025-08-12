@@ -906,3 +906,33 @@ if __name__ == "__main__":
     run_agent()
     logger.info("Agent run finished.")
 
+
+
+def get_local_network_info():
+    """Obtém o IP e MAC do dispositivo local como fallback."""
+    ip_address = "127.0.0.1"
+    mac_address = None
+    try:
+        # Tenta obter o IP da interface padrão
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip_address = s.getsockname()[0]
+        s.close()
+    except Exception:
+        pass
+
+    # Tenta obter o MAC address
+    try:
+        for interface, addrs in psutil.net_if_addrs().items():
+            for addr in addrs:
+                if addr.family == psutil.AF_LINK:
+                    mac_address = addr.address
+                    break
+            if mac_address:
+                break
+    except Exception:
+        pass
+
+    return ip_address, mac_address
+
+

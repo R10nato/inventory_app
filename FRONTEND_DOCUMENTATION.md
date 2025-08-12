@@ -212,7 +212,7 @@ src/
 
 ### Funcionalidades Planejadas
 
-1. **Edição de Dispositivos**: Interface para editar informações manualmente
+1. **Edição de Dispositivos**: Interface para editar informações manualmente - OK
 2. **Exportação de Relatórios**: PDF e Excel
 3. **Notificações em Tempo Real**: WebSocket para atualizações
 4. **Filtros Avançados**: Mais opções de filtragem

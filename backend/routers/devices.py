@@ -1,12 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
+from sqlalchemy.exc import IntegrityError
 
-import crud, models, schemas, database
+import crud, schemas, database
 
 router = APIRouter(
     prefix="/devices",
-    tags=["Devices"],
+    tags=["devices"],
     responses={404: {"description": "Not found"}},
 )
 
@@ -18,61 +19,65 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/", response_model=schemas.Device, status_code=status.HTTP_201_CREATED)
-def create_or_update_device_endpoint(device: schemas.DeviceCreate, db: Session = Depends(get_db)):
-    """
-    Creates a new device or updates an existing one based on IP address.
-    This endpoint is typically used by the collection agents.
-    """
-    try:
-        db_device = crud.create_or_update_device(db=db, device=device)
-        return db_device
-    except Exception as e:
-        traceback.print_exc()  # Mostra a linha exata e traceback no terminal
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Internal server error: {str(e)}")
+@router.post("/", response_model=schemas.Device)
+def create_device(device: schemas.DeviceCreate, db: Session = Depends(get_db)):
+    """Create a new device or update an existing one based on IP address."""
+    # Check if device already exists by IP address
+    db_device = crud.get_device_by_ip(db, ip_address=device.ip_address)
+    if db_device:
+        # Update existing device
+        device_update = schemas.DeviceUpdate(**device.dict())
+        return crud.update_device(db, device_id=db_device.id, device=device_update)
+    else:
+        # Create new device
+        try:
+            return crud.create_device(db=db, device=device)
+        except IntegrityError:
+            raise HTTPException(status_code=409, detail="MAC address already exists.")
 
 @router.get("/", response_model=List[schemas.Device])
 def read_devices(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    """
-    Retrieve a list of devices.
-    """
+    """Get all devices."""
     devices = crud.get_devices(db, skip=skip, limit=limit)
     return devices
 
 @router.get("/{device_id}", response_model=schemas.Device)
 def read_device(device_id: int, db: Session = Depends(get_db)):
-    """
-    Retrieve a specific device by its ID.
-    """
-    db_device = crud.get_device_by_id(db, device_id=device_id)
+    """Get a specific device by ID."""
+    db_device = crud.get_device(db, device_id=device_id)
     if db_device is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Device not found")
+        raise HTTPException(status_code=404, detail="Device not found")
     return db_device
 
 @router.put("/{device_id}", response_model=schemas.Device)
-def update_device_endpoint(device_id: int, device_update: schemas.DeviceUpdate, db: Session = Depends(get_db)):
-    """
-    Manually update specific fields of a device.
-    This endpoint is typically used by the frontend for user edits.
-    """
-    db_device = crud.update_device_manual(db=db, device_id=device_id, device_update=device_update)
+def update_device(device_id: int, device: schemas.DeviceUpdate, db: Session = Depends(get_db)):
+    """Update a device."""
+    db_device = crud.update_device(db, device_id=device_id, device=device)
     if db_device is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Device not found")
+        raise HTTPException(status_code=404, detail="Device not found")
     return db_device
 
-@router.delete("/{device_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_device_endpoint(device_id: int, db: Session = Depends(get_db)):
-    """
-    Delete a device by its ID.
-    """
-    deleted = crud.delete_device(db=db, device_id=device_id)
-    if not deleted:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Device not found")
-    return
+@router.delete("/{device_id}")
+def delete_device(device_id: int, db: Session = Depends(get_db)):
+    """Delete a device."""
+    db_device = crud.delete_device(db, device_id=device_id)
+    if db_device is None:
+        raise HTTPException(status_code=404, detail="Device not found")
+    return {"message": "Device deleted successfully"}
 
-# Add endpoints for history logs if needed
-# Example:
-# @router.post("/{device_id}/history", response_model=schemas.HistoryLog, status_code=status.HTTP_201_CREATED)
-# def create_history_log_for_device(...):
-#     ...
+@router.post("/{device_id}/history", response_model=schemas.HistoryLog)
+def create_history_log(device_id: int, log: schemas.HistoryLogCreate, db: Session = Depends(get_db)):
+    """Create a history log for a device."""
+    db_device = crud.get_device(db, device_id=device_id)
+    if db_device is None:
+        raise HTTPException(status_code=404, detail="Device not found")
+    return crud.create_history_log(db=db, log=log, device_id=device_id)
+
+@router.get("/{device_id}/history", response_model=List[schemas.HistoryLog])
+def read_history_logs(device_id: int, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    """Get history logs for a device."""
+    db_device = crud.get_device(db, device_id=device_id)
+    if db_device is None:
+        raise HTTPException(status_code=404, detail="Device not found")
+    return crud.get_history_logs(db=db, device_id=device_id, skip=skip, limit=limit)
 

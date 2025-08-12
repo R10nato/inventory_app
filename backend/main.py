@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 import models, database, schemas # schemas will be created next
 
@@ -9,6 +10,15 @@ app = FastAPI(
     title="Inventory & Monitoring API",
     description="API for managing network device inventory and hardware details.",
     version="0.1.0"
+)
+
+# Configuração de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite todas as origens
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos os métodos
+    allow_headers=["*"],  # Permite todos os headers
 )
 
 # Dependency to get DB session
@@ -27,10 +37,8 @@ def read_root():
 # Placeholder for future routers/endpoints
 from routers import devices # Example: Routers will be added later
 app.include_router(devices.router)
-from routers import history_logs
-app.include_router(history_logs.router)
+# app.include_router(history.router)
 
 # Note: Pydantic schemas (schemas.py) need to be created for request/response validation.
 # Note: Routers for specific functionalities (devices, history, etc.) will be added in the next steps.
-
 

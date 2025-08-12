@@ -18,7 +18,7 @@ class Device(Base):
 
     hardware_details = relationship("HardwareDetail", back_populates="device", uselist=False, cascade="all, delete-orphan")
     history_logs = relationship("HistoryLog", back_populates="device", cascade="all, delete-orphan")
-    
+
 class HardwareDetail(Base):
     __tablename__ = "hardware_details"
 
@@ -50,5 +50,3 @@ class HistoryLog(Base):
     user = Column(String, nullable=True)
 
     device = relationship("Device", back_populates="history_logs")
-
-    

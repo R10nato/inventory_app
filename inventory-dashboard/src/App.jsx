@@ -148,13 +148,16 @@ function App() {
     const loadDevices = async () => {
       try {
         setLoading(true)
-        // Aqui seria a chamada real para a API
-        // const response = await fetch('https://8000-icaevqvt6t558ljaxl9pk-15911c2d.manusvm.computer/devices/')
-        // const data = await response.json()
+        // Chamada real para a API
+        const response = await fetch('http://localhost:8000/devices/')
+        const data = await response.json()
         
-        // Por enquanto, usar dados mock
-        await new Promise(resolve => setTimeout(resolve, 1000)) // Simular delay
-        setDevices(mockDevices)
+        // Se não houver dispositivos na API, usar dados mock para demonstração
+        if (data.length === 0) {
+          setDevices(mockDevices)
+        } else {
+          setDevices(data)
+        }
         setError(null)
       } catch (err) {
         setError('Erro ao carregar dispositivos')
