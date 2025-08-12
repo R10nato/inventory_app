@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-import traceback
 from typing import List
 
 import crud, models, schemas, database
