@@ -9,16 +9,11 @@ import {
   Printer, 
   Activity, 
   AlertTriangle, 
-  CheckCircle, 
-  Clock,
-  TrendingUp,
-  HardDrive,
-  Cpu,
-  MemoryStick
+  CheckCircle
 } from 'lucide-react'
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
-const DashboardOverview = ({ devices, onViewDevices }) => {
+const DashboardOverview = ({ devices, onViewDevices, onDeviceSelect }) => {
   // Calcular estatísticas
   const totalDevices = devices.length
   const onlineDevices = devices.filter(d => d.status === 'online').length
@@ -221,7 +216,11 @@ const DashboardOverview = ({ devices, onViewDevices }) => {
                 .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                 .slice(0, 5)
                 .map((device) => (
-                  <div key={device.id} className="flex items-center justify-between p-3 border rounded-lg">
+                  <div 
+                    key={device.id} 
+                    className="flex items-center justify-between p-3 border rounded-lg cursor-pointer hover:bg-muted/30"
+                    onClick={() => onDeviceSelect(device)}
+                  >
                     <div className="flex items-center gap-3">
                       {getDeviceIcon(device.device_type)}
                       <div>
@@ -270,7 +269,11 @@ const DashboardOverview = ({ devices, onViewDevices }) => {
                     ((device.hardware_details.disk_info[0].total_gb - device.hardware_details.disk_info[0].free_gb) / device.hardware_details.disk_info[0].total_gb) * 100 : 0
                   
                   return (
-                    <div key={device.id} className="flex items-center justify-between p-3 border rounded-lg border-orange-200 bg-orange-50">
+                    <div 
+                      key={device.id} 
+                      className="flex items-center justify-between p-3 border rounded-lg border-orange-200 bg-orange-50 cursor-pointer hover:bg-orange-100"
+                      onClick={() => onDeviceSelect(device)}
+                    >
                       <div className="flex items-center gap-3">
                         <AlertTriangle className="h-4 w-4 text-orange-600" />
                         <div>
@@ -298,4 +301,3 @@ const DashboardOverview = ({ devices, onViewDevices }) => {
 }
 
 export default DashboardOverview
-

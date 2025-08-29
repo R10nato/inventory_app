@@ -279,7 +279,7 @@ function App() {
         
         {currentView === 'detail' && selectedDevice && (
           <DeviceDetail 
-            device={selectedDevice} 
+            deviceId={selectedDevice.id} 
             onBack={handleBackToDevices}
           />
         )}
@@ -289,4 +289,3 @@ function App() {
 }
 
 export default App
-

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -27,66 +27,66 @@ import {
   User,
   Usb
 } from 'lucide-react'
-import { format } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
 
-const DeviceDetail = ({ device, onBack }) => {
+// Funções utilitárias
+const formatDate = (dateString) => {
+  return new Date(dateString).toLocaleString('pt-BR')
+}
+const getTemperatureColor = (temp) => {
+  if (!temp) return 'text-muted-foreground'
+  if (temp < 40) return 'text-blue-600'
+  if (temp < 70) return 'text-green-600'
+  if (temp < 85) return 'text-yellow-600'
+  return 'text-red-600'
+}
+const getDeviceIcon = (type) => {
+  switch (type) {
+    case 'computer': return <Monitor className="h-8 w-8" />
+    case 'laptop': return <Laptop className="h-8 w-8" />
+    case 'smartphone': return <Smartphone className="h-8 w-8" />
+    case 'printer': return <Printer className="h-8 w-8" />
+    default: return <Monitor className="h-8 w-8" />
+  }
+}
+
+const DeviceDetail = ({ deviceId, onBack }) => {
+  const [device, setDevice] = useState(null)
+  const [historyLogs, setHistoryLogs] = useState([])
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+
+  // Carregar device + histórico do backend
+  useEffect(() => {
+    const fetchDevice = async () => {
+      try {
+        const response = await fetch(`/devices/${deviceId}/full`)
+        if (!response.ok) throw new Error("Erro ao carregar dispositivo")
+        const data = await response.json()
+        setDevice(data)
+        setHistoryLogs(data.history_logs || [])
+      } catch (error) {
+        console.error("Erro ao buscar dados do dispositivo:", error)
+      }
+    }
+    fetchDevice()
+  }, [deviceId])
 
   const handleSaveDevice = async (updatedDevice) => {
     try {
-      // A chamada da API já foi feita no DeviceEditDialog
-      // Aqui apenas atualizamos o estado local e mostramos feedback
       console.log('Dispositivo atualizado:', updatedDevice)
-      
-      // Atualizar o dispositivo local (em uma implementação real, você recarregaria os dados)
       Object.assign(device, updatedDevice)
-      
-      // Mostrar feedback de sucesso
       alert('Dispositivo atualizado com sucesso!')
-      
-      // Em uma implementação real, você poderia:
-      // 1. Recarregar os dados do dispositivo da API
-      // 2. Atualizar o estado global da aplicação
-      // 3. Mostrar uma notificação toast em vez de alert
-      
     } catch (error) {
       console.error('Erro ao processar atualização do dispositivo:', error)
       throw error
     }
   }
-  const getDeviceIcon = (type) => {
-    switch (type) {
-      case 'computer': return <Monitor className="h-8 w-8" />
-      case 'laptop': return <Laptop className="h-8 w-8" />
-      case 'smartphone': return <Smartphone className="h-8 w-8" />
-      case 'printer': return <Printer className="h-8 w-8" />
-      default: return <Monitor className="h-8 w-8" />
-    }
-  }
 
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleString('pt-BR')
-  }
-
-  const formatBytes = (bytes) => {
-    if (!bytes) return 'N/A'
-    const gb = bytes / (1024 * 1024 * 1024)
-    return `${gb.toFixed(2)} GB`
-  }
-
-  const getTemperatureColor = (temp) => {
-    if (!temp) return 'text-muted-foreground'
-    if (temp < 40) return 'text-blue-600'
-    if (temp < 70) return 'text-green-600'
-    if (temp < 85) return 'text-yellow-600'
-    return 'text-red-600'
-  }
-
-  const getUsageColor = (percentage) => {
-    if (percentage < 50) return 'bg-green-500'
-    if (percentage < 80) return 'bg-yellow-500'
-    return 'bg-red-500'
+  if (!device) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-muted-foreground">Carregando dispositivo...</p>
+      </div>
+    )
   }
 
   const hardware = device.hardware_details || {}
@@ -119,7 +119,7 @@ const DeviceDetail = ({ device, onBack }) => {
         </div>
       </div>
 
-      {/* Tabs de Conteúdo */}
+      {/* Tabs */}
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="overview">Resumo</TabsTrigger>
@@ -584,9 +584,9 @@ const DeviceDetail = ({ device, onBack }) => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {device.history_logs && device.history_logs.length > 0 ? (
+              {historyLogs && historyLogs.length > 0 ? (
                 <div className="space-y-4">
-                  {device.history_logs.map((log, index) => (
+                  {historyLogs.map((log, index) => (
                     <div key={index} className="flex gap-4 p-4 border rounded-lg">
                       <div className="flex-shrink-0">
                         <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -655,4 +655,5 @@ const DeviceDetail = ({ device, onBack }) => {
 }
 
 export default DeviceDetail
+
 

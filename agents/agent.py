@@ -11,7 +11,12 @@ import argparse
 import sqlite3
 import datetime
 import logging
-import wmi
+if platform.system() == "Windows":
+    try:
+        import wmi
+        import winreg
+    except ImportError:
+        logger.warning("WMI or winreg not found. Install them for detailed Windows info.")
 import psutil
 import nmap
 import netifaces

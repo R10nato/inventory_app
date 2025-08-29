@@ -2,6 +2,9 @@ from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 
+# ----------------------------
+# Hardware Details
+# ----------------------------
 class HardwareDetailBase(BaseModel):
     cpu_info: Optional[Dict[str, Any]] = None
     ram_info: Optional[Dict[str, Any]] = None
@@ -23,6 +26,10 @@ class HardwareDetail(HardwareDetailBase):
     class Config:
         from_attributes = True
 
+
+# ----------------------------
+# History Logs
+# ----------------------------
 class HistoryLogBase(BaseModel):
     component: str
     change_description: str
@@ -41,6 +48,10 @@ class HistoryLog(HistoryLogBase):
     class Config:
         from_attributes = True
 
+
+# ----------------------------
+# Devices
+# ----------------------------
 class DeviceBase(BaseModel):
     name: Optional[str] = None
     ip_address: str
@@ -66,7 +77,13 @@ class Device(DeviceBase):
     last_seen: datetime
     created_at: datetime
     hardware_details: Optional[HardwareDetail] = None
-    history_logs: List[HistoryLog] = []
 
     class Config:
         from_attributes = True
+
+
+# ----------------------------
+# Device with History (para o endpoint /devices/{id}/full)
+# ----------------------------
+class DeviceFull(Device):
+    history_logs: List[HistoryLog] = []
