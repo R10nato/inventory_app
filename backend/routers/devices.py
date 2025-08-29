@@ -136,12 +136,17 @@ def read_device_with_history(device_id: int, db: Session = Depends(get_db)):
     if db_device is None:
         raise HTTPException(status_code=404, detail="Device not found")
 
+    # Buscar histórico
     history_logs = crud.get_history_logs(db, device_id=device_id)
 
-    # Converter objeto SQLAlchemy em dict compatível com Pydantic
-    device_dict = {c.name: getattr(db_device, c.name) for c in db_device.__table__.columns}
-    device_dict["hardware_details"] = db_device.hardware_details
+    # Converter o dispositivo em dict
+    device_dict = db_device.__dict__.copy()
+
+    # Adicionar o histórico
     device_dict["history_logs"] = history_logs
+
+    return device_dict
+
 
     return device_dict
 

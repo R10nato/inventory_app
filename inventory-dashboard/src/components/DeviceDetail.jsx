@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
-import { Progress } from '@/components/ui/progress.jsx'
 import { Separator } from '@/components/ui/separator.jsx'
 import DeviceEditDialog from './DeviceEditDialog.jsx'
+
 import { 
   ArrowLeft, 
   Monitor, 
@@ -27,6 +27,9 @@ import {
   User,
   Usb
 } from 'lucide-react'
+
+// Defina a base da API aqui
+const API_BASE = "http://localhost:8000"
 
 // Funções utilitárias
 const formatDate = (dateString) => {
@@ -53,21 +56,32 @@ const DeviceDetail = ({ deviceId, onBack }) => {
   const [device, setDevice] = useState(null)
   const [historyLogs, setHistoryLogs] = useState([])
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   // Carregar device + histórico do backend
   useEffect(() => {
     const fetchDevice = async () => {
       try {
-        const response = await fetch(`/devices/${deviceId}/full`)
-        if (!response.ok) throw new Error("Erro ao carregar dispositivo")
+        setLoading(true)
+        setError(null)
+
+        console.log("🔎 Buscando:", `${API_BASE}/devices/${deviceId}/full`)
+
+        const response = await fetch(`${API_BASE}/devices/${deviceId}/full`)
+        if (!response.ok) throw new Error(`Erro ao carregar dispositivo: ${response.status}`)
+
         const data = await response.json()
         setDevice(data)
         setHistoryLogs(data.history_logs || [])
-      } catch (error) {
-        console.error("Erro ao buscar dados do dispositivo:", error)
+      } catch (err) {
+        console.error("Erro ao buscar dados do dispositivo:", err)
+        setError("Não foi possível carregar os detalhes do dispositivo.")
+      } finally {
+        setLoading(false)
       }
     }
-    fetchDevice()
+    if (deviceId) fetchDevice()
   }, [deviceId])
 
   const handleSaveDevice = async (updatedDevice) => {
@@ -81,10 +95,30 @@ const DeviceDetail = ({ deviceId, onBack }) => {
     }
   }
 
+  // Estado de carregamento
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Activity className="h-6 w-6 animate-spin mr-2" />
+        <p className="text-muted-foreground">Carregando dispositivo...</p>
+      </div>
+    )
+  }
+
+  // Estado de erro
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center h-64 space-y-4">
+        <p className="text-red-600">{error}</p>
+        <Button onClick={onBack}>Voltar</Button>
+      </div>
+    )
+  }
+
   if (!device) {
     return (
       <div className="flex items-center justify-center h-64">
-        <p className="text-muted-foreground">Carregando dispositivo...</p>
+        <p className="text-muted-foreground">Dispositivo não encontrado.</p>
       </div>
     )
   }
