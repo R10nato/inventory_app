@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 import models, schemas
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 
@@ -44,19 +44,19 @@ def create_device(db: Session, device: schemas.DeviceCreate):
 
         for key, value in update_data.items():
             if key == "hardware_details" and value is not None:
+                hw_data = device.hardware_details.model_dump(exclude_unset=True)
                 if existing_device.hardware_details:
-                    # Atualiza apenas os campos presentes
-                    for hw_key, hw_value in value.items():
+                    for hw_key, hw_value in hw_data.items():
                         if hw_value is not None:
                             setattr(existing_device.hardware_details, hw_key, hw_value)
                 else:
-                    db_hardware = models.HardwareDetail(**value, device_id=existing_device.id)
+                    db_hardware = models.HardwareDetail(**hw_data, device_id=existing_device.id)
                     db.add(db_hardware)
                     existing_device.hardware_details = db_hardware
             elif hasattr(existing_device, key) and value is not None:
                 setattr(existing_device, key, value)
 
-        existing_device.last_seen = datetime.now()
+        existing_device.last_seen = datetime.now(timezone.utc)
         db.commit()
         db.refresh(existing_device)
         return existing_device
@@ -69,7 +69,7 @@ def create_device(db: Session, device: schemas.DeviceCreate):
     db.flush()  # gera o ID
 
     if hardware_data:
-        db_hardware = models.HardwareDetail(**hardware_data.model_dump(), device_id=db_device.id)
+        db_hardware = models.HardwareDetail(**hardware_data.model_dump(exclude_unset=True), device_id=db_device.id)
         db.add(db_hardware)
 
     db.commit()
@@ -87,18 +87,19 @@ def update_device(db: Session, device_id: int, device: schemas.DeviceUpdate):
 
     for key, value in update_data.items():
         if key == "hardware_details" and value is not None:
+            hw_data = value.model_dump(exclude_unset=True)
             if db_device.hardware_details:
-                for hw_key, hw_value in value.items():
+                for hw_key, hw_value in hw_data.items():
                     if hw_value is not None:
                         setattr(db_device.hardware_details, hw_key, hw_value)
             else:
-                db_hardware = models.HardwareDetail(**value, device_id=db_device.id)
+                db_hardware = models.HardwareDetail(**hw_data, device_id=db_device.id)
                 db.add(db_hardware)
                 db_device.hardware_details = db_hardware
         elif hasattr(db_device, key) and value is not None:
             setattr(db_device, key, value)
 
-    db_device.last_seen = datetime.now()
+    db_device.last_seen = datetime.now(timezone.utc)
 
     try:
         db.commit()
@@ -118,18 +119,19 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
 
         for key, value in update_data.items():
             if key == "hardware_details" and value is not None:
+                hw_data = device.hardware_details.model_dump(exclude_unset=True)
                 if db_device.hardware_details:
-                    for hw_key, hw_value in value.items():
+                    for hw_key, hw_value in hw_data.items():
                         if hw_value is not None:
                             setattr(db_device.hardware_details, hw_key, hw_value)
                 else:
-                    db_hardware = models.HardwareDetail(**value, device_id=db_device.id)
+                    db_hardware = models.HardwareDetail(**hw_data, device_id=db_device.id)
                     db.add(db_hardware)
                     db_device.hardware_details = db_hardware
             elif hasattr(db_device, key) and value is not None:
                 setattr(db_device, key, value)
 
-        db_device.last_seen = datetime.now()
+        db_device.last_seen = datetime.now(timezone.utc)
 
     else:
         # Criar novo dispositivo
@@ -140,7 +142,7 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
         db.flush()
 
         if hardware_data:
-            db_hardware = models.HardwareDetail(**hardware_data.model_dump(), device_id=db_device.id)
+            db_hardware = models.HardwareDetail(**hardware_data.model_dump(exclude_unset=True), device_id=db_device.id)
             db.add(db_hardware)
 
     try:
