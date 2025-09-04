@@ -2,7 +2,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 import models, schemas
 from datetime import datetime, timezone
-from typing import Optional
 
 
 # ----------------------------
@@ -13,14 +12,14 @@ def get_device(db: Session, device_id: int):
 
 
 def get_device_by_id(db: Session, device_id: int):
-    return db.query(models.Device).filter(models.Device.id == device_id).first()
+    return get_device(db, device_id)
 
 
 def get_device_by_ip(db: Session, ip_address: str):
     return db.query(models.Device).filter(models.Device.ip_address == ip_address).first()
 
 
-def get_device_by_ip_or_mac(db: Session, ip_address: str, mac_address: Optional[str] = None):
+def get_device_by_ip_or_mac(db: Session, ip_address: str, mac_address: str | None = None):
     device = db.query(models.Device).filter(models.Device.ip_address == ip_address).first()
     if not device and mac_address:
         device = db.query(models.Device).filter(models.Device.mac_address == mac_address).first()
@@ -35,7 +34,7 @@ def get_devices(db: Session, skip: int = 0, limit: int = 100):
 # Device Create / Update
 # ----------------------------
 def create_device(db: Session, device: schemas.DeviceCreate):
-    """Creates a new device or updates if MAC already exists."""
+    """Cria um novo dispositivo ou atualiza se já existir pelo MAC address."""
     existing_device = db.query(models.Device).filter(models.Device.mac_address == device.mac_address).first()
 
     if existing_device:
@@ -44,7 +43,11 @@ def create_device(db: Session, device: schemas.DeviceCreate):
 
         for key, value in update_data.items():
             if key == "hardware_details" and value is not None:
-                hw_data = device.hardware_details.model_dump(exclude_unset=True)
+                hw_data = (
+                    device.hardware_details.model_dump(exclude_unset=True)
+                    if hasattr(device.hardware_details, "model_dump")
+                    else dict(value)
+                )
                 if existing_device.hardware_details:
                     for hw_key, hw_value in hw_data.items():
                         if hw_value is not None:
@@ -61,15 +64,19 @@ def create_device(db: Session, device: schemas.DeviceCreate):
         db.refresh(existing_device)
         return existing_device
 
-    # Caso não exista, cria novo
-    hardware_data = device.hardware_details
+    # Criar novo dispositivo
     device_data = device.model_dump(exclude={"hardware_details"})
     db_device = models.Device(**device_data)
     db.add(db_device)
-    db.flush()  # gera o ID
+    db.flush()  # gera ID
 
-    if hardware_data:
-        db_hardware = models.HardwareDetail(**hardware_data.model_dump(exclude_unset=True), device_id=db_device.id)
+    if device.hardware_details:
+        hw_data = (
+            device.hardware_details.model_dump(exclude_unset=True)
+            if hasattr(device.hardware_details, "model_dump")
+            else dict(device.hardware_details)
+        )
+        db_hardware = models.HardwareDetail(**hw_data, device_id=db_device.id)
         db.add(db_hardware)
 
     db.commit()
@@ -78,7 +85,7 @@ def create_device(db: Session, device: schemas.DeviceCreate):
 
 
 def update_device(db: Session, device_id: int, device: schemas.DeviceUpdate):
-    """Updates an existing device."""
+    """Atualiza um dispositivo existente."""
     db_device = get_device_by_id(db, device_id=device_id)
     if not db_device:
         return None
@@ -87,7 +94,7 @@ def update_device(db: Session, device_id: int, device: schemas.DeviceUpdate):
 
     for key, value in update_data.items():
         if key == "hardware_details" and value is not None:
-            hw_data = value.model_dump(exclude_unset=True)
+            hw_data = value.model_dump(exclude_unset=True) if hasattr(value, "model_dump") else dict(value)
             if db_device.hardware_details:
                 for hw_key, hw_value in hw_data.items():
                     if hw_value is not None:
@@ -111,15 +118,14 @@ def update_device(db: Session, device_id: int, device: schemas.DeviceUpdate):
 
 
 def create_or_update_device(db: Session, device: schemas.DeviceCreate):
-    """Creates a new device or updates an existing one based on IP or MAC address."""
+    """Cria ou atualiza dispositivo com base no IP/MAC address."""
     db_device = get_device_by_ip_or_mac(db, device.ip_address, device.mac_address)
 
     if db_device:
         update_data = device.model_dump(exclude_unset=True)
-
         for key, value in update_data.items():
             if key == "hardware_details" and value is not None:
-                hw_data = device.hardware_details.model_dump(exclude_unset=True)
+                hw_data = value.model_dump(exclude_unset=True) if hasattr(value, "model_dump") else dict(value)
                 if db_device.hardware_details:
                     for hw_key, hw_value in hw_data.items():
                         if hw_value is not None:
@@ -130,20 +136,9 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
                     db_device.hardware_details = db_hardware
             elif hasattr(db_device, key) and value is not None:
                 setattr(db_device, key, value)
-
         db_device.last_seen = datetime.now(timezone.utc)
-
     else:
-        # Criar novo dispositivo
-        hardware_data = device.hardware_details
-        device_data = device.model_dump(exclude={"hardware_details"})
-        db_device = models.Device(**device_data)
-        db.add(db_device)
-        db.flush()
-
-        if hardware_data:
-            db_hardware = models.HardwareDetail(**hardware_data.model_dump(exclude_unset=True), device_id=db_device.id)
-            db.add(db_hardware)
+        db_device = create_device(db, device)
 
     try:
         db.commit()
@@ -167,8 +162,9 @@ def delete_device(db: Session, device_id: int):
 # History Logs
 # ----------------------------
 def create_history_log(db: Session, log: schemas.HistoryLogCreate, device_id: int):
-    """Creates a history log entry for a device."""
-    db_log = models.HistoryLog(**log.model_dump(), device_id=device_id)
+    """Cria um log de histórico para um dispositivo."""
+    log_data = log.model_dump() if hasattr(log, "model_dump") else dict(log)
+    db_log = models.HistoryLog(**log_data, device_id=device_id)
     db.add(db_log)
     db.commit()
     db.refresh(db_log)
@@ -176,10 +172,21 @@ def create_history_log(db: Session, log: schemas.HistoryLogCreate, device_id: in
 
 
 def get_history_logs(db: Session, device_id: int, skip: int = 0, limit: int = 100):
-    """Gets history logs for a device."""
+    """Busca os logs de histórico de um dispositivo específico."""
     return (
         db.query(models.HistoryLog)
         .filter(models.HistoryLog.device_id == device_id)
+        .order_by(models.HistoryLog.timestamp.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def get_all_history_logs(db: Session, skip: int = 0, limit: int = 100):
+    """Busca todos os logs de histórico do sistema (debug/auditoria)."""
+    return (
+        db.query(models.HistoryLog)
         .order_by(models.HistoryLog.timestamp.desc())
         .offset(skip)
         .limit(limit)

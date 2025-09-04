@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict, Any, Union
+from typing import Any
 from datetime import datetime
 
 
@@ -7,15 +7,15 @@ from datetime import datetime
 # Hardware Details
 # ----------------------------
 class HardwareDetailBase(BaseModel):
-    cpu_info: Optional[Dict[str, Any]] = None
-    ram_info: Optional[Union[Dict[str, Any], List[Dict[str, Any]]]] = None
-    disk_info: Optional[List[Dict[str, Any]]] = None
-    gpu_info: Optional[Dict[str, Any]] = None
-    motherboard_info: Optional[Dict[str, Any]] = None
-    network_info: Optional[List[Dict[str, Any]]] = None
-    temperature_info: Optional[Dict[str, Any]] = None
-    power_supply_info: Optional[Dict[str, Any]] = None
-    custom_notes: Optional[str] = None
+    cpu_info: dict[str, Any] | None = None
+    ram_info: dict[str, Any] | list[dict[str, Any]] | None = None
+    disk_info: list[dict[str, Any]] | None = None
+    gpu_info: dict[str, Any] | None = None
+    motherboard_info: dict[str, Any] | None = None
+    network_info: list[dict[str, Any]] | None = None
+    temperature_info: dict[str, Any] | None = None
+    power_supply_info: dict[str, Any] | None = None
+    custom_notes: str | None = None
 
     model_config = {"from_attributes": True}
 
@@ -37,9 +37,9 @@ class HardwareDetail(HardwareDetailBase):
 class HistoryLogBase(BaseModel):
     component: str
     change_description: str
-    details_before: Optional[str] = None
-    details_after: Optional[str] = None
-    user: Optional[str] = None
+    details_before: str | None = None
+    details_after: str | None = None
+    user: str | None = None
 
 
 class HistoryLogCreate(HistoryLogBase):
@@ -58,41 +58,41 @@ class HistoryLog(HistoryLogBase):
 # Devices
 # ----------------------------
 class DeviceBase(BaseModel):
-    name: Optional[str] = None
+    name: str | None = None
     ip_address: str = Field(..., description="Endereço IPv4 ou IPv6 do dispositivo")
-    mac_address: Optional[str] = Field(
+    mac_address: str | None = Field(
         default=None,
         pattern=r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
         description="Endereço MAC no formato AA:BB:CC:DD:EE:FF"
     )
-    device_type: Optional[str] = Field(default="unknown")
-    os: Optional[str] = None
-    status: Optional[str] = Field(default="online")
+    device_type: str | None = Field(default="unknown")
+    os: str | None = None
+    status: str | None = Field(default="online")
 
 
 class DeviceCreate(DeviceBase):
-    hardware_details: Optional[HardwareDetailCreate] = None
+    hardware_details: HardwareDetailCreate | None = None
 
 
 class DeviceUpdate(BaseModel):
-    name: Optional[str] = None
-    ip_address: Optional[str] = None
-    mac_address: Optional[str] = Field(
+    name: str | None = None
+    ip_address: str | None = None
+    mac_address: str | None = Field(
         default=None,
         pattern=r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
         description="Endereço MAC no formato AA:BB:CC:DD:EE:FF"
     )
-    device_type: Optional[str] = None
-    os: Optional[str] = None
-    status: Optional[str] = None
-    hardware_details: Optional[HardwareDetailCreate] = None
+    device_type: str | None = None
+    os: str | None = None
+    status: str | None = None
+    hardware_details: HardwareDetailCreate | None = None
 
 
 class Device(DeviceBase):
     id: int
     last_seen: datetime
     created_at: datetime
-    hardware_details: Optional[HardwareDetail] = None
+    hardware_details: HardwareDetail | None = None
 
     model_config = {"from_attributes": True}
 
@@ -101,4 +101,4 @@ class Device(DeviceBase):
 # Device with History (para o endpoint /devices/{id}/full)
 # ----------------------------
 class DeviceFull(Device):
-    history_logs: Optional[List[HistoryLog]] = []
+    history_logs: list[HistoryLog] = Field(default_factory=list)
