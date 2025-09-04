@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
-from datetime import datetime
+from datetime import datetime, timezone
 
 import crud, schemas, database
 
@@ -21,7 +21,7 @@ def get_db():
 
 
 # Função para comparar dados antigos e novos e gerar logs de mudança
-def generate_change_logs(old_device, new_device_data):
+def generate_change_logs(old_device, new_device_data: dict):
     changes = []
 
     # Verificar alterações simples no Device
@@ -34,6 +34,9 @@ def generate_change_logs(old_device, new_device_data):
     # Verificar alterações no Hardware
     if "hardware_details" in new_device_data and new_device_data["hardware_details"]:
         new_hw = new_device_data["hardware_details"]
+        if hasattr(new_hw, "model_dump"):  # caso seja Pydantic model
+            new_hw = new_hw.model_dump(exclude_unset=True)
+
         if old_device.hardware_details:
             for hw_field, hw_value in new_hw.items():
                 old_hw_value = getattr(old_device.hardware_details, hw_field, None)
@@ -49,7 +52,6 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
     Cria um novo dispositivo ou atualiza um existente com base no IP ou MAC address.
     Se houver mudanças, registra no histórico.
     """
-    # Buscar por IP ou MAC
     db_device = crud.get_device_by_ip_or_mac(db, device.ip_address, device.mac_address)
 
     if db_device:
@@ -63,24 +65,21 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
         # Salvar logs no histórico
         for change in changes:
             log = schemas.HistoryLogCreate(
-                change_type="update",
-                component="device",  # ou "hardware", depende de onde você detectou a mudança
-                change_description=change,  # nome correto
-                timestamp=datetime.now()
+                component="device",
+                change_description=change
             )
             crud.create_history_log(db, log, device_id=db_device.id)
 
         return updated_device
+
     else:
         # Criar novo dispositivo
         new_device = crud.create_device(db=db, device=device)
 
         # Log de criação
         log = schemas.HistoryLogCreate(
-            change_type="create",
             component="device",
-            change_description="Dispositivo adicionado ao inventário",
-            timestamp=datetime.now()
+            change_description="Dispositivo adicionado ao inventário"
         )
         crud.create_history_log(db, log, device_id=new_device.id)
 
@@ -127,6 +126,7 @@ def create_history_log(device_id: int, log: schemas.HistoryLogCreate, db: Sessio
         raise HTTPException(status_code=404, detail="Device not found")
     return crud.create_history_log(db=db, log=log, device_id=device_id)
 
+
 @router.get("/{device_id}/full", response_model=schemas.DeviceFull)
 def read_device_with_history(device_id: int, db: Session = Depends(get_db)):
     """
@@ -141,14 +141,10 @@ def read_device_with_history(device_id: int, db: Session = Depends(get_db)):
 
     # Converter o dispositivo em dict
     device_dict = db_device.__dict__.copy()
-
-    # Adicionar o histórico
     device_dict["history_logs"] = history_logs
 
     return device_dict
 
-
-    return device_dict
 
 @router.get("/{device_id}/history", response_model=List[schemas.HistoryLog])
 def read_history_logs(device_id: int, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
