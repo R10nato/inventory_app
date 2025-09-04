@@ -172,20 +172,15 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
         {/* Hardware */}
         <TabsContent value="hardware" className="space-y-4">
-          {/* CPU */}
-              <ExpandableCard title="Processador" icon={<Cpu className="h-5 w-5" />}>
-                <p>Modelo: {hardware?.cpu_info?.model || 'N/A'}</p>
-                <p>Cores: {hardware?.cpu_info?.cores ?? 'N/A'}</p>
-                <p>Threads: {hardware?.cpu_info?.threads ?? 'N/A'}</p>
-                {hardware?.cpu_info?.frequency_mhz != null && (
-                  <p>Frequência: {hardware.cpu_info.frequency_mhz} MHz</p>
-                )}
-                {hardware?.cpu_info?.current_temp != null && (
-                  <p className={getTemperatureColor(hardware.cpu_info.current_temp)}>
-                    Temperatura: {safeNumber(hardware.cpu_info.current_temp)}°C
-                  </p>
-                )}
-              </ExpandableCard>
+          {/** CPU */}
+          <ExpandableCard title="Processador" icon={<Cpu className="h-5 w-5" />}>
+            <p>Modelo: {hardware.cpu_info.model || 'N/A'}</p>
+            <p>Cores: {safeNumber(hardware.cpu_info.cores)}</p>
+            <p>Threads: {safeNumber(hardware.cpu_info.threads)}</p>
+            <p className={getTemperatureColor(hardware.cpu_info.current_temp)}>
+              Temperatura: {safeNumber(hardware.cpu_info.current_temp)}°C
+            </p>
+          </ExpandableCard>
 
           {/** RAM */}
           <ExpandableCard title="Memória RAM" icon={<MemoryStick className="h-5 w-5" />}>

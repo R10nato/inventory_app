@@ -1345,3 +1345,706 @@
 2025-08-28 23:20:26,205 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1625
 2025-08-28 23:20:26,206 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
 2025-08-28 23:20:26,207 - inventory_agent - INFO - Agent run finished.
+2025-08-29 19:01:36,290 - inventory_agent - INFO - Starting Inventory Agent...
+2025-08-29 19:01:36,294 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-08-29 19:01:36,295 - inventory_agent - INFO - Collecting local hardware details...
+2025-08-29 19:02:12,193 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-08-29 19:02:12,754 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-08-29 19:02:12,755 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-08-29 19:02:12,756 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-29 19:02:12,756 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-08-29 19:02:12,756 - inventory_agent - INFO - Gateway: 192.168.1.1
+2025-08-29 19:02:12,756 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-08-29 19:02:12,757 - inventory_agent - INFO - Reporting local machine (192.168.1.24)...
+2025-08-29 19:02:12,757 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.24",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 6.23,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 245.75,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.24",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:214:e:5a4:a5d0:7107:9a9b:bb80",
+          "2804:214:e:5a4:8007:186a:f630:8a32"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-08-29T19:02:12.757167"
+}
+2025-08-29 19:02:12,767 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-08-29 19:02:15,465 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1625
+2025-08-29 19:02:15,468 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
+2025-08-29 19:02:15,475 - inventory_agent - INFO - Agent run finished.
+2025-08-30 23:03:16,962 - inventory_agent - INFO - Starting Inventory Agent...
+2025-08-30 23:03:16,966 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-08-30 23:03:16,967 - inventory_agent - INFO - Collecting local hardware details...
+2025-08-30 23:03:52,433 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-08-30 23:03:53,011 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-08-30 23:03:53,012 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-08-30 23:03:53,013 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-30 23:03:53,013 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-08-30 23:03:53,013 - inventory_agent - INFO - Gateway: 192.168.1.1
+2025-08-30 23:03:53,014 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-08-30 23:03:53,014 - inventory_agent - INFO - Reporting local machine (192.168.1.24)...
+2025-08-30 23:03:53,015 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.24",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 6.39,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 245.81,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.24",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:214:e:5a4:f9f6:b6ab:2283:cf8e",
+          "2804:214:e:5a4:a5d0:7107:9a9b:bb80",
+          "2804:214:e:5a4:8007:186a:f630:8a32"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-08-30T23:03:53.014623"
+}
+2025-08-30 23:03:53,025 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-08-30 23:03:55,348 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1662
+2025-08-30 23:03:55,349 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
+2025-08-30 23:03:55,351 - inventory_agent - INFO - Agent run finished.
+2025-08-31 00:40:03,101 - inventory_agent - INFO - Starting Inventory Agent...
+2025-08-31 00:40:03,104 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-08-31 00:40:03,105 - inventory_agent - INFO - Collecting local hardware details...
+2025-08-31 00:40:40,955 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-08-31 00:40:42,091 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-08-31 00:40:42,093 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-08-31 00:40:42,099 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-31 00:40:42,100 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-08-31 00:40:42,101 - inventory_agent - INFO - Gateway: 192.168.1.1
+2025-08-31 00:40:42,102 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-08-31 00:40:42,102 - inventory_agent - INFO - Reporting local machine (192.168.1.24)...
+2025-08-31 00:40:42,103 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.24",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 6.34,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 245.64,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.24",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:214:e:5a4:f9f6:b6ab:2283:cf8e",
+          "2804:214:e:5a4:a5d0:7107:9a9b:bb80",
+          "2804:214:e:5a4:8007:186a:f630:8a32"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-08-31T00:40:42.102825"
+}
+2025-08-31 00:40:42,110 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-08-31 00:40:44,478 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1662
+2025-08-31 00:40:44,481 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
+2025-08-31 00:40:44,482 - inventory_agent - INFO - Agent run finished.
+2025-09-01 21:38:49,359 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-01 21:38:49,365 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-01 21:38:49,365 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-01 21:39:25,891 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-01 21:39:26,484 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-01 21:39:26,485 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-01 21:39:26,486 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-01 21:39:26,487 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-01 21:39:26,487 - inventory_agent - INFO - Gateway: 192.168.1.1
+2025-09-01 21:39:26,487 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-01 21:39:26,487 - inventory_agent - INFO - Reporting local machine (192.168.1.24)...
+2025-09-01 21:39:26,488 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.24",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 5.67,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 244.93,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.24",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:214:e:1375:7964:8b15:9d04:7df4",
+          "2804:214:e:1375:1563:3517:161f:7b55"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-01T21:39:26.487654"
+}
+2025-09-01 21:39:26,496 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-01 21:39:28,707 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1627
+2025-09-01 21:39:28,709 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
+2025-09-01 21:39:28,709 - inventory_agent - INFO - Agent run finished.
+2025-09-02 20:27:36,993 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-02 20:27:36,996 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-02 20:27:36,997 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-02 20:28:13,637 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-02 20:28:14,164 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-02 20:28:14,165 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-02 20:28:14,165 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-02 20:28:14,166 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-02 20:28:14,166 - inventory_agent - INFO - Gateway: 192.168.1.1
+2025-09-02 20:28:14,166 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-02 20:28:14,166 - inventory_agent - INFO - Reporting local machine (192.168.1.24)...
+2025-09-02 20:28:14,167 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.24",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 6.64,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 251.96,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.24",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:214:e:1375:7964:8b15:9d04:7df4",
+          "2804:214:e:1375:1563:3517:161f:7b55"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-02T20:28:14.166947"
+}
+2025-09-02 20:28:14,175 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-02 20:28:16,464 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1627
+2025-09-02 20:28:16,465 - inventory_agent - INFO - Successfully reported data for 192.168.1.24. Status: 200
+2025-09-02 20:28:16,468 - inventory_agent - INFO - Agent run finished.
+2025-09-03 16:03:24,910 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-03 16:03:24,915 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-03 16:03:24,915 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-03 16:04:07,073 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True), ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', False)]}
+2025-09-03 16:04:07,827 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-03 16:04:07,828 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-03 16:04:07,829 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.98
+2025-09-03 16:04:07,829 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-03 16:04:07,830 - inventory_agent - INFO - Gateway: 192.168.0.2
+2025-09-03 16:04:07,830 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-03 16:04:07,830 - inventory_agent - INFO - Reporting local machine (192.168.0.98)...
+2025-09-03 16:04:07,831 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.0.98",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.37,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 250.55,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.0.98",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-03T16:04:07.830616"
+}
+2025-09-03 16:04:07,846 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-03 16:04:10,258 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1551
+2025-09-03 16:04:10,259 - inventory_agent - INFO - Successfully reported data for 192.168.0.98. Status: 200
+2025-09-03 16:04:10,261 - inventory_agent - INFO - Agent run finished.
+2025-09-04 10:31:20,459 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-04 10:31:20,557 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-04 10:31:20,593 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-04 10:32:35,823 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-04 10:32:40,336 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-04 10:32:40,394 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-04 10:32:40,395 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.188
+2025-09-04 10:32:40,395 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-04 10:32:40,396 - inventory_agent - INFO - Gateway: 192.168.0.10
+2025-09-04 10:32:40,396 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-04 10:32:40,397 - inventory_agent - INFO - Reporting local machine (192.168.0.188)...
+2025-09-04 10:32:40,397 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.0.188",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 6.25,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": 0,
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 250.92,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.0.188",
+          "fe80::48ca:46ab:9528:d7d8",
+          "fdd3:5cf:e62a:711c:855c:6b92:9720:1f69",
+          "fdd3:5cf:e62a:711c:86fc:d5ee:e884:3a62"
+        ]
+      }
+    ],
+    "temperature_info": {},
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-04T10:32:40.397236"
+}
+2025-09-04 10:32:40,607 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-04 10:32:42,980 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 21
+2025-09-04 10:32:42,986 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-09-04 10:32:42,989 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-09-04 10:32:42,991 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-09-04 10:32:42,999 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-09-04 10:32:43,013 - inventory_agent - INFO - Agent run finished.
