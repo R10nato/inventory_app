@@ -99,7 +99,7 @@ def get_linux_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": {},
+        "temperature_info": get_temperature_info(),
         "os": platform.system() + " " + platform.release(),
         "usb_devices": [],
         "installed_software": []
