@@ -196,7 +196,7 @@ const DeviceDetail = ({ deviceId, onBack }) => {
               <div key={i} className="border-t pt-2 mt-2 text-sm">
                 <p>Banco: {m.bank_label || 'N/A'}</p>
                 <p>Capacidade: {safeNumber(m.capacity_gb)} GB</p>
-                <p>Tipo: {getRamType(m.type)}</p>
+                <p>Tipo: {getRamType(m.typeCode)}</p>
               </div>
             ))}
           </ExpandableCard>

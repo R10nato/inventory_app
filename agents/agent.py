@@ -25,6 +25,7 @@ import ipaddress
 import subprocess
 from pathlib import Path
 from dotenv import load_dotenv
+from sensors import get_temperature_info
 
 # Configurar logging
 logging.basicConfig(
@@ -207,7 +208,7 @@ def get_windows_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": {},
+        "temperature_info": get_temperature_info(),
         "os": platform.system() + " " + platform.release() + " " + platform.version(),
         "usb_devices": [],
         "installed_software": []
