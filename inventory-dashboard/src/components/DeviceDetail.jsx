@@ -191,12 +191,16 @@ const DeviceDetail = ({ deviceId, onBack }) => {
           <ExpandableCard title="Memória RAM" icon={<MemoryStick className="h-5 w-5" />}>
             <p>Total: {safeNumber(hardware.ram_info.total_gb)} GB</p>
             <p>Usado: {safeNumber(hardware.ram_info.used_gb)} GB</p>
+            <p>Slots: {hardware.ram_info.slots_used || 0} / {hardware.ram_info.slots_total || 0}</p>
             <Progress value={(safeNumber(hardware.ram_info.used_gb) / safeNumber(hardware.ram_info.total_gb)) * 100 || 0} className="h-2 my-2" />
-            {hardware.ram_info.modules.map((m, i) => (
+            {hardware.ram_info.modules && hardware.ram_info.modules.map((m, i) => (
               <div key={i} className="border-t pt-2 mt-2 text-sm">
-                <p>Banco: {m.bank_label || 'N/A'}</p>
+                <p>Módulo {i + 1}</p>
                 <p>Capacidade: {safeNumber(m.capacity_gb)} GB</p>
-                <p>Tipo: {getRamType(m.typeCode)}</p>
+                <p>Tipo: {m.type || 'N/A'}</p>
+                <p>Velocidade: {m.speed_mhz ? `${m.speed_mhz} MHz` : 'N/A'}</p>
+                <p>Fabricante: {m.manufacturer || 'N/A'}</p>
+                {m.part_number && <p>Part Number: {m.part_number.trim()}</p>}
               </div>
             ))}
           </ExpandableCard>
@@ -204,21 +208,38 @@ const DeviceDetail = ({ deviceId, onBack }) => {
           {/** Discos */}
           <ExpandableCard title="Armazenamento" icon={<HardDrive className="h-5 w-5 text-purple-600" />}>
             {hardware.disk_info.map((disk, index) => {
-              const usedSpace = safeNumber(disk.total_gb) - safeNumber(disk.free_gb)
-              const usagePercentage = safeNumber(disk.total_gb) ? (usedSpace / safeNumber(disk.total_gb)) * 100 : 0
               return (
                 <div key={index} className="p-3 border rounded-lg mb-2">
-                  <p className="font-medium">{disk.name || 'N/D'} ({disk.type || 'N/D'})</p>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>{usedSpace.toFixed(1)} GB usado</span>
-                    <span>{safeNumber(disk.total_gb)} GB total</span>
-                  </div>
-                  <Progress value={usagePercentage} className="h-2" />
-                  {Array.isArray(disk.partitions) && disk.partitions.map((p, i) => (
-                    <p key={i} className="text-sm text-muted-foreground">
-                      {p.drive_letter || 'N/A'} - {p.fstype || 'N/A'} - {safeNumber(p.free_gb)} GB livre
-                    </p>
-                  ))}
+                  <p className="font-medium">{disk.name || 'N/A'}</p>
+                  <p className="text-sm text-muted-foreground">Modelo: {disk.model || 'N/A'}</p>
+                  <p className="text-sm text-muted-foreground">Tipo: {disk.type || 'N/A'}</p>
+                  <p className="text-sm text-muted-foreground">Serial: {disk.serial_number || 'N/A'}</p>
+                  <p className="text-sm">Capacidade Total: {safeNumber(disk.total_gb).toFixed(1)} GB</p>
+                  
+                  {Array.isArray(disk.partitions) && disk.partitions.length > 0 ? (
+                    <div className="mt-2">
+                      <p className="text-sm font-medium">Partições:</p>
+                      {disk.partitions.map((p, i) => {
+                        const usedSpace = safeNumber(p.total_gb) - safeNumber(p.free_gb)
+                        const usagePercentage = safeNumber(p.total_gb) ? (usedSpace / safeNumber(p.total_gb)) * 100 : 0
+                        return (
+                          <div key={i} className="ml-4 mt-1 p-2 bg-gray-50 rounded">
+                            <p className="text-sm font-medium">{p.drive_letter || 'N/A'} ({p.fstype || 'N/A'})</p>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span>{usedSpace.toFixed(1)} GB usado</span>
+                              <span>{safeNumber(p.total_gb).toFixed(1)} GB total</span>
+                            </div>
+                            <Progress value={usagePercentage} className="h-1" />
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {safeNumber(p.free_gb).toFixed(1)} GB livres
+                            </p>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground mt-2">Nenhuma partição detectada</p>
+                  )}
                 </div>
               )
             })}
@@ -241,12 +262,30 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
           {/** Temperaturas */}
           <ExpandableCard title="Temperaturas" icon={<Thermometer className="h-5 w-5 text-red-600" />}>
-            {Object.keys(hardware.temperature_info).length > 0 ? (
-              Object.entries(hardware.temperature_info).map(([component, temp]) => (
-                <p key={component} className={`capitalize ${getTemperatureColor(temp)}`}>
-                  {component}: {safeNumber(temp)}°C
+            {hardware.temperature_info && hardware.temperature_info.cpu_temp ? (
+              <div className="space-y-2">
+                <p className={`${getTemperatureColor(hardware.temperature_info.cpu_temp)}`}>
+                  CPU: {safeNumber(hardware.temperature_info.cpu_temp)}°C
                 </p>
-              ))
+                
+                {/* Mostrar notas personalizadas se existirem */}
+                {hardware.temperature_info.custom_notes && hardware.temperature_info.custom_notes.length > 0 && (
+                  <div className="mt-2">
+                    {hardware.temperature_info.custom_notes.map((note, i) => (
+                      <p key={i} className="text-sm text-yellow-600 bg-yellow-50 p-2 rounded">
+                        ⚠️ {note}
+                      </p>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Mostrar erro do LHM apenas se existir */}
+                {hardware.temperature_info.lhm_error && (
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Nota: LibreHardwareMonitor não disponível, usando WMI
+                  </p>
+                )}
+              </div>
             ) : (
               <p className="text-muted-foreground">Nenhuma temperatura registrada</p>
             )}

@@ -66,7 +66,7 @@ def get_cpu_temperature():
         return {
             "cpu_temp": lhm_temp,
             "custom_notes": lhm_notes,
-            "lhm_error": lhm_error,
+            "lhm_error": None,  # Sucesso no LHM, não há erro
             "last_seen": None
         }
 
@@ -75,7 +75,7 @@ def get_cpu_temperature():
     return {
         "cpu_temp": wmi_temp,
         "custom_notes": wmi_notes,
-        "lhm_error": lhm_error,
+        "lhm_error": lhm_error if wmi_temp is None else None,  # Só mostra erro se WMI também falhar
         "last_seen": None
     }
 

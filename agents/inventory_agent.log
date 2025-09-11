@@ -3578,3 +3578,107 @@
 2025-09-11 15:28:00,561 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1875
 2025-09-11 15:28:00,562 - inventory_agent - INFO - Successfully reported data for 192.168.1.98. Status: 200
 2025-09-11 15:28:00,567 - inventory_agent - INFO - Agent run finished.
+2025-09-11 15:36:00,088 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-11 15:36:00,090 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-11 15:36:00,100 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-11 15:36:00,108 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-11 15:36:38,785 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
+2025-09-11 15:36:39,341 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-11 15:36:39,342 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-11 15:36:39,342 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 15:36:39,343 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-11 15:36:39,343 - inventory_agent - INFO - Gateway: 192.168.0.200
+2025-09-11 15:36:39,343 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-11 15:36:39,344 - inventory_agent - INFO - Reporting local machine (192.168.1.98)...
+2025-09-11 15:36:39,345 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.1.98",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.37,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": "DDR4",
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 244.84,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.1.98",
+          "fe80::48ca:46ab:9528:d7d8"
+        ]
+      }
+    ],
+    "temperature_info": {
+      "cpu_temp": 45.1,
+      "custom_notes": [],
+      "lhm_error": "HTTPConnectionPool(host='localhost', port=8085): Max retries exceeded with url: /data.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001B108AF7230>, 'Connection to localhost timed out. (connect timeout=2)'))",
+      "last_seen": null
+    },
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-11T15:36:39.344117"
+}
+2025-09-11 15:36:39,352 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-11 15:36:41,881 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 200 1867
+2025-09-11 15:36:41,882 - inventory_agent - INFO - Successfully reported data for 192.168.1.98. Status: 200
+2025-09-11 15:36:41,885 - inventory_agent - INFO - Agent run finished.
