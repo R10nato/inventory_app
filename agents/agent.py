@@ -205,6 +205,46 @@ def get_linux_details():
 
     return details
 
+# Mapeamento dos códigos de tipo de RAM do WMI para nomes legíveis
+RAM_TYPE_MAP = {
+    0: "Desconhecido",
+    1: "Outro",
+    2: "DRAM",
+    3: "Synchronous DRAM",
+    4: "Cache DRAM",
+    5: "EDO",
+    6: "EDRAM",
+    7: "VRAM",
+    8: "SRAM",
+    9: "RAM",
+    10: "ROM",
+    11: "Flash",
+    12: "EEPROM",
+    13: "FEPROM",
+    14: "EPROM",
+    15: "CDRAM",
+    16: "3DRAM",
+    17: "SDRAM",
+    18: "SGRAM",
+    19: "RDRAM",
+    20: "DDR",
+    21: "DDR2",
+    22: "DDR2 FB-DIMM",
+    23: "DDR3",
+    24: "FBD2",
+    25: "DDR3",
+    26: "DDR4",
+    27: "LPDDR",
+    28: "LPDDR2",
+    29: "LPDDR3",
+    30: "LPDDR4",
+    31: "Logical non-volatile device",
+    32: "HBM",
+    33: "HBM2",
+    34: "DDR5",
+    35: "LPDDR5"
+}
+
 def get_windows_details():
     """Collects hardware details on Windows systems."""
     # Chama a função primeiro
@@ -263,9 +303,13 @@ def get_windows_details():
             slots = c.Win32_PhysicalMemoryArray()[0].MemoryDevices
             details["ram_info"]["slots_total"] = slots
             for module in c.Win32_PhysicalMemory():
+                # Converter o código numérico do tipo de RAM para nome legível
+                memory_type_code = module.MemoryType if module.MemoryType else 0
+                memory_type_name = RAM_TYPE_MAP.get(memory_type_code, f"Desconhecido ({memory_type_code})")
+                
                 details["ram_info"]["modules"].append({
                     "capacity_gb": round(int(module.Capacity) / (1024**3), 2),
-                    "type": module.MemoryType, # Needs mapping to DDR types
+                    "type": memory_type_name,
                     "speed_mhz": module.Speed,
                     "manufacturer": module.Manufacturer,
                     "part_number": module.PartNumber
