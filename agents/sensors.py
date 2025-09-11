@@ -1,77 +1,86 @@
 """
 sensors.py
-Módulo para coleta de sensores de hardware (temperatura).
-- Windows: WMI + LibreHardwareMonitor
-- Linux: psutil.sensors_temperatures
+Módulo simplificado: coleta apenas a temperatura da CPU.
+1. Tenta via LibreHardwareMonitor (LHM).
+2. Se não disponível, usa WMI como fallback.
 """
 
-import platform
+import wmi
 import requests
 
-def get_temperature_info():
-    temps = {}
+TEMP_ALERT = 80.0  # °C
 
-    system = platform.system()
 
-    # 1️⃣ Windows
-    if system == "Windows":
-        try:
-            import wmi
-            w = wmi.WMI(namespace="root\\WMI")
-            sensors = w.MSAcpi_ThermalZoneTemperature()
-            wmi_temps = []
-            for sensor in sensors:
-                # décimos de Kelvin → Celsius
-                celsius = (sensor.CurrentTemperature / 10.0) - 273.15
-                wmi_temps.append(round(celsius, 1))
-            if wmi_temps:
-                temps["wmi_cpu_temp"] = wmi_temps
-        except Exception as e:
-            temps["wmi_error"] = str(e)
+def get_lhm_cpu_temp():
+    """Coleta temperatura da CPU via LibreHardwareMonitor"""
+    try:
+        url = "http://localhost:8085/data.json"
+        response = requests.get(url, timeout=2)
+        lhm = response.json()
 
-        # LibreHardwareMonitor API
-        try:
-            resp = requests.get("http://localhost:8085/data.json", timeout=3)
-            data = resp.json()
+        cpu_temps = []
+        for hw in lhm.get("Hardware", []):
+            if hw.get("HardwareType") == "CPU":
+                for sensor in hw.get("Sensors", []):
+                    if sensor.get("SensorType") == "Temperature":
+                        cpu_temps.append(sensor.get("Value"))
 
-            lhm_temps = {}
+        if cpu_temps:
+            avg_temp = round(sum(cpu_temps) / len(cpu_temps), 1)
+            notes = []
+            if avg_temp >= TEMP_ALERT:
+                notes.append(f"Atenção: CPU acima de {TEMP_ALERT}°C")
+            return avg_temp, notes, None
 
-            def parse_nodes(node):
-                if "Children" in node:
-                    for child in node["Children"]:
-                        parse_nodes(child)
-                if "Text" in node and "Temperature" in node["Text"]:
-                    label = node.get("Text")
-                    value = node.get("Value")
-                    if value is not None:
-                        lhm_temps[label] = value
+    except Exception as e:
+        return None, [], str(e)
 
-            if "Children" in data:
-                parse_nodes(data["Children"][0])
+    return None, [], "Nenhuma temperatura encontrada no LHM"
 
-            if lhm_temps:
-                temps["lhm_temperatures"] = lhm_temps
-        except Exception as e:
-            temps.setdefault("lhm_error", str(e))
 
-    # 2️⃣ Linux
-    elif system == "Linux":
-        try:
-            import psutil
-            sensor_data = psutil.sensors_temperatures()
-            linux_temps = {}
-            for chip, entries in sensor_data.items():
-                linux_temps[chip] = [
-                    {"label": e.label or "core", "temp_c": e.current}
-                    for e in entries if e.current is not None
-                ]
-            if linux_temps:
-                temps["linux_temperatures"] = linux_temps
-        except Exception as e:
-            temps["linux_error"] = str(e)
+def get_wmi_cpu_temp():
+    """Fallback via WMI apenas para CPU"""
+    temps = []
+    notes = []
+    try:
+        w = wmi.WMI(namespace=r"root\wmi")
+        for sensor in w.MSAcpi_ThermalZoneTemperature():
+            temp_c = (sensor.CurrentTemperature / 10.0) - 273.15
+            temps.append(round(temp_c, 1))
+        if temps:
+            avg_temp = sum(temps) / len(temps)
+            if avg_temp >= TEMP_ALERT:
+                notes.append(f"Atenção: CPU acima de {TEMP_ALERT}°C")
+            return round(avg_temp, 1), notes
+    except Exception as e:
+        return None, [f"Erro WMI: {e}"]
 
-    # 3️⃣ Fallback
-    if not temps:
-        temps["status"] = "not_available"
+    return None, []
 
-    return temps
+
+def get_cpu_temperature():
+    """Retorna JSON pronto com apenas CPU"""
+    lhm_temp, lhm_notes, lhm_error = get_lhm_cpu_temp()
+
+    if lhm_temp is not None:
+        return {
+            "cpu_temp": lhm_temp,
+            "custom_notes": lhm_notes,
+            "lhm_error": lhm_error,
+            "last_seen": None
+        }
+
+    # fallback para WMI
+    wmi_temp, wmi_notes = get_wmi_cpu_temp()
+    return {
+        "cpu_temp": wmi_temp,
+        "custom_notes": wmi_notes,
+        "lhm_error": lhm_error,
+        "last_seen": None
+    }
+
+
+if __name__ == "__main__":
+    import json
+    info = get_cpu_temperature()
+    print(json.dumps(info, indent=2, ensure_ascii=False))

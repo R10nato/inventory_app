@@ -11,23 +11,9 @@ import argparse
 import sqlite3
 import datetime
 import logging
-if platform.system() == "Windows":
-    try:
-        import wmi
-        import winreg
-    except ImportError:
-        logger.warning("WMI or winreg not found. Install them for detailed Windows info.")
-import psutil
-import nmap
-import netifaces
-import shutil
-import ipaddress
-import subprocess
-from pathlib import Path
-from dotenv import load_dotenv
-from sensors import get_temperature_info
+import re
 
-# Configurar logging
+# Configurar logging primeiro
 logging.basicConfig(
     #level=logging.INFO,
     level=logging.DEBUG,  # Ativa logs de debug para diagnóstico
@@ -38,6 +24,22 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger("inventory_agent")
+
+if platform.system() == "Windows":
+    try:
+        import wmi
+        import winreg
+    except ImportError:
+        logger.warning("WMI or winreg not found. Install them for detailed Windows info.")
+import psutil
+import nmap
+import netifaces
+import shutil
+import subprocess
+from pathlib import Path
+from dotenv import load_dotenv
+from sensors import get_cpu_temperature
+
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Inventory Hardware Agent')
@@ -92,6 +94,10 @@ def setup_local_db():
 # --- Platform Specific Collection --- 
 def get_linux_details():
     """Collects hardware details on Linux systems."""
+    # Chama a função primeiro
+    # hardware_data = get_hardware_info()
+
+    # Monta o dicionário
     details = {
         "cpu_info": {},
         "ram_info": {},
@@ -99,8 +105,8 @@ def get_linux_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": get_temperature_info(),
-        "os": platform.system() + " " + platform.release(),
+        "temperature_info": get_cpu_temperature(),  # hardware_data,  # aqui apenas usamos o valor
+        "os": f"{platform.system()} {platform.release()} {platform.version()}",
         "usb_devices": [],
         "installed_software": []
     }
@@ -201,6 +207,10 @@ def get_linux_details():
 
 def get_windows_details():
     """Collects hardware details on Windows systems."""
+    # Chama a função primeiro
+    # hardware_data = get_hardware_info()
+
+    # Monta o dicionário
     details = {
         "cpu_info": {},
         "ram_info": {},
@@ -208,8 +218,8 @@ def get_windows_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": get_temperature_info(),
-        "os": platform.system() + " " + platform.release() + " " + platform.version(),
+        "temperature_info": get_cpu_temperature(),# hardware_data,  # aqui apenas usamos o valor
+        "os": f"{platform.system()} {platform.release()} {platform.version()}",
         "usb_devices": [],
         "installed_software": []
     }
@@ -504,6 +514,33 @@ def get_domain_from_dns_suffix(suffix):
     if suffix and suffix != "N/A":
         return suffix.lower()
     return None
+
+def get_local_network_info():
+    """Obtém o IP e MAC do dispositivo local como fallback."""
+    ip_address = "127.0.0.1"
+    mac_address = None
+    try:
+        # Tenta obter o IP da interface padrão
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip_address = s.getsockname()[0]
+        s.close()
+    except Exception:
+        pass
+
+    # Tenta obter o MAC address
+    try:
+        for interface, addrs in psutil.net_if_addrs().items():
+            for addr in addrs:
+                if addr.family == psutil.AF_LINK:
+                    mac_address = addr.address
+                    break
+            if mac_address:
+                break
+    except Exception:
+        pass
+
+    return ip_address, mac_address
 
 def get_network_info():
     """
@@ -840,43 +877,42 @@ def run_agent():
         local_mac = network_info.get("mac_address", None)
 
         
-    # Construção segura do payload com base nos campos válidos
-    hardware_details = {
-        "cpu_info": local_details.get("cpu_info"),
-        "ram_info": local_details.get("ram_info"),
-        "disk_info": local_details.get("disk_info"),
-        "gpu_info": local_details.get("gpu_info"),
-        "motherboard_info": local_details.get("motherboard_info"),
-        "network_info": local_details.get("network_info"),
-        "temperature_info": local_details.get("temperature_info"),
-        "power_supply_info": local_details.get("power_supply_info"),
-        "custom_notes": local_details.get("custom_notes")
-    }
+        # Construção segura do payload com base nos campos válidos
+        hardware_details = {
+            "cpu_info": local_details.get("cpu_info"),
+            "ram_info": local_details.get("ram_info"),
+            "disk_info": local_details.get("disk_info"),
+            "gpu_info": local_details.get("gpu_info"),
+            "motherboard_info": local_details.get("motherboard_info"),
+            "network_info": local_details.get("network_info"),
+            "temperature_info": local_details.get("temperature_info"),
+            "power_supply_info": local_details.get("power_supply_info"),
+            "custom_notes": local_details.get("custom_notes")
+        }
 
-    payload = {
-        "ip_address": local_ip,
-        "mac_address": local_mac,
-        "name": platform.node(),
-        "os": local_details.get("os", platform.system()),
-        "device_type": "computer",
-        "status": "online",
-        "hardware_details": hardware_details,
-        "last_seen": datetime.datetime.now().isoformat()
-    }
+        payload = {
+            "ip_address": local_ip,
+            "mac_address": local_mac,
+            "name": platform.node(),
+            "os": local_details.get("os", platform.system()),
+            "device_type": "computer",
+            "status": "online",
+            "hardware_details": hardware_details,
+            "last_seen": datetime.datetime.now().isoformat()
+        }
 
+        logger.info(f"Reporting local machine ({local_ip})...")
 
-    logger.info(f"Reporting local machine ({local_ip})...")
-
-    if offline_mode:
-        # Armazenar dados localmente
-        store_data_locally(machine_id, payload)
-    else:
-        # Enviar dados diretamente para o servidor
-        success = report_data(payload)
-        if not success and not args.offline:
-            # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
-            logger.info("Failed to report data to server, storing locally...")
+        if offline_mode:
+            # Armazenar dados localmente
             store_data_locally(machine_id, payload)
+        else:
+            # Enviar dados diretamente para o servidor
+            success = report_data(payload)
+            if not success and not args.offline:
+                # Se falhar e não estiver explicitamente em modo offline, armazenar localmente
+                logger.info("Failed to report data to server, storing locally...")
+                store_data_locally(machine_id, payload)
                 
 def print_help():
     """Print help information about the agent."""
@@ -914,31 +950,5 @@ if __name__ == "__main__":
 
 
 
-def get_local_network_info():
-    """Obtém o IP e MAC do dispositivo local como fallback."""
-    ip_address = "127.0.0.1"
-    mac_address = None
-    try:
-        # Tenta obter o IP da interface padrão
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))
-        ip_address = s.getsockname()[0]
-        s.close()
-    except Exception:
-        pass
-
-    # Tenta obter o MAC address
-    try:
-        for interface, addrs in psutil.net_if_addrs().items():
-            for addr in addrs:
-                if addr.family == psutil.AF_LINK:
-                    mac_address = addr.address
-                    break
-            if mac_address:
-                break
-    except Exception:
-        pass
-
-    return ip_address, mac_address
 
 
