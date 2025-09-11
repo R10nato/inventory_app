@@ -291,6 +291,137 @@ const DeviceDetail = ({ deviceId, onBack }) => {
             )}
           </ExpandableCard>
         </TabsContent>
+
+        {/* Software */}
+        <TabsContent value="software" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Package className="h-5 w-5" /> Software Instalado
+              </CardTitle>
+              <CardDescription>
+                {hardware.installed_software ? `${hardware.installed_software.length} programas encontrados` : 'Nenhum software detectado'}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {hardware.installed_software && hardware.installed_software.length > 0 ? (
+                <div className="space-y-2 max-h-96 overflow-y-auto">
+                  {hardware.installed_software.map((software, index) => (
+                    <div key={index} className="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50">
+                      <div className="flex-1">
+                        <p className="font-medium text-sm">{software.name || 'N/A'}</p>
+                        <div className="flex gap-4 text-xs text-muted-foreground mt-1">
+                          <span>Versão: {software.version || 'N/A'}</span>
+                          <span>Editor: {software.publisher || 'N/A'}</span>
+                          <span>Instalado: {software.install_date || 'N/A'}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted-foreground text-center py-8">
+                  Nenhum software instalado foi detectado
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Network */}
+        <TabsContent value="network" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Wifi className="h-5 w-5" /> Informações de Rede
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {hardware.network_info && hardware.network_info.length > 0 ? (
+                <div className="space-y-3">
+                  {hardware.network_info.map((adapter, index) => (
+                    <div key={index} className="p-3 border rounded-lg">
+                      <p className="font-medium">{adapter.name || 'N/A'}</p>
+                      <div className="text-sm text-muted-foreground mt-1 space-y-1">
+                        <p>Tipo: {adapter.type || 'N/A'}</p>
+                        <p>MAC: {adapter.mac || 'N/A'}</p>
+                        {adapter.ip_addresses && Array.isArray(adapter.ip_addresses) && (
+                          <p>IPs: {adapter.ip_addresses.join(', ')}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted-foreground">Nenhuma interface de rede detectada</p>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* USB Devices */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Usb className="h-5 w-5" /> Dispositivos USB
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {hardware.usb_devices && hardware.usb_devices.length > 0 ? (
+                <div className="space-y-2 max-h-64 overflow-y-auto">
+                  {hardware.usb_devices.map((device, index) => (
+                    <div key={index} className="p-2 border rounded text-sm">
+                      <p className="font-medium">{typeof device === 'string' ? device : device.name || 'N/A'}</p>
+                      {typeof device === 'object' && device.status && (
+                        <p className="text-xs text-muted-foreground">Status: {device.status}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted-foreground">Nenhum dispositivo USB detectado</p>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* History */}
+        <TabsContent value="history" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <History className="h-5 w-5" /> Histórico de Alterações
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {historyLogs && historyLogs.length > 0 ? (
+                <div className="space-y-3 max-h-96 overflow-y-auto">
+                  {historyLogs.map((log, index) => (
+                    <div key={index} className="p-3 border-l-4 border-blue-500 bg-blue-50">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-medium text-sm">{log.component || 'N/A'}</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            {formatDate(log.timestamp)}
+                          </p>
+                        </div>
+                        <Badge variant="outline" className="text-xs">
+                          {log.change_type || 'Alteração'}
+                        </Badge>
+                      </div>
+                      {log.description && (
+                        <p className="text-sm mt-2">{log.description}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted-foreground text-center py-8">
+                  Nenhuma alteração registrada
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
 
       {/* Modal de Edição */}
