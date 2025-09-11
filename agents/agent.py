@@ -397,33 +397,17 @@ def get_windows_details():
 
         # Installed Software
         try:
-            # Método 1: WMI
-            for product in c.Win32_Product():
-                install_date = product.InstallDate
-                if install_date:
-                    # Converter formato YYYYMMDD para YYYY-MM-DD
-                    try:
-                        install_date = f"{install_date[0:4]}-{install_date[4:6]}-{install_date[6:8]}"
-                    except:
-                        install_date = "Unknown"
-                        
-                details["installed_software"].append({
-                    "name": product.Name,
-                    "version": product.Version,
-                    "publisher": product.Vendor,
-                    "install_date": install_date
-                })
-                
-            # Método 2: Registro do Windows (para programas que não aparecem no WMI)
+            # Usar apenas o método do registro, que é mais rápido e confiável
             import winreg
             
-            def get_software_from_registry(hive, flag):
+            def get_software_from_registry(hive, flag=0):
                 registry_software = []
                 try:
                     aReg = winreg.ConnectRegistry(None, hive)
-                    aKey = winreg.OpenKey(aReg, r"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, winreg.KEY_READ | flag)
+                    aKey = winreg.OpenKey(aReg, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", 0, winreg.KEY_READ | flag)
                     
                     count_subkey = winreg.QueryInfoKey(aKey)[0]
+                    logger.info(f"Found {count_subkey} registry entries to process")
                     
                     for i in range(count_subkey):
                         try:
@@ -432,6 +416,12 @@ def get_windows_details():
                             
                             try:
                                 name = winreg.QueryValueEx(subkey, "DisplayName")[0]
+                                
+                                # Pular entradas vazias ou com nomes muito curtos
+                                if not name or len(name.strip()) < 2:
+                                    winreg.CloseKey(subkey)
+                                    continue
+                                
                                 try:
                                     version = winreg.QueryValueEx(subkey, "DisplayVersion")[0]
                                 except:
@@ -443,43 +433,72 @@ def get_windows_details():
                                 try:
                                     install_date = winreg.QueryValueEx(subkey, "InstallDate")[0]
                                     # Converter formato YYYYMMDD para YYYY-MM-DD se possível
-                                    if install_date and len(install_date) == 8:
+                                    if install_date and len(str(install_date)) == 8:
+                                        install_date = str(install_date)
                                         install_date = f"{install_date[0:4]}-{install_date[4:6]}-{install_date[6:8]}"
+                                    else:
+                                        install_date = "Unknown"
                                 except:
                                     install_date = "Unknown"
                                     
-                                # Verificar se já existe na lista
-                                if not any(s.get("name") == name for s in details["installed_software"]):
-                                    registry_software.append({
-                                        "name": name,
-                                        "version": version,
-                                        "publisher": publisher,
-                                        "install_date": install_date
-                                    })
-                            except:
+                                registry_software.append({
+                                    "name": name.strip(),
+                                    "version": version if version else "Unknown",
+                                    "publisher": publisher if publisher else "Unknown",
+                                    "install_date": install_date
+                                })
+                                
+                            except FileNotFoundError:
+                                # DisplayName não existe, pular esta entrada
                                 pass
+                            except Exception as e:
+                                logger.debug(f"Error reading subkey {subkey_name}: {e}")
                             
                             winreg.CloseKey(subkey)
-                        except:
+                        except Exception as e:
+                            logger.debug(f"Error processing registry entry {i}: {e}")
                             continue
                     
                     winreg.CloseKey(aKey)
                     winreg.CloseKey(aReg)
+                    logger.info(f"Collected {len(registry_software)} software entries from registry")
+                    
                 except Exception as e:
-                    logger.error(f"Error accessing registry: {e}")
+                    logger.error(f"Error accessing registry hive: {e}")
                     
                 return registry_software
             
             # Obter software do registro (32-bit e 64-bit)
-            registry_software = get_software_from_registry(winreg.HKEY_LOCAL_MACHINE, 0)
+            logger.info("Starting software collection from registry...")
+            all_software = []
+            
+            # Registro principal
+            software_list = get_software_from_registry(winreg.HKEY_LOCAL_MACHINE)
+            all_software.extend(software_list)
+            
+            # Em sistemas 64-bit, verificar também as chaves WOW64
             if platform.machine().endswith('64'):
-                registry_software.extend(get_software_from_registry(winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_32KEY))
-                registry_software.extend(get_software_from_registry(winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_64KEY))
+                try:
+                    software_32 = get_software_from_registry(winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_32KEY)
+                    all_software.extend(software_32)
+                except Exception as e:
+                    logger.warning(f"Could not access 32-bit registry: {e}")
                 
-            # Adicionar software do registro à lista
-            for software in registry_software:
-                if not any(s.get("name") == software["name"] for s in details["installed_software"]):
+                try:
+                    software_64 = get_software_from_registry(winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_64KEY)
+                    all_software.extend(software_64)
+                except Exception as e:
+                    logger.warning(f"Could not access 64-bit registry: {e}")
+            
+            # Remover duplicatas baseado no nome
+            seen_names = set()
+            for software in all_software:
+                name = software.get("name", "").strip()
+                if name and name not in seen_names:
+                    seen_names.add(name)
                     details["installed_software"].append(software)
+            
+            logger.info(f"Total unique software found: {len(details['installed_software'])}")
                     
         except Exception as e:
             logger.error(f"Error collecting installed software: {e}")
