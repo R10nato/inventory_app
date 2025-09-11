@@ -304,7 +304,16 @@ def get_windows_details():
             details["ram_info"]["slots_total"] = slots
             for module in c.Win32_PhysicalMemory():
                 # Converter o código numérico do tipo de RAM para nome legível
-                memory_type_code = module.MemoryType if module.MemoryType else 0
+                # Tenta primeiro SMBIOSMemoryType, depois MemoryType como fallback
+                memory_type_code = 0
+                
+                # Primeiro tenta SMBIOSMemoryType (mais preciso quando disponível)
+                if hasattr(module, 'SMBIOSMemoryType') and module.SMBIOSMemoryType:
+                    memory_type_code = module.SMBIOSMemoryType
+                # Se SMBIOSMemoryType for 0 ou vazio, usa MemoryType como fallback
+                elif hasattr(module, 'MemoryType') and module.MemoryType:
+                    memory_type_code = module.MemoryType
+                
                 memory_type_name = RAM_TYPE_MAP.get(memory_type_code, f"Desconhecido ({memory_type_code})")
                 
                 details["ram_info"]["modules"].append({
