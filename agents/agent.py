@@ -958,6 +958,8 @@ def run_agent():
             "motherboard_info": local_details.get("motherboard_info"),
             "network_info": local_details.get("network_info"),
             "temperature_info": local_details.get("temperature_info"),
+            "installed_software": local_details.get("installed_software"),
+            "usb_devices": local_details.get("usb_devices"),
             "power_supply_info": local_details.get("power_supply_info"),
             "custom_notes": local_details.get("custom_notes")
         }

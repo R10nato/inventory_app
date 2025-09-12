@@ -1,7 +1,12 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 import models, database
+import logging
+
+# Configurar logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
@@ -10,7 +15,12 @@ from export_service import export_devices_snapshot
 from compare_snapshots import generate_comparison_report
 
 # Criar tabelas no banco ao iniciar (idealmente usar Alembic em produção)
-models.Base.metadata.create_all(bind=database.engine)
+try:
+    models.Base.metadata.create_all(bind=database.engine)
+    logger.info("Database tables created successfully")
+except Exception as e:
+    logger.error(f"Error creating database tables: {e}")
+    raise
 
 # Instância do FastAPI
 app = FastAPI(

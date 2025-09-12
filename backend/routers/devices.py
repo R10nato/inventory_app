@@ -64,38 +64,53 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
     Cria um novo dispositivo ou atualiza um existente com base no IP ou MAC address.
     Se houver mudanças, registra no histórico.
     """
-    db_device = crud.get_device_by_ip_or_mac(db, device.ip_address, device.mac_address)
-    device_data = device.model_dump(exclude_unset=True)
+    try:
+        db_device = crud.get_device_by_ip_or_mac(db, device.ip_address, device.mac_address)
+        device_data = device.model_dump(exclude_unset=True)
 
-    if db_device:
-        # Gerar logs de alteração antes da atualização
-        changes = generate_change_logs(db_device, device_data)
+        if db_device:
+            # Gerar logs de alteração antes da atualização
+            changes = generate_change_logs(db_device, device_data)
 
-        # Atualizar
-        device_update = schemas.DeviceUpdate(**device_data)
-        updated_device = crud.update_device(db, device_id=db_device.id, device=device_update)
+            # Atualizar
+            device_update = schemas.DeviceUpdate(**device_data)
+            updated_device = crud.update_device(db, device_id=db_device.id, device=device_update)
 
-        # Registrar logs
-        for change in changes:
-            log = schemas.HistoryLogCreate(
-                component="device",
-                change_description=change,
-            )
-            crud.create_history_log(db, log, device_id=db_device.id)
+            # Registrar logs
+            for change in changes:
+                log = schemas.HistoryLogCreate(
+                    component="device",
+                    change_description=change,
+                )
+                crud.create_history_log(db, log, device_id=db_device.id)
 
-        return updated_device
+            return updated_device
 
-    # Criar novo dispositivo
-    new_device = crud.create_device(db=db, device=device)
+        # Criar novo dispositivo
+        new_device = crud.create_device(db=db, device=device)
 
-    # Registrar log de criação
-    log = schemas.HistoryLogCreate(
-        component="device",
-        change_description="Dispositivo adicionado ao inventário",
-    )
-    crud.create_history_log(db, log, device_id=new_device.id)
+        # Registrar log de criação
+        log = schemas.HistoryLogCreate(
+            component="device",
+            change_description="Dispositivo adicionado ao inventário",
+        )
+        crud.create_history_log(db, log, device_id=new_device.id)
 
-    return new_device
+        return new_device
+    
+    except Exception as e:
+        import traceback
+        error_msg = f"Erro ao criar/atualizar dispositivo: {e}"
+        traceback_msg = traceback.format_exc()
+        print(error_msg)
+        print(f"Traceback: {traceback_msg}")
+        
+        # Log detalhado do erro
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"{error_msg}\nTraceback: {traceback_msg}")
+        
+        raise HTTPException(status_code=500, detail={"error": str(e), "traceback": traceback_msg})
 
 
 @router.get("/", response_model=List[schemas.Device])

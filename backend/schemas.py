@@ -15,6 +15,9 @@ class HardwareDetailBase(BaseModel):
     network_info: list[dict[str, Any]] | None = None
     temperature_info: dict[str, Any] | None = None
     power_supply_info: dict[str, Any] | None = None
+    installed_software: list[dict[str, Any]] | None = None
+    usb_devices: list[dict[str, Any]] | None = None
+    os: str | None = None
     custom_notes: str | None = None
 
     model_config = {"from_attributes": True}

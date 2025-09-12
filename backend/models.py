@@ -46,6 +46,9 @@ class HardwareDetail(Base):
     network_info = Column(JSON, nullable=True)
     temperature_info = Column(JSON, nullable=True)
     power_supply_info = Column(JSON, nullable=True)
+    installed_software = Column(JSON, nullable=True)
+    usb_devices = Column(JSON, nullable=True)
+    os = Column(String(255), nullable=True)
     custom_notes = Column(Text, nullable=True)
 
     device = relationship("Device", back_populates="hardware_details")
