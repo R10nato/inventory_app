@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Boolean, BigInteger
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Boolean, BigInteger, Index
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from database import Base
@@ -99,6 +99,13 @@ class HistoryLog(Base):
     agent_version = Column(String(50), nullable=True)
 
     device = relationship("Device", back_populates="history_logs")
+    
+    # Add unique constraint for deduplication
+    __table_args__ = (
+        Index('idx_device_change_hash', 'device_id', 'change_hash', unique=True),
+        Index('idx_device_timestamp', 'device_id', 'timestamp'),
+        Index('idx_change_type', 'change_type'),
+    )
 
 
 class Snapshot(Base):
