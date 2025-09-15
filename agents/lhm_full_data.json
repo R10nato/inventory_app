@@ -1,0 +1,1488 @@
+{
+  "id": 0,
+  "Text": "Sensor",
+  "Min": "Min",
+  "Value": "Value",
+  "Max": "Max",
+  "ImageURL": "",
+  "Children": [
+    {
+      "id": 1,
+      "Text": "DESKTOP-VUDLI0B",
+      "Min": "",
+      "Value": "",
+      "Max": "",
+      "ImageURL": "images_icon/computer.png",
+      "Children": [
+        {
+          "id": 2,
+          "Text": "Samsung NP350XAA-KDBBR",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/mainboard.png",
+          "Children": []
+        },
+        {
+          "id": 3,
+          "Text": "Intel Celeron 3865U",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/cpu.png",
+          "Children": [
+            {
+              "id": 4,
+              "Text": "Voltages",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/voltage.png",
+              "Children": [
+                {
+                  "id": 5,
+                  "Text": "CPU Core",
+                  "Min": "0,632 V",
+                  "Value": "0,747 V",
+                  "Max": "0,752 V",
+                  "SensorId": "/intelcpu/0/voltage/0",
+                  "Type": "Voltage",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 6,
+                  "Text": "CPU Core #1",
+                  "Min": "0,633 V",
+                  "Value": "0,748 V",
+                  "Max": "0,753 V",
+                  "SensorId": "/intelcpu/0/voltage/1",
+                  "Type": "Voltage",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 7,
+                  "Text": "CPU Core #2",
+                  "Min": "0,633 V",
+                  "Value": "0,748 V",
+                  "Max": "0,751 V",
+                  "SensorId": "/intelcpu/0/voltage/2",
+                  "Type": "Voltage",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "Text": "Powers",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 9,
+                  "Text": "CPU Package",
+                  "Min": "0,6 W",
+                  "Value": "3,9 W",
+                  "Max": "4,0 W",
+                  "SensorId": "/intelcpu/0/power/0",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 10,
+                  "Text": "CPU Cores",
+                  "Min": "0,1 W",
+                  "Value": "2,8 W",
+                  "Max": "3,1 W",
+                  "SensorId": "/intelcpu/0/power/1",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 11,
+                  "Text": "CPU Memory",
+                  "Min": "0,4 W",
+                  "Value": "1,3 W",
+                  "Max": "1,3 W",
+                  "SensorId": "/intelcpu/0/power/3",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 12,
+                  "Text": "CPU Platform",
+                  "Min": "7,7 W",
+                  "Value": "15,5 W",
+                  "Max": "16,0 W",
+                  "SensorId": "/intelcpu/0/power/4",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 13,
+              "Text": "Clocks",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/clock.png",
+              "Children": [
+                {
+                  "id": 14,
+                  "Text": "Bus Speed",
+                  "Min": "100,0 MHz",
+                  "Value": "100,0 MHz",
+                  "Max": "100,0 MHz",
+                  "SensorId": "/intelcpu/0/clock/0",
+                  "Type": "Clock",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 15,
+                  "Text": "CPU Core #1",
+                  "Min": "700,0 MHz",
+                  "Value": "1800,0 MHz",
+                  "Max": "1800,2 MHz",
+                  "SensorId": "/intelcpu/0/clock/1",
+                  "Type": "Clock",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 16,
+                  "Text": "CPU Core #2",
+                  "Min": "700,0 MHz",
+                  "Value": "1800,0 MHz",
+                  "Max": "1800,2 MHz",
+                  "SensorId": "/intelcpu/0/clock/2",
+                  "Type": "Clock",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "Text": "Temperatures",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/temperature.png",
+              "Children": [
+                {
+                  "id": 18,
+                  "Text": "Core Max",
+                  "Min": "40,0 °C",
+                  "Value": "47,0 °C",
+                  "Max": "51,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/0",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 19,
+                  "Text": "Core Average",
+                  "Min": "39,0 °C",
+                  "Value": "46,5 °C",
+                  "Max": "51,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/1",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 20,
+                  "Text": "CPU Core #1",
+                  "Min": "38,0 °C",
+                  "Value": "46,0 °C",
+                  "Max": "51,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/2",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 21,
+                  "Text": "CPU Core #2",
+                  "Min": "40,0 °C",
+                  "Value": "47,0 °C",
+                  "Max": "51,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/3",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 22,
+                  "Text": "CPU Package",
+                  "Min": "41,0 °C",
+                  "Value": "47,0 °C",
+                  "Max": "51,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/4",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 23,
+                  "Text": "CPU Core #1 Distance to TjMax",
+                  "Min": "49,0 °C",
+                  "Value": "54,0 °C",
+                  "Max": "62,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/5",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 24,
+                  "Text": "CPU Core #2 Distance to TjMax",
+                  "Min": "49,0 °C",
+                  "Value": "53,0 °C",
+                  "Max": "60,0 °C",
+                  "SensorId": "/intelcpu/0/temperature/6",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 25,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 26,
+                  "Text": "CPU Total",
+                  "Min": "11,1 %",
+                  "Value": "100,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/intelcpu/0/load/0",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 27,
+                  "Text": "CPU Core Max",
+                  "Min": "11,7 %",
+                  "Value": "100,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/intelcpu/0/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 28,
+                  "Text": "CPU Core #1",
+                  "Min": "10,6 %",
+                  "Value": "100,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/intelcpu/0/load/2",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 29,
+                  "Text": "CPU Core #2",
+                  "Min": "9,9 %",
+                  "Value": "100,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/intelcpu/0/load/3",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "Text": "Generic Memory",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/ram.png",
+          "Children": [
+            {
+              "id": 31,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 32,
+                  "Text": "Memory",
+                  "Min": "37,7 %",
+                  "Value": "50,2 %",
+                  "Max": "54,2 %",
+                  "SensorId": "/ram/load/0",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 33,
+                  "Text": "Virtual Memory",
+                  "Min": "23,6 %",
+                  "Value": "31,3 %",
+                  "Max": "35,6 %",
+                  "SensorId": "/ram/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 34,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 35,
+                  "Text": "Memory Used",
+                  "Min": "6,0 GB",
+                  "Value": "8,0 GB",
+                  "Max": "8,6 GB",
+                  "SensorId": "/ram/data/0",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 36,
+                  "Text": "Memory Available",
+                  "Min": "7,3 GB",
+                  "Value": "7,9 GB",
+                  "Max": "9,9 GB",
+                  "SensorId": "/ram/data/1",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 37,
+                  "Text": "Virtual Memory Used",
+                  "Min": "7,5 GB",
+                  "Value": "10,0 GB",
+                  "Max": "11,4 GB",
+                  "SensorId": "/ram/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 38,
+                  "Text": "Virtual Memory Available",
+                  "Min": "20,5 GB",
+                  "Value": "21,9 GB",
+                  "Max": "24,4 GB",
+                  "SensorId": "/ram/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "Text": "Intel(R) HD Graphics 610",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/intel.png",
+          "Children": [
+            {
+              "id": 40,
+              "Text": "Powers",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 41,
+                  "Text": "GPU Power",
+                  "Min": "0,0 W",
+                  "Value": "0,2 W",
+                  "Max": "1,5 W",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/power/0",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 42,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 43,
+                  "Text": "D3D 3D",
+                  "Min": "0,0 %",
+                  "Value": "21,9 %",
+                  "Max": "73,2 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/0",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 44,
+                  "Text": "D3D Copy",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 45,
+                  "Text": "D3D GDI Render",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/2",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 46,
+                  "Text": "D3D Other",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/3",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 47,
+                  "Text": "D3D Other",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/4",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 48,
+                  "Text": "D3D Other",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/5",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 49,
+                  "Text": "D3D Overlay",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/6",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 50,
+                  "Text": "D3D Video Decode",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/7",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 51,
+                  "Text": "D3D Video Decode",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/8",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 52,
+                  "Text": "D3D Video Processing",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,1 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/9",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 53,
+                  "Text": "D3D Video Processing",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/load/10",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 54,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 55,
+                  "Text": "D3D Shared Memory Used",
+                  "Min": "108,6 MB",
+                  "Value": "173,7 MB",
+                  "Max": "566,0 MB",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/smalldata/0",
+                  "Type": "SmallData",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 56,
+                  "Text": "D3D Shared Memory Free",
+                  "Min": "7581,7 MB",
+                  "Value": "7975,5 MB",
+                  "Max": "8039,1 MB",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/smalldata/1",
+                  "Type": "SmallData",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 57,
+                  "Text": "D3D Shared Memory Total",
+                  "Min": "8147,7 MB",
+                  "Value": "8147,7 MB",
+                  "Max": "8147,7 MB",
+                  "SensorId": "/gpu-intel-integrated/%5C%5C%3F%5CPCI%23VEN_8086%26DEV_5906%26SUBSYS_C804144D%26REV_02%233%2611583659%260%2610%23%7B1ca05180-a699-450a-9a0c-de4fbe3ddd89%7D/smalldata/2",
+                  "Type": "SmallData",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "Text": "NGFF SSD 128GB",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/hdd.png",
+          "Children": [
+            {
+              "id": 59,
+              "Text": "Temperatures",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/temperature.png",
+              "Children": [
+                {
+                  "id": 60,
+                  "Text": "Temperature",
+                  "Min": "40,0 °C",
+                  "Value": "40,0 °C",
+                  "Max": "40,0 °C",
+                  "SensorId": "/hdd/1/temperature/0",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 61,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 62,
+                  "Text": "Read Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/hdd/1/load/31",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 63,
+                  "Text": "Write Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/hdd/1/load/32",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 64,
+                  "Text": "Total Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/hdd/1/load/33",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 65,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 66,
+                  "Text": "Read Rate",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/hdd/1/throughput/34",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 67,
+                  "Text": "Write Rate",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/hdd/1/throughput/35",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "Text": "HFS480G3H2X069N",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/hdd.png",
+          "Children": [
+            {
+              "id": 69,
+              "Text": "Temperatures",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/temperature.png",
+              "Children": [
+                {
+                  "id": 70,
+                  "Text": "Temperature",
+                  "Min": "36,0 °C",
+                  "Value": "45,0 °C",
+                  "Max": "45,0 °C",
+                  "SensorId": "/hdd/0/temperature/0",
+                  "Type": "Temperature",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 71,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 72,
+                  "Text": "Used Space",
+                  "Min": "45,5 %",
+                  "Value": "45,5 %",
+                  "Max": "45,5 %",
+                  "SensorId": "/hdd/0/load/0",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 73,
+                  "Text": "Read Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "32,8 %",
+                  "SensorId": "/hdd/0/load/31",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 74,
+                  "Text": "Write Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "78,2 %",
+                  "SensorId": "/hdd/0/load/32",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 75,
+                  "Text": "Total Activity",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "100,0 %",
+                  "SensorId": "/hdd/0/load/33",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 76,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 77,
+                  "Text": "Read Rate",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "9,1 MB/s",
+                  "SensorId": "/hdd/0/throughput/34",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 78,
+                  "Text": "Write Rate",
+                  "Min": "0,0 KB/s",
+                  "Value": "21,9 KB/s",
+                  "Max": "15,9 MB/s",
+                  "SensorId": "/hdd/0/throughput/35",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "Text": "Conexão Local* 1",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/nic.png",
+          "Children": [
+            {
+              "id": 80,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 81,
+                  "Text": "Network Utilization",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/nic/%7B76641441-1CBC-4A04-AC67-39F5BA8E2205%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 82,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 83,
+                  "Text": "Data Uploaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7B76641441-1CBC-4A04-AC67-39F5BA8E2205%7D/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 84,
+                  "Text": "Data Downloaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7B76641441-1CBC-4A04-AC67-39F5BA8E2205%7D/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 85,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 86,
+                  "Text": "Upload Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7B76641441-1CBC-4A04-AC67-39F5BA8E2205%7D/throughput/7",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 87,
+                  "Text": "Download Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7B76641441-1CBC-4A04-AC67-39F5BA8E2205%7D/throughput/8",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 88,
+          "Text": "Conexão Local* 2",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/nic.png",
+          "Children": [
+            {
+              "id": 89,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 90,
+                  "Text": "Network Utilization",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/nic/%7BFEB97F0C-9BCF-4DEF-AA98-64F6D764884E%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 91,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 92,
+                  "Text": "Data Uploaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7BFEB97F0C-9BCF-4DEF-AA98-64F6D764884E%7D/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 93,
+                  "Text": "Data Downloaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7BFEB97F0C-9BCF-4DEF-AA98-64F6D764884E%7D/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 94,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 95,
+                  "Text": "Upload Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7BFEB97F0C-9BCF-4DEF-AA98-64F6D764884E%7D/throughput/7",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 96,
+                  "Text": "Download Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7BFEB97F0C-9BCF-4DEF-AA98-64F6D764884E%7D/throughput/8",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "Text": "Ethernet",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/nic.png",
+          "Children": [
+            {
+              "id": 98,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 99,
+                  "Text": "Network Utilization",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/nic/%7BB7B1CED4-34BB-466A-A2F7-909B135AAB29%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 100,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 101,
+                  "Text": "Data Uploaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7BB7B1CED4-34BB-466A-A2F7-909B135AAB29%7D/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 102,
+                  "Text": "Data Downloaded",
+                  "Min": "0,2 GB",
+                  "Value": "0,2 GB",
+                  "Max": "0,2 GB",
+                  "SensorId": "/nic/%7BB7B1CED4-34BB-466A-A2F7-909B135AAB29%7D/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 103,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 104,
+                  "Text": "Upload Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7BB7B1CED4-34BB-466A-A2F7-909B135AAB29%7D/throughput/7",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 105,
+                  "Text": "Download Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7BB7B1CED4-34BB-466A-A2F7-909B135AAB29%7D/throughput/8",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 106,
+          "Text": "vEthernet (Default Switch)",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/nic.png",
+          "Children": [
+            {
+              "id": 107,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 108,
+                  "Text": "Network Utilization",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "0,0 %",
+                  "SensorId": "/nic/%7B19DADA07-59D7-4E8D-B4C1-016AA0CB3A19%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 109,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 110,
+                  "Text": "Data Uploaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7B19DADA07-59D7-4E8D-B4C1-016AA0CB3A19%7D/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 111,
+                  "Text": "Data Downloaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7B19DADA07-59D7-4E8D-B4C1-016AA0CB3A19%7D/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 112,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 113,
+                  "Text": "Upload Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "21,4 KB/s",
+                  "SensorId": "/nic/%7B19DADA07-59D7-4E8D-B4C1-016AA0CB3A19%7D/throughput/7",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 114,
+                  "Text": "Download Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,0 KB/s",
+                  "Max": "0,0 KB/s",
+                  "SensorId": "/nic/%7B19DADA07-59D7-4E8D-B4C1-016AA0CB3A19%7D/throughput/8",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 115,
+          "Text": "Wi-Fi",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/nic.png",
+          "Children": [
+            {
+              "id": 116,
+              "Text": "Load",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/load.png",
+              "Children": [
+                {
+                  "id": 117,
+                  "Text": "Network Utilization",
+                  "Min": "0,0 %",
+                  "Value": "0,0 %",
+                  "Max": "11,0 %",
+                  "SensorId": "/nic/%7B241811CC-3D5F-412F-9CE3-89549CAE85DB%7D/load/1",
+                  "Type": "Load",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 118,
+              "Text": "Data",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 119,
+                  "Text": "Data Uploaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,0 GB",
+                  "Max": "0,0 GB",
+                  "SensorId": "/nic/%7B241811CC-3D5F-412F-9CE3-89549CAE85DB%7D/data/2",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 120,
+                  "Text": "Data Downloaded",
+                  "Min": "0,0 GB",
+                  "Value": "0,1 GB",
+                  "Max": "0,1 GB",
+                  "SensorId": "/nic/%7B241811CC-3D5F-412F-9CE3-89549CAE85DB%7D/data/3",
+                  "Type": "Data",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 121,
+              "Text": "Throughput",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/throughput.png",
+              "Children": [
+                {
+                  "id": 122,
+                  "Text": "Upload Speed",
+                  "Min": "0,0 KB/s",
+                  "Value": "0,4 KB/s",
+                  "Max": "307,4 KB/s",
+                  "SensorId": "/nic/%7B241811CC-3D5F-412F-9CE3-89549CAE85DB%7D/throughput/7",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 123,
+                  "Text": "Download Speed",
+                  "Min": "0,1 KB/s",
+                  "Value": "5,3 KB/s",
+                  "Max": "5,6 MB/s",
+                  "SensorId": "/nic/%7B241811CC-3D5F-412F-9CE3-89549CAE85DB%7D/throughput/8",
+                  "Type": "Throughput",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 124,
+          "Text": "SR Real Battery\u0000",
+          "Min": "",
+          "Value": "",
+          "Max": "",
+          "ImageURL": "images_icon/battery.png",
+          "Children": [
+            {
+              "id": 125,
+              "Text": "Voltages",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/voltage.png",
+              "Children": [
+                {
+                  "id": 126,
+                  "Text": "Voltage",
+                  "Min": "10,439 V",
+                  "Value": "10,465 V",
+                  "Max": "11,720 V",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/voltage/0",
+                  "Type": "Voltage",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 127,
+              "Text": "Currents",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/voltage.png",
+              "Children": [
+                {
+                  "id": 128,
+                  "Text": "Discharge Current",
+                  "Min": "0,498 A",
+                  "Value": "1,231 A",
+                  "Max": "1,273 A",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/current/0",
+                  "Type": "Current",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 129,
+              "Text": "Powers",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 130,
+                  "Text": "Discharge Rate",
+                  "Min": "5,8 W",
+                  "Value": "12,9 W",
+                  "Max": "13,3 W",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/power/0",
+                  "Type": "Power",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 131,
+              "Text": "Levels",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/level.png",
+              "Children": [
+                {
+                  "id": 132,
+                  "Text": "Charge Level",
+                  "Min": "32,0 %",
+                  "Value": "32,0 %",
+                  "Max": "79,0 %",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/level/0",
+                  "Type": "Level",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 133,
+                  "Text": "Degradation Level",
+                  "Min": "41,8 %",
+                  "Value": "41,8 %",
+                  "Max": "41,8 %",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/level/1",
+                  "Type": "Level",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 134,
+              "Text": "Times",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 135,
+                  "Text": "Remaining Time (Estimated)",
+                  "Min": "0:36:42",
+                  "Value": "0:37:22",
+                  "Max": "3:16:42",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/timespan/0",
+                  "Type": "TimeSpan",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "id": 136,
+              "Text": "Capacities",
+              "Min": "",
+              "Value": "",
+              "Max": "",
+              "ImageURL": "images_icon/power.png",
+              "Children": [
+                {
+                  "id": 137,
+                  "Text": "Designed Capacity",
+                  "Min": "43092 mWh",
+                  "Value": "43092 mWh",
+                  "Max": "43092 mWh",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/energy/0",
+                  "Type": "Energy",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 138,
+                  "Text": "Fully-Charged Capacity",
+                  "Min": "25080 mWh",
+                  "Value": "25080 mWh",
+                  "Max": "25080 mWh",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/energy/1",
+                  "Type": "Energy",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                },
+                {
+                  "id": 139,
+                  "Text": "Remaining Capacity",
+                  "Min": "8026 mWh",
+                  "Value": "8026 mWh",
+                  "Max": "19813 mWh",
+                  "SensorId": "/battery/SR-Real-Battery%00_6/energy/2",
+                  "Type": "Energy",
+                  "ImageURL": "images/transparent.png",
+                  "Children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

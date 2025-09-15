@@ -38,7 +38,7 @@ import shutil
 import subprocess
 from pathlib import Path
 from dotenv import load_dotenv
-from sensors import get_cpu_temperature
+from sensors import get_cpu_temperature, get_all_temperatures
 
 
 # Parse command line arguments
@@ -105,7 +105,7 @@ def get_linux_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": get_cpu_temperature(),  # hardware_data,  # aqui apenas usamos o valor
+        "temperature_info": get_all_temperatures(),  # hardware_data,  # aqui apenas usamos o valor
         "os": f"{platform.system()} {platform.release()} {platform.version()}",
         "usb_devices": [],
         "installed_software": []
@@ -258,7 +258,7 @@ def get_windows_details():
         "gpu_info": {},
         "motherboard_info": {},
         "network_info": [],
-        "temperature_info": get_cpu_temperature(),# hardware_data,  # aqui apenas usamos o valor
+        "temperature_info": get_all_temperatures(),# hardware_data,  # aqui apenas usamos o valor
         "os": f"{platform.system()} {platform.release()} {platform.version()}",
         "usb_devices": [],
         "installed_software": []

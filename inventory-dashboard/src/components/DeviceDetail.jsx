@@ -262,11 +262,26 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
           {/** Temperaturas */}
           <ExpandableCard title="Temperaturas" icon={<Thermometer className="h-5 w-5 text-red-600" />}>
-            {hardware.temperature_info && hardware.temperature_info.cpu_temp ? (
+            {hardware.temperature_info && (hardware.temperature_info.cpu_temp || hardware.temperature_info.disk_temps) ? (
               <div className="space-y-2">
-                <p className={`${getTemperatureColor(hardware.temperature_info.cpu_temp)}`}>
-                  CPU: {safeNumber(hardware.temperature_info.cpu_temp)}°C
-                </p>
+                {/* CPU Temperature */}
+                {hardware.temperature_info.cpu_temp && (
+                  <p className={`${getTemperatureColor(hardware.temperature_info.cpu_temp)}`}>
+                    CPU: {safeNumber(hardware.temperature_info.cpu_temp)}°C
+                  </p>
+                )}
+                
+                {/* Disk Temperatures */}
+                {hardware.temperature_info.disk_temps && Object.keys(hardware.temperature_info.disk_temps).length > 0 && (
+                  <div className="space-y-1">
+                    <p className="text-sm font-medium text-muted-foreground">Discos:</p>
+                    {Object.entries(hardware.temperature_info.disk_temps).map(([diskName, temp]) => (
+                      <p key={diskName} className={`ml-2 ${getTemperatureColor(temp)}`}>
+                        {diskName}: {safeNumber(temp)}°C
+                      </p>
+                    ))}
+                  </div>
+                )}
                 
                 {/* Mostrar notas personalizadas se existirem */}
                 {hardware.temperature_info.custom_notes && hardware.temperature_info.custom_notes.length > 0 && (
