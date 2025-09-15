@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { Button } from '@/components/ui/button.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
-import { Monitor, Cpu, HardDrive, MemoryStick, Wifi, Activity, Clock, AlertTriangle } from 'lucide-react'
+import { Input } from '@/components/ui/input.jsx'
+import { 
+  Monitor, Cpu, HardDrive, Wifi, Activity, 
+  Search, Filter, RefreshCw, Settings, 
+  AlertTriangle, CheckCircle, Clock, Power
+} from 'lucide-react'
 import DashboardOverview from './components/DashboardOverview'
 import DeviceGrid from './components/DeviceGrid'
-import DeviceDetail from './components/DeviceDetail'
+import DeviceDetail from './components/DeviceDetail.jsx'
+import NotificationCenter, { NotificationBell } from './components/NotificationCenter.jsx'
 import './App.css'
 
 function App() {
@@ -15,6 +20,7 @@ function App() {
   const [currentView, setCurrentView] = useState('overview') // 'overview', 'devices', 'detail'
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [showNotifications, setShowNotifications] = useState(false)
 
   // Mock data para desenvolvimento - substituir pela API real
   const mockDevices = [
@@ -235,9 +241,10 @@ function App() {
               <Badge variant={devices.filter(d => d.status === 'online').length > 0 ? 'default' : 'secondary'}>
                 {devices.filter(d => d.status === 'online').length} Online
               </Badge>
-              <Badge variant="outline">
-                {devices.length} Total
-              </Badge>
+              <NotificationBell onClick={() => setShowNotifications(true)} />
+              <Button variant="ghost" size="sm">
+                <Settings className="h-4 w-4" />
+              </Button>
             </div>
           </div>
           
@@ -276,14 +283,13 @@ function App() {
             onDeviceSelect={handleDeviceSelect}
           />
         )}
-        
-        {currentView === 'detail' && selectedDevice && (
-          <DeviceDetail 
-            deviceId={selectedDevice.id} 
-            onBack={handleBackToDevices}
-          />
-        )}
       </main>
+        
+      {/* Notification Center */}
+      <NotificationCenter 
+        isOpen={showNotifications} 
+        onClose={() => setShowNotifications(false)} 
+      />
     </div>
   )
 }

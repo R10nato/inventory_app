@@ -52,10 +52,11 @@ def read_root():
     return {"message": "Welcome to the Inventory & Monitoring API"}
 
 # Importando e incluindo routers
-from routers import devices, history_logs, snapshots
+from routers import devices, history_logs, snapshots, alerts
 app.include_router(devices.router)
 app.include_router(history_logs.router)
 app.include_router(snapshots.router)
+app.include_router(alerts.router)
 
 # Configuração do agendador
 scheduler = BackgroundScheduler()
@@ -63,6 +64,9 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(export_devices_snapshot, "interval", hours=6, id="snapshot_export")
 # Comparação a cada 6 horas (5 minutos após o snapshot)
 scheduler.add_job(generate_comparison_report, "interval", hours=6, minutes=5, id="snapshot_comparison")
+# Verificação de saúde dos dispositivos a cada 30 minutos
+from alert_service import check_device_health_and_create_alerts
+scheduler.add_job(check_device_health_and_create_alerts, "interval", minutes=30, id="health_check")
 scheduler.start()
 
 # Garantir que o scheduler feche ao encerrar o servidor

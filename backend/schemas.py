@@ -127,3 +127,39 @@ class Snapshot(SnapshotBase):
     created_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+# ----------------------------
+# Alerts
+# ----------------------------
+class AlertBase(BaseModel):
+    title: str = Field(..., description="Título do alerta")
+    message: str = Field(..., description="Mensagem do alerta")
+    alert_type: str = Field(..., description="Tipo do alerta: info, warning, error, success")
+    severity: str = Field(default="medium", description="Severidade: low, medium, high, critical")
+    source: str | None = Field(default=None, description="Origem do alerta")
+    device_id: int | None = Field(default=None, description="ID do dispositivo relacionado")
+    snapshot_id: int | None = Field(default=None, description="ID do snapshot relacionado")
+    alert_metadata: dict[str, Any] | None = Field(default=None, description="Metadados adicionais")
+
+
+class AlertCreate(AlertBase):
+    pass
+
+
+class AlertUpdate(BaseModel):
+    is_read: bool | None = None
+    is_resolved: bool | None = None
+    resolved_by: str | None = None
+
+
+class Alert(AlertBase):
+    id: int
+    is_read: bool
+    is_resolved: bool
+    resolved_by: str | None
+    resolved_at: datetime | None
+    created_at: datetime
+    updated_at: datetime
+
+    model_config = {"from_attributes": True}

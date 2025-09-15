@@ -107,13 +107,20 @@ def generate_comparison_report():
 
             if db_device:
                 log_entry = schemas.HistoryLogCreate(
-                    change_type=change["type"],
-                    description=json.dumps(change["changes"], ensure_ascii=False),
-                    timestamp=datetime.now()
+                    component=change["type"],
+                    change_description=json.dumps(change["changes"], ensure_ascii=False)
                 )
                 crud.create_history_log(db, log=log_entry, device_id=db_device.id)
 
         print(f"[COMPARE] {len(changes)} mudanças gravadas no banco (history_logs).")
+        
+        # Gerar alertas baseados nas mudanças
+        try:
+            from alert_service import analyze_changes_and_create_alerts
+            analyze_changes_and_create_alerts(changes)
+            print(f"[COMPARE] Alertas gerados para {len(changes)} mudanças.")
+        except Exception as e:
+            print(f"[COMPARE][AVISO] Falha ao gerar alertas: {e}")
     finally:
         db.close()
 

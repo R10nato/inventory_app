@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from database import Base
@@ -80,3 +80,32 @@ class Snapshot(Base):
     file_size = Column(Integer, nullable=True)
     
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class Alert(Base):
+    __tablename__ = "alerts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(255), nullable=False)
+    message = Column(Text, nullable=False)
+    alert_type = Column(String(50), nullable=False, index=True)  # 'info', 'warning', 'error', 'success'
+    severity = Column(String(20), default="medium", index=True)  # 'low', 'medium', 'high', 'critical'
+    source = Column(String(100), nullable=True)  # 'system', 'snapshot', 'device', etc.
+    device_id = Column(Integer, ForeignKey("devices.id", ondelete="CASCADE"), nullable=True)
+    snapshot_id = Column(Integer, ForeignKey("snapshots.id", ondelete="CASCADE"), nullable=True)
+    
+    # Status do alerta
+    is_read = Column(Boolean, default=False, index=True)
+    is_resolved = Column(Boolean, default=False, index=True)
+    resolved_by = Column(String(100), nullable=True)
+    resolved_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # Metadados adicionais
+    alert_metadata = Column(JSON, nullable=True)
+    
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), index=True)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    # Relacionamentos
+    device = relationship("Device", backref="alerts")
+    snapshot = relationship("Snapshot", backref="alerts")

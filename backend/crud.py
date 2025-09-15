@@ -236,3 +236,88 @@ def delete_snapshot(db: Session, snapshot_id: int):
         db.delete(snapshot)
         db.commit()
     return snapshot
+
+
+# ----------------------------
+# Alert Queries
+# ----------------------------
+def get_alert(db: Session, alert_id: int):
+    return db.query(models.Alert).filter(models.Alert.id == alert_id).first()
+
+
+def get_alerts(db: Session, skip: int = 0, limit: int = 100, unread_only: bool = False, unresolved_only: bool = False):
+    query = db.query(models.Alert)
+    
+    if unread_only:
+        query = query.filter(models.Alert.is_read == False)
+    
+    if unresolved_only:
+        query = query.filter(models.Alert.is_resolved == False)
+    
+    return (
+        query.order_by(models.Alert.created_at.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def get_alerts_by_device(db: Session, device_id: int, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Alert)
+        .filter(models.Alert.device_id == device_id)
+        .order_by(models.Alert.created_at.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def create_alert(db: Session, alert: schemas.AlertCreate):
+    """Cria um novo alerta."""
+    db_alert = models.Alert(**alert.model_dump())
+    db.add(db_alert)
+    db.commit()
+    db.refresh(db_alert)
+    return db_alert
+
+
+def update_alert(db: Session, alert_id: int, alert_update: schemas.AlertUpdate):
+    """Atualiza um alerta existente."""
+    db_alert = get_alert(db, alert_id)
+    if not db_alert:
+        return None
+    
+    update_data = alert_update.model_dump(exclude_unset=True)
+    
+    # Se está sendo resolvido, adicionar timestamp
+    if update_data.get("is_resolved") and not db_alert.is_resolved:
+        update_data["resolved_at"] = datetime.now(timezone.utc)
+    
+    for key, value in update_data.items():
+        setattr(db_alert, key, value)
+    
+    db.commit()
+    db.refresh(db_alert)
+    return db_alert
+
+
+def delete_alert(db: Session, alert_id: int):
+    """Remove um alerta do banco de dados."""
+    alert = get_alert(db, alert_id)
+    if alert:
+        db.delete(alert)
+        db.commit()
+    return alert
+
+
+def mark_all_alerts_as_read(db: Session, device_id: int = None):
+    """Marca todos os alertas como lidos."""
+    query = db.query(models.Alert).filter(models.Alert.is_read == False)
+    
+    if device_id:
+        query = query.filter(models.Alert.device_id == device_id)
+    
+    query.update({"is_read": True})
+    db.commit()
+    return True
