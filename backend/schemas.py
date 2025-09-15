@@ -38,24 +38,103 @@ class HardwareDetail(HardwareDetailBase):
 # ----------------------------
 # History Logs
 # ----------------------------
-class HistoryLogBase(BaseModel):
-    component: str
-    change_description: str
-    details_before: str | None = None
-    details_after: str | None = None
-    user: str | None = None
+from typing import List, Dict, Any, Optional
+from pydantic import BaseModel, Field, HttpUrl, validator, root_validator
+import hashlib
+import hmac
+import base64
+import json
+from datetime import datetime
+from enum import Enum
 
+class ChangeType(str, Enum):
+    ADDED = "added"
+    REMOVED = "removed"
+    MODIFIED = "modified"
+    REPLACED = "replaced"
+
+class SeverityLevel(str, Enum):
+    INFO = "info"
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+class HistoryLogBase(BaseModel):
+    """Base schema for history log entries."""
+    component: str = Field(..., description="Componente afetado (ex: 'cpu', 'memory', 'disk')")
+    change_type: ChangeType = Field(..., description="Tipo de mudança ocorrida")
+    change_description: str = Field(..., description="Descrição legível da mudança")
+    severity: SeverityLevel = Field(default=SeverityLevel.INFO, description="Nível de severidade da mudança")
+    
+    # Detalhes estruturados
+    path: Optional[str] = Field(None, description="Caminho do campo alterado (ex: 'hardware.cpu.0.model')")
+    old_value: Optional[Any] = Field(None, description="Valor anterior (estruturado)")
+    new_value: Optional[Any] = Field(None, description="Novo valor (estruturado)")
+    
+    # Metadados
+    source: Optional[str] = Field(None, description="Fonte da mudança (agente, usuário, sistema)")
+    user: Optional[str] = Field(None, description="Usuário responsável pela mudança, se aplicável")
+    evidence: Optional[Dict[str, Any]] = Field(None, description="Evidências da mudança (dados brutos, hashes, etc.)")
+    
+    # Validação de dados estruturados
+    @validator('old_value', 'new_value', pre=True)
+    def validate_json_serializable(cls, v):
+        if v is not None and not isinstance(v, (str, int, float, bool, type(None))):
+            try:
+                json.dumps(v)
+            except (TypeError, OverflowError):
+                raise ValueError("Valor deve ser serializável em JSON")
+        return v
 
 class HistoryLogCreate(HistoryLogBase):
+    """Schema para criação de logs de histórico."""
     pass
 
-
 class HistoryLog(HistoryLogBase):
+    """Schema completo de um log de histórico."""
     id: int
     device_id: int
     timestamp: datetime
+    agent_version: Optional[str] = Field(None, description="Versão do agente que reportou a mudança")
+    
+    class Config:
+        from_attributes = True
 
+class HistoryLogBatchCreate(BaseModel):
+    """Schema para criação em lote de logs de histórico."""
+    device_id: int
+    logs: List[HistoryLogCreate] = Field(..., min_items=1)
+    snapshot: Optional[Dict[str, Any]] = Field(
+        None, 
+        description="Snapshot opcional do estado atual do dispositivo"
+    )
+    agent_version: Optional[str] = Field(
+        None, 
+        description="Versão do agente que está enviando os logs"
+    )
+    signature: Optional[str] = Field(
+        None,
+        description="Assinatura HMAC-SHA256 dos dados usando a chave secreta do agente"
+    )
+    
+    @root_validator
+    def validate_signature(cls, values):
+        # A validação real da assinatura será feita no endpoint
+        # usando a chave secreta armazenada no servidor
+        return values
+    
     model_config = {"from_attributes": True}
+
+
+class BatchProcessResult(BaseModel):
+    """Modelo de resposta para operações em lote."""
+    success: bool = Field(..., description="Indica se a operação foi bem-sucedida")
+    logs_processed: int = Field(..., description="Número de logs processados")
+    snapshot_processed: bool = Field(..., description="Indica se um snapshot foi processado")
+    warnings: List[str] = Field(default_factory=list, description="Avisos não fatais")
+    batch_id: str = Field(..., description="ID único para rastreamento do lote")
+    message: str = Field(..., description="Mensagem descritiva do resultado")
 
 
 # ----------------------------
