@@ -66,11 +66,23 @@ class DeviceBase(BaseModel):
     mac_address: str | None = Field(
         default=None,
         pattern=r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
-        description="Endereço MAC no formato AA:BB:CC:DD:EE:FF"
-    )
+        description="Endereço MAC no formato AA:BB:CC:DD:EE:FF (WMI, lshw, etc)")
     device_type: str | None = Field(default="unknown")
     os: str | None = None
     status: str | None = Field(default="online")
+    
+    # Identificadores únicos estáveis
+    system_uuid: str | None = Field(default=None, description="UUID único do sistema")
+    motherboard_serial: str | None = Field(default=None, description="Serial da placa-mãe")
+    bios_version: str | None = Field(default=None, description="Versão da BIOS/UEFI")
+    bios_vendor: str | None = Field(default=None, description="Fabricante da BIOS")
+    bios_date: str | None = Field(default=None, description="Data da BIOS")
+    chassis_serial: str | None = Field(default=None, description="Serial do chassi")
+    
+    # Metadados de coleta
+    agent_version: str | None = Field(default=None, description="Versão do agente de coleta")
+    collection_method: str | None = Field(default=None, description="Método de coleta")
+    uptime_seconds: int | None = Field(default=None, description="Uptime em segundos")
 
 
 class DeviceCreate(DeviceBase):

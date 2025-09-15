@@ -114,13 +114,39 @@ def generate_comparison_report():
 
         print(f"[COMPARE] {len(changes)} mudanças gravadas no banco (history_logs).")
         
-        # Gerar alertas baseados nas mudanças
+        # Filtrar mudanças inteligentemente antes de gerar alertas
         try:
-            from alert_service import analyze_changes_and_create_alerts
-            analyze_changes_and_create_alerts(changes)
-            print(f"[COMPARE] Alertas gerados para {len(changes)} mudanças.")
+            from intelligent_change_filter import filter_changes_intelligently
+            
+            # Carregar dados dos dispositivos para contexto
+            devices_context = {}
+            for device_data in new_devices.values():
+                mac = device_data.get('mac_address')
+                if mac:
+                    devices_context[mac] = device_data
+            
+            # Aplicar filtro inteligente
+            filtered_changes = filter_changes_intelligently(changes, devices_context)
+            
+            print(f"[COMPARE] Filtro inteligente: {len(changes)} mudanças → {len(filtered_changes)} significativas")
+            
+            # Gerar alertas apenas para mudanças significativas
+            if filtered_changes:
+                from alert_service import analyze_changes_and_create_alerts
+                analyze_changes_and_create_alerts(filtered_changes)
+                print(f"[COMPARE] Alertas gerados para {len(filtered_changes)} mudanças significativas.")
+            else:
+                print("[COMPARE] Nenhuma mudança significativa detectada - sem alertas gerados.")
+                
         except Exception as e:
-            print(f"[COMPARE][AVISO] Falha ao gerar alertas: {e}")
+            print(f"[COMPARE][AVISO] Falha ao filtrar/gerar alertas: {e}")
+            # Fallback: usar sistema antigo
+            try:
+                from alert_service import analyze_changes_and_create_alerts
+                analyze_changes_and_create_alerts(changes)
+                print(f"[COMPARE] Fallback: Alertas gerados para {len(changes)} mudanças.")
+            except Exception as e2:
+                print(f"[COMPARE][ERRO] Falha no fallback de alertas: {e2}")
     finally:
         db.close()
 

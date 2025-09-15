@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Boolean, BigInteger
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from database import Base
@@ -8,15 +8,31 @@ class Device(Base):
     __tablename__ = "devices"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(255), nullable=False, index=True)
+    name = Column(String(255), index=True)
     ip_address = Column(String(45), unique=True, index=True, nullable=False)
-    mac_address = Column(String(17), unique=True, index=True, nullable=True)
-    device_type = Column(String(100), nullable=True, index=True)
-    os = Column(String(100), nullable=True)
-    status = Column(String(50), default="unknown", index=True)
-
+    mac_address = Column(String(17), index=True)
+    device_type = Column(String(50), default="unknown")
+    os = Column(String(255))
+    status = Column(String(20), default="online", index=True)
+    last_seen = Column(DateTime(timezone=True), server_default=func.now())
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    last_seen = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    # Identificadores únicos estáveis
+    system_uuid = Column(String(36), unique=True, index=True, nullable=True)
+    motherboard_serial = Column(String(255), index=True, nullable=True)
+    bios_version = Column(String(255), nullable=True)
+    bios_vendor = Column(String(255), nullable=True)
+    bios_date = Column(String(20), nullable=True)
+    chassis_serial = Column(String(255), nullable=True)
+
+    # Metadados de coleta
+    agent_version = Column(String(50), nullable=True)
+    collection_method = Column(String(50), nullable=True)  # WMI, lshw, etc
+    uptime_seconds = Column(BigInteger, nullable=True)
+
+    # Timestamps em UTC ISO8601
+    first_seen = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     # Relacionamentos
     hardware_details = relationship(
@@ -38,18 +54,25 @@ class HardwareDetail(Base):
     id = Column(Integer, primary_key=True, index=True)
     device_id = Column(Integer, ForeignKey("devices.id", ondelete="CASCADE"), unique=True, nullable=False)
 
-    cpu_info = Column(JSON, nullable=True)
-    ram_info = Column(JSON, nullable=True)
-    disk_info = Column(JSON, nullable=True)
-    gpu_info = Column(JSON, nullable=True)
-    motherboard_info = Column(JSON, nullable=True)
-    network_info = Column(JSON, nullable=True)
+    # Informações de hardware com identificadores únicos e metadados
+    cpu_info = Column(JSON, nullable=True)  # + model, vendor, cores, threads, cache_sizes
+    ram_info = Column(JSON, nullable=True)  # + serial, part_number, capacity_bytes, speed_mhz, slot_location
+    disk_info = Column(JSON, nullable=True)  # + serial, model, capacity_bytes, interface_type, firmware_version
+    gpu_info = Column(JSON, nullable=True)  # + device_id, vendor_id, uuid, vram_bytes, driver_version
+    motherboard_info = Column(JSON, nullable=True)  # + serial, model, vendor, bios_version, chipset
+    network_info = Column(JSON, nullable=True)  # + mac_address, vendor, speed_mbps, driver_version
     temperature_info = Column(JSON, nullable=True)
-    power_supply_info = Column(JSON, nullable=True)
+    power_supply_info = Column(JSON, nullable=True)  # + serial, model, wattage, efficiency_rating
     installed_software = Column(JSON, nullable=True)
-    usb_devices = Column(JSON, nullable=True)
+    usb_devices = Column(JSON, nullable=True)  # + vendor_id, product_id, serial, description
     os = Column(String(255), nullable=True)
     custom_notes = Column(Text, nullable=True)
+    
+    # Evidência de coleta (dados brutos)
+    wmi_raw_data = Column(JSON, nullable=True)  # Dados brutos WMI para auditoria
+    lshw_raw_data = Column(JSON, nullable=True)  # Dados brutos lshw para Linux
+    collection_hash = Column(String(64), nullable=True)  # Hash dos dados coletados
+    collection_timestamp = Column(DateTime(timezone=True), nullable=True)  # UTC ISO8601
 
     device = relationship("Device", back_populates="hardware_details")
 

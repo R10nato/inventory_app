@@ -283,6 +283,13 @@ function App() {
             onDeviceSelect={handleDeviceSelect}
           />
         )}
+        
+        {currentView === 'detail' && selectedDevice && (
+          <DeviceDetail 
+            deviceId={selectedDevice.id}
+            onBack={handleBackToOverview}
+          />
+        )}
       </main>
         
       {/* Notification Center */}
