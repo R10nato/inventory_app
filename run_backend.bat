@@ -1,4 +1,5 @@
 @echo off
+:start
 echo ========================================
 echo  Iniciando Backend - Inventory API
 echo ========================================
@@ -26,4 +27,17 @@ echo.
 
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-pause
+echo.
+echo ========================================
+echo  Backend parou de executar
+echo ========================================
+echo.
+echo [R] - Reiniciar Backend
+echo [Q] - Sair
+echo.
+set /p choice="Escolha uma opcao: "
+
+if /i "%choice%"=="R" goto start
+if /i "%choice%"=="Q" exit /b
+
+goto start

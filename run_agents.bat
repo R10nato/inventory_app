@@ -1,4 +1,5 @@
 @echo off
+:start
 echo ========================================
 echo  Iniciando Agents - Coleta de Inventario
 echo ========================================
@@ -30,4 +31,17 @@ echo.
 
 python agent.py
 
-pause
+echo.
+echo ========================================
+echo  Agent parou de executar
+echo ========================================
+echo.
+echo [R] - Reiniciar Agent
+echo [Q] - Sair
+echo.
+set /p choice="Escolha uma opcao: "
+
+if /i "%choice%"=="R" goto start
+if /i "%choice%"=="Q" exit /b
+
+goto start
