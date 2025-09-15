@@ -5,6 +5,7 @@ from datetime import datetime
 from sqlalchemy.orm import Session
 
 import database, crud, schemas
+from data_normalizer import DataNormalizer
 
 EXPORT_DIR = os.path.join(os.path.dirname(__file__), "exports")
 
@@ -45,16 +46,20 @@ def compare_snapshots(old_snapshot, new_snapshot):
     for mac, old_dev in old_devices.items():
         if mac in new_devices:
             new_dev = new_devices[mac]
+            
+            # Normalizar dados antes da comparação
+            normalized_old, normalized_new = DataNormalizer.normalize_for_comparison(old_dev, new_dev)
+            
             diff = {}
-            for key, old_value in old_dev.items():
+            for key, old_value in normalized_old.items():
                 if key == "hardware_details":
                     for hw_key, hw_old_val in old_value.items():
-                        hw_new_val = new_dev.get("hardware_details", {}).get(hw_key)
+                        hw_new_val = normalized_new.get("hardware_details", {}).get(hw_key)
                         if hw_old_val != hw_new_val:
                             diff[f"hardware.{hw_key}"] = {"old": hw_old_val, "new": hw_new_val}
                 else:
-                    if old_value != new_dev.get(key):
-                        diff[key] = {"old": old_value, "new": new_dev.get(key)}
+                    if old_value != normalized_new.get(key):
+                        diff[key] = {"old": old_value, "new": normalized_new.get(key)}
             if diff:
                 changes.append({
                     "type": "UPDATED_DEVICE",
