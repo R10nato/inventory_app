@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 import database, crud, schemas
 from data_normalizer import DataNormalizer
+from change_hash_utils import create_change_event_data, generate_change_hash
 
 EXPORT_DIR = os.path.join(os.path.dirname(__file__), "exports")
 

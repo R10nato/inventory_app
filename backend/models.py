@@ -88,6 +88,15 @@ class HistoryLog(Base):
     details_before = Column(Text, nullable=True)
     details_after = Column(Text, nullable=True)
     user = Column(String(100), nullable=True)
+    
+    # Enhanced fields for new structure
+    change_hash = Column(String(64), nullable=True, index=True)  # SHA256 for deduplication
+    change_type = Column(String(50), nullable=True, index=True)  # added, removed, modified, replaced
+    path = Column(String(500), nullable=True)  # hardware.disks[0].serial
+    old_value = Column(JSON, nullable=True)  # structured old value
+    new_value = Column(JSON, nullable=True)  # structured new value
+    evidence = Column(JSON, nullable=True)  # raw WMI/lshw snippets
+    agent_version = Column(String(50), nullable=True)
 
     device = relationship("Device", back_populates="history_logs")
 
@@ -101,6 +110,12 @@ class Snapshot(Base):
     device_count = Column(Integer, nullable=False)
     file_path = Column(String(500), nullable=False)
     file_size = Column(Integer, nullable=True)
+    
+    # Enhanced fields for new structure
+    device_id = Column(String(255), nullable=True, index=True)  # device identifier
+    agent_id = Column(String(255), nullable=True)
+    agent_version = Column(String(50), nullable=True)
+    data = Column(JSON, nullable=True)  # normalized hardware data
     
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 

@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
-from typing import Any
+from typing import Any, List, Optional
 from datetime import datetime
+from uuid import UUID
 
 
 # ----------------------------
@@ -120,7 +121,61 @@ class DeviceFull(Device):
 
 
 # ----------------------------
-# Snapshots
+# Enhanced Snapshots (New Structure)
+# ----------------------------
+class EnhancedSnapshot(BaseModel):
+    """New snapshot structure with normalized hardware data"""
+    device_id: str
+    agent_id: Optional[str] = None
+    agent_version: Optional[str] = None
+    timestamp: datetime
+    hardware: dict = Field(..., description="Normalized hardware structure")
+    snapshot_hash: str = Field(..., min_length=64, max_length=64, description="SHA256 hash of snapshot")
+
+    model_config = {"from_attributes": True}
+
+
+class EnhancedSnapshotCreate(BaseModel):
+    device_id: str
+    agent_id: Optional[str] = None
+    agent_version: Optional[str] = None
+    hardware: dict
+    snapshot_hash: str
+
+
+# ----------------------------
+# Change Event Items (New Structure)
+# ----------------------------
+class ChangeEventItem(BaseModel):
+    """Structured change event for precise tracking"""
+    change_id: Optional[str] = None  # UUID gerado pelo agente ou backend
+    device_id: str
+    timestamp: datetime
+    component: str = Field(..., description="Component type: ram, disk, nic, bios, etc.")
+    change_type: str = Field(..., description="Change type: added, removed, modified, replaced")
+    path: str = Field(..., description="Path in snapshot: hardware.disks[0].serial")
+    old_value: Optional[Any] = None
+    new_value: Optional[Any] = None
+    evidence: Optional[dict] = Field(default=None, description="Raw snippets / WMI output")
+    change_hash: str = Field(..., description="SHA256 hash for deduplication/idempotency")
+    agent_version: Optional[str] = None
+
+    model_config = {"from_attributes": True}
+
+
+class ChangeEventItemCreate(BaseModel):
+    device_id: str
+    component: str
+    change_type: str
+    path: str
+    old_value: Optional[Any] = None
+    new_value: Optional[Any] = None
+    evidence: Optional[dict] = None
+    agent_version: Optional[str] = None
+
+
+# ----------------------------
+# Legacy Snapshots (Backward Compatibility)
 # ----------------------------
 class SnapshotBase(BaseModel):
     hash_sha256: str = Field(..., min_length=64, max_length=64, description="Hash SHA256 do snapshot")
