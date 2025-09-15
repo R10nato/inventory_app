@@ -192,3 +192,47 @@ def get_all_history_logs(db: Session, skip: int = 0, limit: int = 100):
         .limit(limit)
         .all()
     )
+
+
+# ----------------------------
+# Snapshot Queries
+# ----------------------------
+def get_snapshot(db: Session, snapshot_id: int):
+    return db.query(models.Snapshot).filter(models.Snapshot.id == snapshot_id).first()
+
+
+def get_snapshot_by_hash(db: Session, hash_sha256: str):
+    return db.query(models.Snapshot).filter(models.Snapshot.hash_sha256 == hash_sha256).first()
+
+
+def get_snapshots(db: Session, skip: int = 0, limit: int = 100):
+    return (
+        db.query(models.Snapshot)
+        .order_by(models.Snapshot.timestamp.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+def create_snapshot(db: Session, snapshot: schemas.SnapshotCreate):
+    """Cria um novo snapshot no banco de dados."""
+    # Verifica se já existe um snapshot com o mesmo hash
+    existing = get_snapshot_by_hash(db, snapshot.hash_sha256)
+    if existing:
+        return existing
+    
+    db_snapshot = models.Snapshot(**snapshot.model_dump())
+    db.add(db_snapshot)
+    db.commit()
+    db.refresh(db_snapshot)
+    return db_snapshot
+
+
+def delete_snapshot(db: Session, snapshot_id: int):
+    """Remove um snapshot do banco de dados."""
+    snapshot = get_snapshot(db, snapshot_id)
+    if snapshot:
+        db.delete(snapshot)
+        db.commit()
+    return snapshot

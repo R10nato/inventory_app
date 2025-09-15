@@ -67,3 +67,16 @@ class HistoryLog(Base):
     user = Column(String(100), nullable=True)
 
     device = relationship("Device", back_populates="history_logs")
+
+
+class Snapshot(Base):
+    __tablename__ = "snapshots"
+
+    id = Column(Integer, primary_key=True, index=True)
+    timestamp = Column(DateTime(timezone=True), server_default=func.now(), index=True)
+    hash_sha256 = Column(String(64), unique=True, index=True, nullable=False)
+    device_count = Column(Integer, nullable=False)
+    file_path = Column(String(500), nullable=False)
+    file_size = Column(Integer, nullable=True)
+    
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

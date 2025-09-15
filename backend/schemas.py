@@ -105,3 +105,25 @@ class Device(DeviceBase):
 # ----------------------------
 class DeviceFull(Device):
     history_logs: list[HistoryLog] = Field(default_factory=list)
+
+
+# ----------------------------
+# Snapshots
+# ----------------------------
+class SnapshotBase(BaseModel):
+    hash_sha256: str = Field(..., min_length=64, max_length=64, description="Hash SHA256 do snapshot")
+    device_count: int = Field(..., ge=0, description="Número de dispositivos no snapshot")
+    file_path: str = Field(..., description="Caminho do arquivo do snapshot")
+    file_size: int | None = Field(default=None, ge=0, description="Tamanho do arquivo em bytes")
+
+
+class SnapshotCreate(SnapshotBase):
+    pass
+
+
+class Snapshot(SnapshotBase):
+    id: int
+    timestamp: datetime
+    created_at: datetime
+
+    model_config = {"from_attributes": True}

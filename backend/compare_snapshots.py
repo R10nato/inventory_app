@@ -10,7 +10,12 @@ EXPORT_DIR = os.path.join(os.path.dirname(__file__), "exports")
 
 def load_snapshot(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
+        snapshot = json.load(f)
+        # Se o snapshot tem a nova estrutura com metadados, retorna apenas os devices
+        if isinstance(snapshot, dict) and "devices" in snapshot:
+            return snapshot["devices"], snapshot.get("hash"), snapshot.get("timestamp")
+        # Compatibilidade com snapshots antigos
+        return snapshot, None, None
 
 def compare_snapshots(old_snapshot, new_snapshot):
     changes = []
@@ -62,6 +67,7 @@ def compare_snapshots(old_snapshot, new_snapshot):
 def generate_comparison_report():
     """
     Compara os 2 snapshots mais recentes e grava as mudanças no banco (history_logs).
+    Usa hash SHA256 para detecção rápida de mudanças.
     """
     snapshots = sorted(
         [f for f in os.listdir(EXPORT_DIR) if f.endswith(".json")],
@@ -75,10 +81,18 @@ def generate_comparison_report():
     latest = os.path.join(EXPORT_DIR, snapshots[0])
     previous = os.path.join(EXPORT_DIR, snapshots[1])
 
-    old_snapshot = load_snapshot(previous)
-    new_snapshot = load_snapshot(latest)
+    # Carrega snapshots com hash e metadados
+    old_devices, old_hash, old_timestamp = load_snapshot(previous)
+    new_devices, new_hash, new_timestamp = load_snapshot(latest)
 
-    changes = compare_snapshots(old_snapshot, new_snapshot)
+    # Verificação rápida usando hash SHA256
+    if old_hash and new_hash and old_hash == new_hash:
+        print(f"[COMPARE] Hash SHA256 idêntico ({new_hash[:8]}...) - Nenhuma alteração detectada.")
+        return None
+
+    print(f"[COMPARE] Hash diferente - Old: {old_hash[:8] if old_hash else 'N/A'}... New: {new_hash[:8] if new_hash else 'N/A'}...")
+
+    changes = compare_snapshots(old_devices, new_devices)
 
     if not changes:
         print("[COMPARE] Nenhuma alteração encontrada.")

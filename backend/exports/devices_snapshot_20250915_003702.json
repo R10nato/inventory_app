@@ -1,0 +1,1008 @@
+{
+    "timestamp": "2025-09-15T00:37:02.638716",
+    "hash": "0c87b5c11c72d8068240274c64ec8e3239d21f6a0fd1aa09b5bee9ad4f5a5c16",
+    "device_count": 1,
+    "devices": [
+        {
+            "id": 1,
+            "name": "DESKTOP-VUDLI0B",
+            "ip_address": "192.168.15.12",
+            "mac_address": "98:83:89:d0:b2:79",
+            "device_type": "computer",
+            "os": "Microsoft Windows 11 Pro (64 bits)",
+            "status": "online",
+            "last_seen": "2025-09-15T04:17:04.805931",
+            "created_at": "2025-07-28T04:52:31",
+            "hardware_details": {
+                "cpu_info": {
+                    "brand": "GenuineIntel",
+                    "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+                    "cores": 2,
+                    "threads": 2,
+                    "frequency_mhz": 1800
+                },
+                "disk_info": [
+                    {
+                        "name": "NGFF SSD 128GB",
+                        "type": "Fixed hard disk media",
+                        "model": "NGFF SSD 128GB",
+                        "serial_number": "202212310009",
+                        "total_gb": 119.24,
+                        "partitions": []
+                    },
+                    {
+                        "name": "HFS480G3H2X069N",
+                        "type": "Fixed hard disk media",
+                        "model": "HFS480G3H2X069N",
+                        "serial_number": "EJC8N4983I1008G2R",
+                        "total_gb": 447.13,
+                        "partitions": [
+                            {
+                                "drive_letter": "C:",
+                                "total_gb": 446.43,
+                                "free_gb": 243.73,
+                                "fstype": "NTFS"
+                            }
+                        ]
+                    }
+                ],
+                "motherboard_info": {
+                    "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+                    "model": "NP350XAA-KDBBR",
+                    "serial_number": "123490EN400015"
+                },
+                "temperature_info": {
+                    "cpu_temp": 48.1,
+                    "custom_notes": [],
+                    "lhm_error": null,
+                    "last_seen": null
+                },
+                "installed_software": [
+                    {
+                        "name": "Docker Desktop",
+                        "version": "4.41.2",
+                        "publisher": "Docker Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Desinstalar Impressora EPSON L3150 Series",
+                        "version": "Unknown",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "EPSON L395 Series Printer Uninstall",
+                        "version": "Unknown",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Git",
+                        "version": "2.50.0",
+                        "publisher": "The Git Development Community",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "GrupoKNC",
+                        "version": "1.3.8",
+                        "publisher": "GrupoKNC",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "KONICA MINOLTA Universal V4 PCL",
+                        "version": "Unknown",
+                        "publisher": "KONICA MINOLTA",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Kyocera Product Library",
+                        "version": "6.0.4912",
+                        "publisher": "KYOCERA Document Solutions Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Microsoft OneDrive",
+                        "version": "25.159.0817.0003",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "PostgreSQL 16",
+                        "version": "16.9-2",
+                        "publisher": "PostgreSQL Global Development Group",
+                        "install_date": "2025-07-02"
+                    },
+                    {
+                        "name": "Microsoft Office LTSC Professional Plus 2021 - en-us",
+                        "version": "16.0.14334.20244",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Microsoft Office LTSC Professional Plus 2021 - pt-br",
+                        "version": "16.0.14334.20244",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Speccy",
+                        "version": "1.32",
+                        "publisher": "Piriform",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Status Monitor 5",
+                        "version": "5.0.9814",
+                        "publisher": "KYOCERA Document Solutions Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Tesseract-OCR - open source OCR engine",
+                        "version": "5.5.0.20241111",
+                        "publisher": "Tesseract-OCR community",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "WinRAR 6.20 (64-bit)",
+                        "version": "6.20.0",
+                        "publisher": "win.rar GmbH",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Python 3.13.5 Documentation (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "Universal CRT Tools x64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35208",
+                        "version": "14.44.35208",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+                        "version": "10.0.40219",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-04-08"
+                    },
+                    {
+                        "name": "Python 3.13.5 pip Bootstrap (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "VMware Workstation",
+                        "version": "17.6.2",
+                        "publisher": "VMware, Inc.",
+                        "install_date": "2025-03-22"
+                    },
+                    {
+                        "name": "Python 3.13.5 Executables (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows App Certification Kit Native Components",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Estudo de aprimoramento de produto para HP LaserJet Pro 4001 4002 4003 4004",
+                        "version": "54.4.5341.23298",
+                        "publisher": "HP Inc.",
+                        "install_date": "2025-04-01"
+                    },
+                    {
+                        "name": "Windows SDK DirectX x64 Remote",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual Studio Installer",
+                        "version": "3.14.2075.50697",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35208",
+                        "version": "14.44.35208",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Office 16 Click-to-Run Licensing Component",
+                        "version": "16.0.14334.20244",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-08-18"
+                    },
+                    {
+                        "name": "Office 16 Click-to-Run Extensibility Component",
+                        "version": "16.0.14334.20244",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-08-18"
+                    },
+                    {
+                        "name": "Office 16 Click-to-Run Localization Component",
+                        "version": "16.0.14334.20090",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-18"
+                    },
+                    {
+                        "name": "Python 3.13.5 Core Interpreter (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Node.js",
+                        "version": "22.17.0",
+                        "publisher": "Node.js Foundation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Python 3.13.5 Test Suite (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "VS Script Debugging Common",
+                        "version": "16.0.102.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005",
+                        "version": "12.0.21005",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-03-02"
+                    },
+                    {
+                        "name": "Python 3.13.5 Tcl/Tk Support (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "Microsoft Update Health Tools",
+                        "version": "4.75.0.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-02-28"
+                    },
+                    {
+                        "name": "Epson Customer Research Participation",
+                        "version": "1.83.0000",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2019 X64 Debug Runtime - 14.29.30157",
+                        "version": "14.29.30157",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Python 3.13.5 Development Libraries (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "Python 3.13.5 Standard Library (64-bit)",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "Application Verifier x64 External Package",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Update for x64-based Windows Systems (KB5001716)",
+                        "version": "8.94.0.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-02-28"
+                    },
+                    {
+                        "name": "EpsonNet Print",
+                        "version": "3.3.1.0",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "HP LaserJet Pro 4001 4002 4003 4004 Software básico do dispositivo",
+                        "version": "54.4.5341.23298",
+                        "publisher": "HP Inc.",
+                        "install_date": "2025-04-01"
+                    },
+                    {
+                        "name": "Windows Subsystem for Linux Update",
+                        "version": "5.10.102.1",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-07-07"
+                    },
+                    {
+                        "name": "Ferramentas de Build do Visual Studio 2019",
+                        "version": "16.11.48",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Adobe Genuine Service",
+                        "version": "9.0.0.29",
+                        "publisher": "Adobe Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Epson Scan 2",
+                        "version": "Unknown",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Google Chrome",
+                        "version": "140.0.7339.128",
+                        "publisher": "Google LLC",
+                        "install_date": "2025-09-10"
+                    },
+                    {
+                        "name": "HP Laser MFP 131 133 135-138",
+                        "version": "1.20 (02/05/2023)",
+                        "publisher": "HP Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "HP MFP Scan",
+                        "version": "1.06.68 ()",
+                        "publisher": "HP Inc.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "HP Scan Process Machine",
+                        "version": "1.03.05.30",
+                        "publisher": "HP Development Company, L.P.",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Kaspersky",
+                        "version": "21.22.7.466",
+                        "publisher": "Kaspersky",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Microsoft Edge",
+                        "version": "140.0.3485.66",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-09-13"
+                    },
+                    {
+                        "name": "Microsoft Edge WebView2 Runtime",
+                        "version": "140.0.3485.66",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-09-13"
+                    },
+                    {
+                        "name": "Nmap 7.97",
+                        "version": "7.97",
+                        "publisher": "Nmap Project",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Npcap",
+                        "version": "1.82",
+                        "publisher": "Nmap Project",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Universal CRT Redistributable",
+                        "version": "10.0.26624",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vcpp_crt.redist.clickonce",
+                        "version": "14.29.30157",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Tools x86",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense Mobile - en-us",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_filehandler_amd64",
+                        "version": "16.11.31503",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Easy Photo Scan",
+                        "version": "1.00.0019",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Windows IoT Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Desktop Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense UAP - en-us",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Headers arm64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Tools arm64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Tools x64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Signing Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense Desktop - Other Languages",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Universal CRT Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_communitymsires",
+                        "version": "16.10.31213",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows App Certification Kit SupportedApiList x86",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_communitymsi",
+                        "version": "16.11.34930",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Epson Printer Connection Checker",
+                        "version": "3.4.1.0",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-04-08"
+                    },
+                    {
+                        "name": "SDK ARM Additions",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "SP 330_3710_Series Software Uninstall",
+                        "version": "1.08.0000",
+                        "publisher": "Ricoh Company Limited",
+                        "install_date": "2025-03-05"
+                    },
+                    {
+                        "name": "Windows SDK Redistributables",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Team Extension SDK Contracts",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35208",
+                        "version": "14.44.35208",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "MSI Development Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinAppDeploy",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35208",
+                        "version": "14.44.35208",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Software Development Kit - Windows 10.0.19041.5609",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Windows SDK Modern Versioned Developer Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Python Launcher",
+                        "version": "3.13.5150.0",
+                        "publisher": "Python Software Foundation",
+                        "install_date": "2025-06-24"
+                    },
+                    {
+                        "name": "Microsoft Visual Studio Setup Configuration",
+                        "version": "3.7.2182.35401",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_filehandler_x86",
+                        "version": "16.11.31503",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Universal CRT Headers Libraries and Sources",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Epson Easy Photo Print 2",
+                        "version": "2.8.3.0",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2005 Redistributable",
+                        "version": "8.0.61001",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Modern Non-Versioned Developer Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense Desktop - en-us",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps Metadata",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Libs x86",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Kits Configuration Installer",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_minshellinteropmsi",
+                        "version": "16.10.31306",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps Libs",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Headers arm",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK DirectX x86 Remote",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps Contracts",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35208",
+                        "version": "14.44.35208.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17",
+                        "version": "9.0.30729",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps Headers",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+                        "version": "9.0.30729.6161",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-02-28"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Headers x86",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Headers x64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Team Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_FileTracker_Singleton",
+                        "version": "16.11.34827",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Epson Event Manager",
+                        "version": "3.10.0085",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "Adobe Acrobat DC",
+                        "version": "20.006.20042",
+                        "publisher": "Adobe Systems Incorporated",
+                        "install_date": "2025-03-02"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Apps DirectX x86 Remote",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense UAP - Other Languages",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_minshellmsi",
+                        "version": "16.11.34902",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows IoT Extension SDK Contracts",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2019 X86 Debug Runtime - 14.29.30157",
+                        "version": "14.29.30157",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Libs arm64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Libs arm",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft .NET Framework 4 Multi-Targeting Pack",
+                        "version": "4.0.30319",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Update for  (KB2504637)",
+                        "version": "1",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "WinRT Intellisense IoT - en-us",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Universal General MIDI DLS Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Assistente de Atualização do Windows 10",
+                        "version": "1.4.19041.2183",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "Windows Desktop Extension SDK Contracts",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Mobile Extension SDK",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Facade Windows WinMD Versioned",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows Mobile Extension SDK Contracts",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK EULA",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporations",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK Desktop Libs x64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual Studio Setup WMI Provider",
+                        "version": "3.7.2182.35401",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "vs_minshellmsires",
+                        "version": "16.10.31303",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK AddOn",
+                        "version": "10.1.0.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35208",
+                        "version": "14.44.35208.0",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "Unknown"
+                    },
+                    {
+                        "name": "WinRT Intellisense IoT - Other Languages",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense PPI - en-us",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK for Windows Store Managed Apps Libs",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "WinRT Intellisense PPI - Other Languages",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Epson Software Updater",
+                        "version": "4.6.9",
+                        "publisher": "Seiko Epson Corporation",
+                        "install_date": "2025-08-07"
+                    },
+                    {
+                        "name": "SDK ARM Redistributables",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+                        "version": "10.0.40219",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-04-08"
+                    },
+                    {
+                        "name": "Windows App Certification Kit x64",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Windows SDK ARM Desktop Tools",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    },
+                    {
+                        "name": "Universal CRT Tools x86",
+                        "version": "10.1.19041.5609",
+                        "publisher": "Microsoft Corporation",
+                        "install_date": "2025-06-26"
+                    }
+                ],
+                "os": null,
+                "id": 1,
+                "ram_info": {
+                    "total_gb": 15.91,
+                    "used_gb": 7.53,
+                    "modules": [
+                        {
+                            "capacity_gb": 16.0,
+                            "type": "DDR4",
+                            "speed_mhz": 2133,
+                            "manufacturer": "04CB",
+                            "part_number": "AD4S3200316G22-BHYD "
+                        }
+                    ],
+                    "slots_total": 4,
+                    "slots_used": 1
+                },
+                "gpu_info": {
+                    "brand": "Intel Corporation",
+                    "model": "Intel(R) HD Graphics 610",
+                    "vram_mb": 1024.0,
+                    "driver_version": "27.20.100.7988"
+                },
+                "network_info": [
+                    {
+                        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+                        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+                        "mac": "98:83:89:D0:B2:79",
+                        "ip_addresses": [
+                            "192.168.15.12",
+                            "fe80::48ca:46ab:9528:d7d8",
+                            "2804:1b2:f146:36a0:35f5:8990:98ab:3c44",
+                            "2804:1b2:f146:36a0:ce5f:3422:5c9b:e896"
+                        ]
+                    }
+                ],
+                "power_supply_info": null,
+                "usb_devices": [
+                    {
+                        "name": "USB Composite Device",
+                        "device_id": "USB\\VID_2232&PID_1080\\200901010001",
+                        "status": "OK"
+                    },
+                    {
+                        "name": "USB Root Hub (USB 3.0)",
+                        "device_id": "USB\\ROOT_HUB30\\4&1AEBED92&0&0",
+                        "status": "OK"
+                    },
+                    {
+                        "name": "Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)",
+                        "device_id": "PCI\\VEN_8086&DEV_9D2F&SUBSYS_C804144D&REV_21\\3&11583659&0&A0",
+                        "status": "OK"
+                    }
+                ],
+                "custom_notes": null
+            }
+        }
+    ]
+}
