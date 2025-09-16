@@ -1,0 +1,84 @@
+============================================================
+TESTE COMPLETO DA API - INVENTORY SYSTEM
+============================================================
+
+============================================================
+Testando: Endpoint raiz
+Método: GET - URL: http://localhost:8000/
+Status: 200
+✅ SUCESSO
+Campos retornados: ['message']
+
+============================================================
+Testando: Listar todos os dispositivos
+Método: GET - URL: http://localhost:8000/devices/
+Status: 200
+✅ SUCESSO
+Retornou 2 itens
+
+============================================================
+Testando: Buscar dispositivo ID 1
+Método: GET - URL: http://localhost:8000/devices/1
+Status: 200
+✅ SUCESSO
+Campos retornados: ['name', 'ip_address', 'mac_address', 'device_type', 'os', 'status', 'system_uuid', 'motherboard_serial', 'bios_version', 'bios_vendor', 'bios_date', 'chassis_serial', 'agent_version', 'collection_method', 'uptime_seconds', 'id', 'last_seen', 'created_at', 'hardware_details']
+
+============================================================
+Testando: Listar logs de histórico
+Método: GET - URL: http://localhost:8000/history_logs/
+Status: 401
+❌ ERRO: 401
+Detalhes: {"detail":"Não autenticado ou credenciais inválidas"}
+
+============================================================
+Testando: Logs do dispositivo 1
+Método: GET - URL: http://localhost:8000/history_logs/?device_id=1
+Status: 401
+❌ ERRO: 401
+Detalhes: {"detail":"Não autenticado ou credenciais inválidas"}
+
+============================================================
+Testando: Listar snapshots
+Método: GET - URL: http://localhost:8000/snapshots/
+Status: 500
+❌ ERRO: 500
+Detalhes: Internal Server Error
+
+============================================================
+Testando: Último snapshot
+Método: GET - URL: http://localhost:8000/snapshots/latest
+Status: 422
+❌ ERRO: 422
+Detalhes: {"detail":[{"type":"int_parsing","loc":["path","snapshot_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"latest"}]}
+
+============================================================
+Testando: Listar alertas
+Método: GET - URL: http://localhost:8000/alerts/
+Status: 200
+✅ SUCESSO
+Retornou 5 itens
+
+============================================================
+Testando: Alertas não lidos
+Método: GET - URL: http://localhost:8000/alerts/unread
+Status: 422
+❌ ERRO: 422
+Detalhes: {"detail":[{"type":"int_parsing","loc":["path","alert_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"unread"}]}
+
+============================================================
+Testando: Estatísticas de alertas
+Método: GET - URL: http://localhost:8000/alerts/stats
+Status: 200
+✅ SUCESSO
+Campos retornados: ['total', 'unread', 'unresolved', 'by_severity', 'by_type']
+
+============================================================
+Testando: Criar novo alerta
+Método: POST - URL: http://localhost:8000/alerts/
+Status: 201
+✅ SUCESSO
+Campos retornados: ['title', 'message', 'alert_type', 'severity', 'source', 'device_id', 'snapshot_id', 'alert_metadata', 'id', 'is_read', 'is_resolved', 'resolved_by', 'resolved_at', 'created_at', 'updated_at']
+
+============================================================
+TESTE CONCLUÍDO
+============================================================

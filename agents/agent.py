@@ -33,7 +33,10 @@ if platform.system() == "Windows":
         logger.warning("WMI or winreg not found. Install them for detailed Windows info.")
 import psutil
 import nmap
-import netifaces
+try:
+    import netifaces
+except ImportError:
+    import netifaces_plus as netifaces
 import shutil
 import subprocess
 from pathlib import Path

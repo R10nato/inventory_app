@@ -1,0 +1,21 @@
+# Core dependencies
+requests==2.32.3
+python-dotenv==1.1.1
+
+# System monitoring
+psutil==6.1.1
+py-cpuinfo==9.0.0
+
+# Network discovery
+python-nmap==0.7.1
+netifaces==0.11.0
+
+# Windows specific (optional)
+wmi==1.5.1; platform_system == "Windows"
+pywin32==308; platform_system == "Windows"
+
+# Database
+# sqlite3 is included in Python standard library
+
+# Additional utilities
+pyyaml==6.0.2

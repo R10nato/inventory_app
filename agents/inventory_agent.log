@@ -38,7 +38,7 @@
 2025-07-28 00:52:28,733 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-07-28 00:52:29,250 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-07-28 00:52:29,250 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-28 00:52:29,252 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.11
+2025-07-28 00:52:29,252 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.11
 2025-07-28 00:52:29,253 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-07-28 00:52:29,253 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-07-28 00:52:29,253 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -138,7 +138,7 @@
 2025-07-28 09:01:33,787 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-07-28 09:01:34,551 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-07-28 09:01:34,552 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-28 09:01:34,554 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:01:34,554 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.150
 2025-07-28 09:01:34,555 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-07-28 09:01:34,555 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-07-28 09:01:34,555 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -239,7 +239,7 @@
 2025-07-28 09:14:47,843 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-07-28 09:14:48,309 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-07-28 09:14:48,309 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-28 09:14:48,313 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:14:48,313 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.150
 2025-07-28 09:14:48,314 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-07-28 09:14:48,314 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-07-28 09:14:48,314 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -340,7 +340,7 @@
 2025-07-28 09:23:13,702 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-07-28 09:23:14,218 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-07-28 09:23:14,220 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-28 09:23:14,226 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:23:14,226 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.150
 2025-07-28 09:23:14,227 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-07-28 09:23:14,228 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-07-28 09:23:14,230 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -441,7 +441,7 @@
 2025-07-28 09:43:26,975 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-07-28 09:43:32,047 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-07-28 09:43:32,053 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-07-28 09:43:32,059 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.150
+2025-07-28 09:43:32,059 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.150
 2025-07-28 09:43:32,060 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-07-28 09:43:32,061 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-07-28 09:43:32,062 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -542,7 +542,7 @@
 2025-08-11 22:28:09,344 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-11 22:28:10,671 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-11 22:28:10,672 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-11 22:28:10,672 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.9
+2025-08-11 22:28:10,672 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.9
 2025-08-11 22:28:10,675 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-11 22:28:10,676 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-08-11 22:28:10,676 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -645,7 +645,7 @@
 2025-08-11 23:32:33,310 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-11 23:32:33,899 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-11 23:32:33,905 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-11 23:32:33,908 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.9
+2025-08-11 23:32:33,908 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.9
 2025-08-11 23:32:33,909 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-11 23:32:33,910 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-08-11 23:32:33,911 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -745,7 +745,7 @@
 2025-08-22 17:32:10,616 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-22 17:32:19,405 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-22 17:32:19,408 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-22 17:32:19,409 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.11
+2025-08-22 17:32:19,409 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.11
 2025-08-22 17:32:19,409 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-22 17:32:19,409 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-08-22 17:32:19,409 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -848,7 +848,7 @@
 2025-08-22 17:38:31,129 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-22 17:38:31,767 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-22 17:38:31,767 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-22 17:38:31,768 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.11
+2025-08-22 17:38:31,768 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.11
 2025-08-22 17:38:31,768 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-22 17:38:31,768 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-08-22 17:38:31,768 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -951,7 +951,7 @@
 2025-08-27 22:30:51,824 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-27 22:30:52,531 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-27 22:30:52,532 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-27 22:30:52,532 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-27 22:30:52,532 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-27 22:30:52,533 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-27 22:30:52,533 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-27 22:30:52,533 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1051,7 +1051,7 @@
 2025-08-27 22:38:23,042 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-27 22:38:23,568 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-27 22:38:23,570 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-27 22:38:23,571 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-27 22:38:23,571 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-27 22:38:23,571 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-27 22:38:23,571 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-27 22:38:23,571 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1151,7 +1151,7 @@
 2025-08-28 23:09:59,478 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-28 23:10:00,375 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-28 23:10:00,376 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-28 23:10:00,377 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-28 23:10:00,377 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-28 23:10:00,377 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-28 23:10:00,377 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-28 23:10:00,378 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1251,7 +1251,7 @@
 2025-08-28 23:20:23,362 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-28 23:20:23,910 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-28 23:20:23,910 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-28 23:20:23,915 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-28 23:20:23,915 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-28 23:20:23,916 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-28 23:20:23,917 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-28 23:20:23,919 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1351,7 +1351,7 @@
 2025-08-29 19:02:12,193 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-29 19:02:12,754 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-29 19:02:12,755 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-29 19:02:12,756 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-29 19:02:12,756 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-29 19:02:12,756 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-29 19:02:12,756 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-29 19:02:12,756 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1451,7 +1451,7 @@
 2025-08-30 23:03:52,433 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-30 23:03:53,011 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-30 23:03:53,012 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-30 23:03:53,013 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-30 23:03:53,013 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-30 23:03:53,013 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-30 23:03:53,013 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-30 23:03:53,014 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1552,7 +1552,7 @@
 2025-08-31 00:40:40,955 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-08-31 00:40:42,091 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-08-31 00:40:42,093 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-08-31 00:40:42,099 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-08-31 00:40:42,099 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-08-31 00:40:42,100 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-08-31 00:40:42,101 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-08-31 00:40:42,102 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1653,7 +1653,7 @@
 2025-09-01 21:39:25,891 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-01 21:39:26,484 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-01 21:39:26,485 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-01 21:39:26,486 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-01 21:39:26,486 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-01 21:39:26,487 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-01 21:39:26,487 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-01 21:39:26,487 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1753,7 +1753,7 @@
 2025-09-02 20:28:13,637 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-02 20:28:14,164 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-02 20:28:14,165 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-02 20:28:14,165 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-02 20:28:14,165 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-02 20:28:14,166 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-02 20:28:14,166 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-02 20:28:14,166 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1853,7 +1853,7 @@
 2025-09-03 16:04:07,073 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True), ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', False)]}
 2025-09-03 16:04:07,827 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-03 16:04:07,828 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-03 16:04:07,829 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.98
+2025-09-03 16:04:07,829 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.98
 2025-09-03 16:04:07,829 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-03 16:04:07,830 - inventory_agent - INFO - Gateway: 192.168.0.2
 2025-09-03 16:04:07,830 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -1951,7 +1951,7 @@
 2025-09-04 10:32:35,823 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-04 10:32:40,336 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-04 10:32:40,394 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-04 10:32:40,395 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.188
+2025-09-04 10:32:40,395 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.188
 2025-09-04 10:32:40,395 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-04 10:32:40,396 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-04 10:32:40,396 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2054,7 +2054,7 @@
 2025-09-04 10:58:03,921 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-04 10:58:04,512 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-04 10:58:04,514 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-04 10:58:04,514 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.188
+2025-09-04 10:58:04,514 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.188
 2025-09-04 10:58:04,514 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-04 10:58:04,515 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-04 10:58:04,516 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2157,7 +2157,7 @@
 2025-09-04 11:00:46,039 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-04 11:00:46,494 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-04 11:00:46,494 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-04 11:00:46,495 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.188
+2025-09-04 11:00:46,495 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.188
 2025-09-04 11:00:46,495 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-04 11:00:46,495 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-04 11:00:46,496 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2258,15 +2258,15 @@
 2025-09-04 11:14:03,027 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
 2025-09-04 11:14:03,027 - inventory_agent - INFO - Collecting local hardware details...
 2025-09-04 11:14:36,240 - inventory_agent - DEBUG - Gateways detectados: {'default': {}}
-2025-09-04 11:14:36,393 - inventory_agent - WARNING - Não foi possível determinar interface ativa com IP válido.
-2025-09-04 11:14:36,394 - inventory_agent - WARNING - Falha ao obter rede com gateway padrão. Usando fallback...
+2025-09-04 11:14:36,393 - inventory_agent - WARNING - Nï¿½o foi possï¿½vel determinar interface ativa com IP vï¿½lido.
+2025-09-04 11:14:36,394 - inventory_agent - WARNING - Falha ao obter rede com gateway padrï¿½o. Usando fallback...
 2025-09-04 11:16:19,053 - inventory_agent - INFO - Starting Inventory Agent...
 2025-09-04 11:16:19,055 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
 2025-09-04 11:16:19,056 - inventory_agent - INFO - Collecting local hardware details...
 2025-09-04 11:16:52,748 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-04 11:16:53,263 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-04 11:16:53,263 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-04 11:16:53,263 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.188
+2025-09-04 11:16:53,263 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.188
 2025-09-04 11:16:53,264 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-04 11:16:53,264 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-04 11:16:53,265 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2369,7 +2369,7 @@
 2025-09-04 15:30:11,782 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-04 15:30:12,376 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-04 15:30:12,378 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-04 15:30:12,378 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.85
+2025-09-04 15:30:12,378 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.85
 2025-09-04 15:30:12,379 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-04 15:30:12,379 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-04 15:30:12,379 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2467,7 +2467,7 @@
 2025-09-05 20:38:50,779 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-05 20:38:51,545 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-05 20:38:51,546 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-05 20:38:51,547 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-05 20:38:51,547 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-05 20:38:51,547 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-05 20:38:51,547 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-05 20:38:51,547 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2568,7 +2568,7 @@
 2025-09-05 21:51:43,189 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-05 21:51:43,716 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-05 21:51:43,716 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-05 21:51:43,722 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-05 21:51:43,722 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-05 21:51:43,724 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-05 21:51:43,726 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-05 21:51:43,726 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2675,7 +2675,7 @@
 2025-09-05 22:25:25,073 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-05 22:25:26,837 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-05 22:25:26,839 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-05 22:25:26,840 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-05 22:25:26,840 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-05 22:25:26,840 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-05 22:25:26,841 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-05 22:25:26,841 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2793,7 +2793,7 @@
 2025-09-05 23:10:15,428 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}'), 23: ('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)], 23: [('fe80::26e4:ceff:fe8a:ade0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-05 23:10:16,003 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-05 23:10:16,007 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-05 23:10:16,007 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.24
+2025-09-05 23:10:16,007 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.24
 2025-09-05 23:10:16,012 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-05 23:10:16,016 - inventory_agent - INFO - Gateway: 192.168.1.1
 2025-09-05 23:10:16,018 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -2912,7 +2912,7 @@
 2025-09-11 09:18:42,218 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 09:18:42,973 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 09:18:42,974 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 09:18:42,975 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.206
+2025-09-11 09:18:42,975 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.206
 2025-09-11 09:18:42,975 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 09:18:42,975 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-11 09:18:42,976 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3029,7 +3029,7 @@
 2025-09-11 14:07:22,805 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 14:07:23,427 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 14:07:23,428 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 14:07:23,429 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 14:07:23,429 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 14:07:23,429 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 14:07:23,430 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 14:07:23,430 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3144,7 +3144,7 @@
 2025-09-11 14:21:11,814 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 14:21:12,406 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 14:21:12,407 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 14:21:12,410 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 14:21:12,410 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 14:21:12,411 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 14:21:12,412 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 14:21:12,413 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3261,7 +3261,7 @@
 2025-09-11 14:38:49,092 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 14:38:49,589 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 14:38:49,590 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 14:38:49,591 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 14:38:49,591 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 14:38:49,595 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 14:38:49,595 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 14:38:49,596 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3377,7 +3377,7 @@
 2025-09-11 15:00:27,643 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 15:00:28,127 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 15:00:28,128 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 15:00:28,130 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 15:00:28,130 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 15:00:28,133 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 15:00:28,134 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 15:00:28,135 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3481,7 +3481,7 @@
 2025-09-11 15:27:57,918 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 15:27:58,439 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 15:27:58,439 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 15:27:58,442 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 15:27:58,442 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 15:27:58,442 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 15:27:58,443 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 15:27:58,443 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3585,7 +3585,7 @@
 2025-09-11 15:36:38,785 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 15:36:39,341 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 15:36:39,342 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 15:36:39,342 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 15:36:39,342 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 15:36:39,343 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 15:36:39,343 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 15:36:39,343 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3697,7 +3697,7 @@
 2025-09-11 16:21:38,887 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 16:21:39,372 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 16:21:39,372 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 16:21:39,374 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 16:21:39,374 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 16:21:39,377 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 16:21:39,379 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 16:21:39,379 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3809,7 +3809,7 @@
 2025-09-11 16:30:56,304 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 16:30:58,192 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 16:30:58,192 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 16:30:58,193 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 16:30:58,193 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 16:30:58,193 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 16:30:58,193 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 16:30:58,193 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -3923,7 +3923,7 @@
 2025-09-11 16:33:59,568 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.200', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-11 16:34:08,946 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-11 16:34:08,946 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-11 16:34:08,946 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.98
+2025-09-11 16:34:08,946 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.98
 2025-09-11 16:34:08,947 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-11 16:34:08,947 - inventory_agent - INFO - Gateway: 192.168.0.200
 2025-09-11 16:34:08,947 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -4954,7 +4954,7 @@
 2025-09-12 11:29:46,915 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 11:29:51,732 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 11:29:51,732 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 11:29:51,732 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 11:29:51,732 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 11:29:51,732 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 11:29:51,732 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 11:29:51,733 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -5986,7 +5986,7 @@
 2025-09-12 11:30:31,730 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 11:30:34,251 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 11:30:34,255 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 11:30:34,255 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 11:30:34,255 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 11:30:34,255 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 11:30:34,256 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 11:30:34,258 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -7016,7 +7016,7 @@
 2025-09-12 11:42:13,216 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 11:42:22,031 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 11:42:22,032 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 11:42:22,032 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 11:42:22,032 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 11:42:22,032 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 11:42:22,033 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 11:42:22,033 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -8051,7 +8051,7 @@
 2025-09-12 11:52:18,179 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 11:52:24,683 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 11:52:24,683 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 11:52:24,683 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 11:52:24,683 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 11:52:24,683 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 11:52:24,684 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 11:52:24,684 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -9086,7 +9086,7 @@
 2025-09-12 11:58:24,187 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 11:58:27,076 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 11:58:27,077 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 11:58:27,077 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 11:58:27,077 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 11:58:27,077 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 11:58:27,077 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 11:58:27,077 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -10121,7 +10121,7 @@
 2025-09-12 12:06:51,354 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 12:06:59,934 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 12:06:59,935 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 12:06:59,935 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 12:06:59,935 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 12:06:59,935 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 12:06:59,935 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 12:06:59,935 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -11156,7 +11156,7 @@
 2025-09-12 12:19:58,596 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 12:20:01,469 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 12:20:01,469 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 12:20:01,469 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 12:20:01,469 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 12:20:01,469 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 12:20:01,469 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 12:20:01,470 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -12188,7 +12188,7 @@
 2025-09-12 12:28:20,578 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.1.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.53', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-12 12:28:22,840 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-12 12:28:22,841 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-12 12:28:22,843 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.77
+2025-09-12 12:28:22,843 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.77
 2025-09-12 12:28:22,843 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-12 12:28:22,844 - inventory_agent - INFO - Gateway: 192.168.1.53
 2025-09-12 12:28:22,845 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -13218,7 +13218,7 @@
 2025-09-15 00:17:01,891 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 00:17:02,531 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 00:17:02,532 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 00:17:02,532 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 00:17:02,532 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 00:17:02,533 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 00:17:02,537 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 00:17:02,538 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -14240,7 +14240,7 @@
 2025-09-15 01:16:38,979 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 01:16:44,617 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 01:16:44,617 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 01:16:44,619 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 01:16:44,619 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 01:16:44,625 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 01:16:44,653 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 01:16:44,666 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -15264,7 +15264,7 @@
 2025-09-15 01:39:27,406 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 01:39:28,036 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 01:39:28,036 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 01:39:28,036 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 01:39:28,036 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 01:39:28,037 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 01:39:28,037 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 01:39:28,037 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -16286,7 +16286,7 @@
 2025-09-15 02:06:56,516 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:06:57,087 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:06:57,088 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:06:57,089 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:06:57,089 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:06:57,092 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:06:57,093 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:06:57,094 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -17311,7 +17311,7 @@
 2025-09-15 02:21:47,133 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:21:47,650 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:21:47,651 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:21:47,652 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:21:47,652 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:21:47,656 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:21:47,658 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:21:47,660 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -18336,7 +18336,7 @@
 2025-09-15 02:29:56,412 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:29:56,923 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:29:56,924 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:29:56,928 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:29:56,928 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:29:56,929 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:29:56,932 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:29:56,933 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -19361,7 +19361,7 @@
 2025-09-15 02:32:08,058 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:32:08,857 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:32:08,861 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:32:08,867 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:32:08,867 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:32:08,869 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:32:08,870 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:32:08,871 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -20386,7 +20386,7 @@
 2025-09-15 02:38:31,503 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:38:32,090 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:38:32,091 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:38:32,095 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:38:32,095 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:38:32,096 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:38:32,097 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:38:32,098 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -21410,7 +21410,7 @@
 2025-09-15 02:41:44,064 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.1.1', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-15 02:41:44,583 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 02:41:44,584 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 02:41:44,588 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.15.12
+2025-09-15 02:41:44,588 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.12
 2025-09-15 02:41:44,589 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 02:41:44,590 - inventory_agent - INFO - Gateway: 192.168.15.1
 2025-09-15 02:41:44,591 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -22432,7 +22432,7 @@
 2025-09-15 13:31:10,476 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 13:31:11,310 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 13:31:11,311 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 13:31:11,316 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 13:31:11,316 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 13:31:11,319 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 13:31:11,323 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 13:31:11,324 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -23464,7 +23464,7 @@
 2025-09-15 13:54:33,491 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 13:54:34,305 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 13:54:34,306 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 13:54:34,314 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 13:54:34,314 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 13:54:34,316 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 13:54:34,317 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 13:54:34,321 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -24496,7 +24496,7 @@
 2025-09-15 13:56:38,186 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 13:56:38,957 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 13:56:38,958 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 13:56:38,964 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 13:56:38,964 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 13:56:38,966 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 13:56:38,967 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 13:56:38,970 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -25528,7 +25528,7 @@
 2025-09-15 14:06:20,691 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 14:06:21,440 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 14:06:21,441 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 14:06:21,447 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 14:06:21,447 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 14:06:21,448 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 14:06:21,449 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 14:06:21,451 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -26560,7 +26560,7 @@
 2025-09-15 14:11:16,019 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 14:11:17,150 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 14:11:17,154 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 14:11:17,158 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 14:11:17,158 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 14:11:17,158 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 14:11:17,160 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 14:11:17,161 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -27595,7 +27595,7 @@
 2025-09-15 14:33:21,335 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.1.2', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-15 14:33:22,049 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-15 14:33:22,050 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-15 14:33:22,056 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.1.138
+2025-09-15 14:33:22,056 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.1.138
 2025-09-15 14:33:22,057 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-15 14:33:22,059 - inventory_agent - INFO - Gateway: 192.168.1.2
 2025-09-15 14:33:22,060 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -28628,7 +28628,7 @@
 2025-09-16 11:44:20,655 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.10', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)]}
 2025-09-16 11:44:37,498 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-16 11:44:37,498 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-16 11:44:37,499 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.251
+2025-09-16 11:44:37,499 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.251
 2025-09-16 11:44:37,499 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-16 11:44:37,500 - inventory_agent - INFO - Gateway: 192.168.0.10
 2025-09-16 11:44:37,500 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -29669,7 +29669,7 @@
 2025-09-16 14:49:18,329 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
 2025-09-16 14:49:19,124 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
 2025-09-16 14:49:19,124 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
-2025-09-16 14:49:19,137 - inventory_agent - INFO - Endereço IP da interface ativa: 192.168.0.141
+2025-09-16 14:49:19,137 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.141
 2025-09-16 14:49:19,139 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
 2025-09-16 14:49:19,148 - inventory_agent - INFO - Gateway: 192.168.0.1
 2025-09-16 14:49:19,152 - inventory_agent - INFO - Sufixo DNS detectado: N/A
@@ -30682,3 +30682,3095 @@
 2025-09-16 14:49:21,616 - inventory_agent - INFO - Failed to report data to server, storing locally...
 2025-09-16 14:49:21,629 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
 2025-09-16 14:49:21,630 - inventory_agent - INFO - Agent run finished.
+2025-09-16 15:21:58,294 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-16 15:21:58,297 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-16 15:21:58,298 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-16 15:21:58,304 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 15:21:58,358 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2856
+2025-09-16 15:21:58,364 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 15:21:58,377 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2856
+2025-09-16 15:22:06,629 - inventory_agent - INFO - Starting software collection from registry...
+2025-09-16 15:22:06,631 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 15:22:06,640 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 15:22:06,642 - inventory_agent - INFO - Found 133 registry entries to process
+2025-09-16 15:22:06,659 - inventory_agent - INFO - Collected 104 software entries from registry
+2025-09-16 15:22:06,660 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 15:22:06,665 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 15:22:06,667 - inventory_agent - INFO - Total unique software found: 148
+2025-09-16 15:22:08,086 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-16 15:22:08,643 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-16 15:22:08,643 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-16 15:22:08,647 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.141
+2025-09-16 15:22:08,649 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-16 15:22:08,650 - inventory_agent - INFO - Gateway: 192.168.0.1
+2025-09-16 15:22:08,653 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-16 15:22:08,655 - inventory_agent - INFO - Reporting local machine (192.168.0.141)...
+2025-09-16 15:22:08,657 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.0.141",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.48,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": "DDR4",
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 242.25,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.0.141",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:14d:1487:4377:f58d:aac9:f6f1:71d0",
+          "2804:14d:1487:4377:42a0:9f22:fba3:90f6",
+          "2804:14d:1487:4377::100d"
+        ]
+      }
+    ],
+    "temperature_info": {
+      "cpu_temp": 49.4,
+      "disk_temps": {
+        "NGFF SSD 128GB": 40.0
+      },
+      "custom_notes": [],
+      "lhm_error": null,
+      "last_seen": null
+    },
+    "installed_software": [
+      {
+        "name": "Docker Desktop",
+        "version": "4.41.2",
+        "publisher": "Docker Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Desinstalar Impressora EPSON L3150 Series",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "EPSON L395 Series Printer Uninstall",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Git",
+        "version": "2.50.0",
+        "publisher": "The Git Development Community",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "GrupoKNC",
+        "version": "1.3.8",
+        "publisher": "GrupoKNC",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "KONICA MINOLTA Universal V4 PCL",
+        "version": "Unknown",
+        "publisher": "KONICA MINOLTA",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kyocera Product Library",
+        "version": "6.0.4912",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft OneDrive",
+        "version": "25.159.0817.0003",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "PostgreSQL 16",
+        "version": "16.9-2",
+        "publisher": "PostgreSQL Global Development Group",
+        "install_date": "2025-07-02"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - en-us",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - pt-br",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Speccy",
+        "version": "1.32",
+        "publisher": "Piriform",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Status Monitor 5",
+        "version": "5.0.9814",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Tesseract-OCR - open source OCR engine",
+        "version": "5.5.0.20241111",
+        "publisher": "Tesseract-OCR community",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRAR 6.20 (64-bit)",
+        "version": "6.20.0",
+        "publisher": "win.rar GmbH",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Python 3.13.5 Documentation (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Universal CRT Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Python 3.13.5 pip Bootstrap (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VMware Workstation",
+        "version": "17.6.2",
+        "publisher": "VMware, Inc.",
+        "install_date": "2025-03-22"
+      },
+      {
+        "name": "Python 3.13.5 Executables (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit Native Components",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Estudo de aprimoramento de produto para HP LaserJet Pro 4001 4002 4003 4004",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows SDK DirectX x64 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Installer",
+        "version": "3.14.2075.50697",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Office 16 Click-to-Run Licensing Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Extensibility Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Localization Component",
+        "version": "16.0.14334.20090",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-18"
+      },
+      {
+        "name": "Python 3.13.5 Core Interpreter (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Node.js",
+        "version": "22.17.0",
+        "publisher": "Node.js Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Test Suite (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VS Script Debugging Common",
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005",
+        "version": "12.0.21005",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Python 3.13.5 Tcl/Tk Support (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Update Health Tools",
+        "version": "4.75.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Epson Customer Research Participation",
+        "version": "1.83.0000",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X64 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Development Libraries (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Python 3.13.5 Standard Library (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Application Verifier x64 External Package",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for x64-based Windows Systems (KB5001716)",
+        "version": "8.94.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "EpsonNet Print",
+        "version": "3.3.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "HP LaserJet Pro 4001 4002 4003 4004 Software b\u00e1sico do dispositivo",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows Subsystem for Linux Update",
+        "version": "5.10.102.1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-07-07"
+      },
+      {
+        "name": "Ferramentas de Build do Visual Studio 2019",
+        "version": "16.11.48",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Adobe Genuine Service",
+        "version": "9.0.0.29",
+        "publisher": "Adobe Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Epson Scan 2",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Google Chrome",
+        "version": "140.0.7339.128",
+        "publisher": "Google LLC",
+        "install_date": "2025-09-10"
+      },
+      {
+        "name": "HP Laser MFP 131 133 135-138",
+        "version": "1.20 (02/05/2023)",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP MFP Scan",
+        "version": "1.06.68 ()",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP Scan Process Machine",
+        "version": "1.03.05.30",
+        "publisher": "HP Development Company, L.P.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kaspersky",
+        "version": "21.22.7.466",
+        "publisher": "Kaspersky",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Edge",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Microsoft Edge WebView2 Runtime",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Nmap 7.97",
+        "version": "7.97",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Npcap",
+        "version": "1.82",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Universal CRT Redistributable",
+        "version": "10.0.26624",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vcpp_crt.redist.clickonce",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Mobile - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_amd64",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Easy Photo Scan",
+        "version": "1.00.0019",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows IoT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Desktop Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Signing Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsires",
+        "version": "16.10.31213",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit SupportedApiList x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsi",
+        "version": "16.11.34930",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Printer Connection Checker",
+        "version": "3.4.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "SDK ARM Additions",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "SP 330_3710_Series Software Uninstall",
+        "version": "1.08.0000",
+        "publisher": "Ricoh Company Limited",
+        "install_date": "2025-03-05"
+      },
+      {
+        "name": "Windows SDK Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "MSI Development Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinAppDeploy",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Software Development Kit - Windows 10.0.19041.5609",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows SDK Modern Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python Launcher",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup Configuration",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_x86",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Headers Libraries and Sources",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Easy Photo Print 2",
+        "version": "2.8.3.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2005 Redistributable",
+        "version": "8.0.61001",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Modern Non-Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Metadata",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Kits Configuration Installer",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellinteropmsi",
+        "version": "16.10.31306",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17",
+        "version": "9.0.30729",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Headers",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+        "version": "9.0.30729.6161",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_FileTracker_Singleton",
+        "version": "16.11.34827",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Event Manager",
+        "version": "3.10.0085",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Adobe Acrobat DC",
+        "version": "20.006.20042",
+        "publisher": "Adobe Systems Incorporated",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsi",
+        "version": "16.11.34902",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows IoT Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X86 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft .NET Framework 4 Multi-Targeting Pack",
+        "version": "4.0.30319",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for  (KB2504637)",
+        "version": "1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal General MIDI DLS Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Assistente de Atualiza\u00e7\u00e3o do Windows 10",
+        "version": "1.4.19041.2183",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows Desktop Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Facade Windows WinMD Versioned",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK EULA",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporations",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup WMI Provider",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsires",
+        "version": "16.10.31303",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK AddOn",
+        "version": "10.1.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Managed Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Software Updater",
+        "version": "4.6.9",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "SDK ARM Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Windows App Certification Kit x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK ARM Desktop Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      }
+    ],
+    "usb_devices": [
+      {
+        "name": "USB Composite Device",
+        "device_id": "USB\\VID_2232&PID_1080\\200901010001",
+        "status": "OK"
+      },
+      {
+        "name": "USB Root Hub (USB 3.0)",
+        "device_id": "USB\\ROOT_HUB30\\4&1AEBED92&0&0",
+        "status": "OK"
+      },
+      {
+        "name": "Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)",
+        "device_id": "PCI\\VEN_8086&DEV_9D2F&SUBSYS_C804144D&REV_21\\3&11583659&0&A0",
+        "status": "OK"
+      }
+    ],
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-16T15:22:08.655024"
+}
+2025-09-16 15:22:08,670 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-16 15:22:11,251 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 1165
+2025-09-16 15:22:11,254 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-09-16 15:22:11,255 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-09-16 15:22:11,256 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-09-16 15:22:11,266 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-09-16 15:22:11,267 - inventory_agent - INFO - Agent run finished.
+2025-09-16 15:32:20,527 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-16 15:32:20,542 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-16 15:32:20,552 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-16 15:32:20,584 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 15:32:20,885 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2835
+2025-09-16 15:32:20,892 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 15:32:21,018 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2835
+2025-09-16 15:33:25,139 - inventory_agent - INFO - Starting software collection from registry...
+2025-09-16 15:33:25,310 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 15:33:25,634 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 15:33:25,791 - inventory_agent - INFO - Found 133 registry entries to process
+2025-09-16 15:33:26,024 - inventory_agent - INFO - Collected 104 software entries from registry
+2025-09-16 15:33:26,209 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 15:33:26,401 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 15:33:26,576 - inventory_agent - INFO - Total unique software found: 148
+2025-09-16 15:33:30,189 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.0.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::ca5d:38ff:fe95:3a93', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-16 15:33:31,575 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-16 15:33:31,591 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-16 15:33:31,592 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.0.141
+2025-09-16 15:33:31,599 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-16 15:33:31,601 - inventory_agent - INFO - Gateway: 192.168.0.1
+2025-09-16 15:33:31,602 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-16 15:33:31,603 - inventory_agent - INFO - Reporting local machine (192.168.0.141)...
+2025-09-16 15:33:31,605 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.0.141",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.4,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": "DDR4",
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 242.1,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.0.141",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:14d:1487:4377:f58d:aac9:f6f1:71d0",
+          "2804:14d:1487:4377:42a0:9f22:fba3:90f6",
+          "2804:14d:1487:4377::100d"
+        ]
+      }
+    ],
+    "temperature_info": {
+      "cpu_temp": 50.0,
+      "disk_temps": {
+        "NGFF SSD 128GB": 40.0
+      },
+      "custom_notes": [],
+      "lhm_error": null,
+      "last_seen": null
+    },
+    "installed_software": [
+      {
+        "name": "Docker Desktop",
+        "version": "4.41.2",
+        "publisher": "Docker Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Desinstalar Impressora EPSON L3150 Series",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "EPSON L395 Series Printer Uninstall",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Git",
+        "version": "2.50.0",
+        "publisher": "The Git Development Community",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "GrupoKNC",
+        "version": "1.3.8",
+        "publisher": "GrupoKNC",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "KONICA MINOLTA Universal V4 PCL",
+        "version": "Unknown",
+        "publisher": "KONICA MINOLTA",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kyocera Product Library",
+        "version": "6.0.4912",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft OneDrive",
+        "version": "25.159.0817.0003",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "PostgreSQL 16",
+        "version": "16.9-2",
+        "publisher": "PostgreSQL Global Development Group",
+        "install_date": "2025-07-02"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - en-us",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - pt-br",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Speccy",
+        "version": "1.32",
+        "publisher": "Piriform",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Status Monitor 5",
+        "version": "5.0.9814",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Tesseract-OCR - open source OCR engine",
+        "version": "5.5.0.20241111",
+        "publisher": "Tesseract-OCR community",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRAR 6.20 (64-bit)",
+        "version": "6.20.0",
+        "publisher": "win.rar GmbH",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Python 3.13.5 Documentation (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Universal CRT Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Python 3.13.5 pip Bootstrap (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VMware Workstation",
+        "version": "17.6.2",
+        "publisher": "VMware, Inc.",
+        "install_date": "2025-03-22"
+      },
+      {
+        "name": "Python 3.13.5 Executables (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit Native Components",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Estudo de aprimoramento de produto para HP LaserJet Pro 4001 4002 4003 4004",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows SDK DirectX x64 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Installer",
+        "version": "3.14.2075.50697",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Office 16 Click-to-Run Licensing Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Extensibility Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Localization Component",
+        "version": "16.0.14334.20090",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-18"
+      },
+      {
+        "name": "Python 3.13.5 Core Interpreter (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Node.js",
+        "version": "22.17.0",
+        "publisher": "Node.js Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Test Suite (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VS Script Debugging Common",
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005",
+        "version": "12.0.21005",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Python 3.13.5 Tcl/Tk Support (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Update Health Tools",
+        "version": "4.75.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Epson Customer Research Participation",
+        "version": "1.83.0000",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X64 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Development Libraries (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Python 3.13.5 Standard Library (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Application Verifier x64 External Package",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for x64-based Windows Systems (KB5001716)",
+        "version": "8.94.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "EpsonNet Print",
+        "version": "3.3.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "HP LaserJet Pro 4001 4002 4003 4004 Software b\u00e1sico do dispositivo",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows Subsystem for Linux Update",
+        "version": "5.10.102.1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-07-07"
+      },
+      {
+        "name": "Ferramentas de Build do Visual Studio 2019",
+        "version": "16.11.48",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Adobe Genuine Service",
+        "version": "9.0.0.29",
+        "publisher": "Adobe Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Epson Scan 2",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Google Chrome",
+        "version": "140.0.7339.128",
+        "publisher": "Google LLC",
+        "install_date": "2025-09-10"
+      },
+      {
+        "name": "HP Laser MFP 131 133 135-138",
+        "version": "1.20 (02/05/2023)",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP MFP Scan",
+        "version": "1.06.68 ()",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP Scan Process Machine",
+        "version": "1.03.05.30",
+        "publisher": "HP Development Company, L.P.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kaspersky",
+        "version": "21.22.7.466",
+        "publisher": "Kaspersky",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Edge",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Microsoft Edge WebView2 Runtime",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Nmap 7.97",
+        "version": "7.97",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Npcap",
+        "version": "1.82",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Universal CRT Redistributable",
+        "version": "10.0.26624",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vcpp_crt.redist.clickonce",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Mobile - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_amd64",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Easy Photo Scan",
+        "version": "1.00.0019",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows IoT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Desktop Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Signing Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsires",
+        "version": "16.10.31213",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit SupportedApiList x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsi",
+        "version": "16.11.34930",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Printer Connection Checker",
+        "version": "3.4.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "SDK ARM Additions",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "SP 330_3710_Series Software Uninstall",
+        "version": "1.08.0000",
+        "publisher": "Ricoh Company Limited",
+        "install_date": "2025-03-05"
+      },
+      {
+        "name": "Windows SDK Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "MSI Development Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinAppDeploy",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Software Development Kit - Windows 10.0.19041.5609",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows SDK Modern Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python Launcher",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup Configuration",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_x86",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Headers Libraries and Sources",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Easy Photo Print 2",
+        "version": "2.8.3.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2005 Redistributable",
+        "version": "8.0.61001",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Modern Non-Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Metadata",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Kits Configuration Installer",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellinteropmsi",
+        "version": "16.10.31306",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17",
+        "version": "9.0.30729",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Headers",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+        "version": "9.0.30729.6161",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_FileTracker_Singleton",
+        "version": "16.11.34827",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Event Manager",
+        "version": "3.10.0085",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Adobe Acrobat DC",
+        "version": "20.006.20042",
+        "publisher": "Adobe Systems Incorporated",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsi",
+        "version": "16.11.34902",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows IoT Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X86 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft .NET Framework 4 Multi-Targeting Pack",
+        "version": "4.0.30319",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for  (KB2504637)",
+        "version": "1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal General MIDI DLS Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Assistente de Atualiza\u00e7\u00e3o do Windows 10",
+        "version": "1.4.19041.2183",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows Desktop Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Facade Windows WinMD Versioned",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK EULA",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporations",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup WMI Provider",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsires",
+        "version": "16.10.31303",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK AddOn",
+        "version": "10.1.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Managed Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Software Updater",
+        "version": "4.6.9",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "SDK ARM Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Windows App Certification Kit x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK ARM Desktop Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      }
+    ],
+    "usb_devices": [
+      {
+        "name": "USB Composite Device",
+        "device_id": "USB\\VID_2232&PID_1080\\200901010001",
+        "status": "OK"
+      },
+      {
+        "name": "USB Root Hub (USB 3.0)",
+        "device_id": "USB\\ROOT_HUB30\\4&1AEBED92&0&0",
+        "status": "OK"
+      },
+      {
+        "name": "Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)",
+        "device_id": "PCI\\VEN_8086&DEV_9D2F&SUBSYS_C804144D&REV_21\\3&11583659&0&A0",
+        "status": "OK"
+      }
+    ],
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-16T15:33:31.603640"
+}
+2025-09-16 15:33:31,620 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-16 15:33:34,385 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 1165
+2025-09-16 15:33:34,406 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-09-16 15:33:34,408 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-09-16 15:33:34,419 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-09-16 15:33:34,437 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-09-16 15:33:34,474 - inventory_agent - INFO - Agent run finished.
+2025-09-16 18:19:19,077 - inventory_agent - INFO - Starting Inventory Agent...
+2025-09-16 18:19:19,100 - inventory_agent - INFO - Local database setup complete at C:\Projetos\AppInventario\home\ubuntu\inventory_app\agents\inventory_data.db
+2025-09-16 18:19:19,108 - inventory_agent - INFO - Collecting local hardware details...
+2025-09-16 18:19:19,120 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 18:19:23,026 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2857
+2025-09-16 18:19:23,043 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8085
+2025-09-16 18:19:23,142 - urllib3.connectionpool - DEBUG - http://localhost:8085 "GET /data.json HTTP/1.1" 200 2846
+2025-09-16 18:20:11,173 - inventory_agent - INFO - Starting software collection from registry...
+2025-09-16 18:20:11,189 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 18:20:11,255 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 18:20:11,288 - inventory_agent - INFO - Found 133 registry entries to process
+2025-09-16 18:20:11,357 - inventory_agent - INFO - Collected 104 software entries from registry
+2025-09-16 18:20:11,451 - inventory_agent - INFO - Found 59 registry entries to process
+2025-09-16 18:20:11,565 - inventory_agent - INFO - Collected 46 software entries from registry
+2025-09-16 18:20:11,669 - inventory_agent - INFO - Total unique software found: 148
+2025-09-16 18:20:16,466 - inventory_agent - DEBUG - Gateways detectados: {'default': {2: ('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}'), 23: ('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}')}, 2: [('192.168.0.2', '{B7B1CED4-34BB-466A-A2F7-909B135AAB29}', True), ('192.168.15.1', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', False)], 23: [('fe80::4689:6dff:fe13:16f0', '{241811CC-3D5F-412F-9CE3-89549CAE85DB}', True)]}
+2025-09-16 18:20:20,287 - inventory_agent - WARNING - Falha ao obter sufixo DNS da interface Qualcomm Atheros QCA9377 Wireless Network Adapter: 'utf-8' codec can't decode byte 0x87 in position 11: invalid start byte
+2025-09-16 18:20:20,342 - inventory_agent - INFO - Interface ativa: Qualcomm Atheros QCA9377 Wireless Network Adapter
+2025-09-16 18:20:20,345 - inventory_agent - INFO - Endereï¿½o IP da interface ativa: 192.168.15.11
+2025-09-16 18:20:20,347 - inventory_agent - INFO - MAC da interface ativa: 98:83:89:d0:b2:79
+2025-09-16 18:20:20,467 - inventory_agent - INFO - Gateway: 192.168.15.1
+2025-09-16 18:20:20,622 - inventory_agent - INFO - Sufixo DNS detectado: N/A
+2025-09-16 18:20:20,736 - inventory_agent - INFO - Reporting local machine (192.168.15.11)...
+2025-09-16 18:20:20,768 - inventory_agent - DEBUG - Payload enviado:{
+  "ip_address": "192.168.15.11",
+  "mac_address": "98:83:89:d0:b2:79",
+  "name": "DESKTOP-VUDLI0B",
+  "os": "Microsoft Windows 11 Pro (64 bits)",
+  "device_type": "computer",
+  "status": "online",
+  "hardware_details": {
+    "cpu_info": {
+      "brand": "GenuineIntel",
+      "model": "Intel(R) Celeron(R) CPU 3865U @ 1.80GHz",
+      "cores": 2,
+      "threads": 2,
+      "frequency_mhz": 1800
+    },
+    "ram_info": {
+      "total_gb": 15.91,
+      "used_gb": 7.27,
+      "modules": [
+        {
+          "capacity_gb": 16.0,
+          "type": "DDR4",
+          "speed_mhz": 2133,
+          "manufacturer": "04CB",
+          "part_number": "AD4S3200316G22-BHYD "
+        }
+      ],
+      "slots_total": 4,
+      "slots_used": 1
+    },
+    "disk_info": [
+      {
+        "name": "NGFF SSD 128GB",
+        "type": "Fixed hard disk media",
+        "model": "NGFF SSD 128GB",
+        "serial_number": "202212310009",
+        "total_gb": 119.24,
+        "partitions": []
+      },
+      {
+        "name": "HFS480G3H2X069N",
+        "type": "Fixed hard disk media",
+        "model": "HFS480G3H2X069N",
+        "serial_number": "EJC8N4983I1008G2R",
+        "total_gb": 447.13,
+        "partitions": [
+          {
+            "drive_letter": "C:",
+            "total_gb": 446.43,
+            "free_gb": 241.6,
+            "fstype": "NTFS"
+          }
+        ]
+      }
+    ],
+    "gpu_info": {
+      "brand": "Intel Corporation",
+      "model": "Intel(R) HD Graphics 610",
+      "vram_mb": 1024.0,
+      "driver_version": "27.20.100.7988"
+    },
+    "motherboard_info": {
+      "manufacturer": "SAMSUNG ELECTRONICS CO., LTD.",
+      "model": "NP350XAA-KDBBR",
+      "serial_number": "123490EN400015"
+    },
+    "network_info": [
+      {
+        "type": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "name": "Qualcomm Atheros QCA9377 Wireless Network Adapter",
+        "mac": "98:83:89:D0:B2:79",
+        "ip_addresses": [
+          "192.168.15.11",
+          "fe80::48ca:46ab:9528:d7d8",
+          "2804:1b2:f146:36a0:7140:d71:e306:267d",
+          "2804:1b2:f146:36a0:ce5f:3422:5c9b:e896"
+        ]
+      }
+    ],
+    "temperature_info": {
+      "cpu_temp": 50.6,
+      "disk_temps": {
+        "NGFF SSD 128GB": 40.0
+      },
+      "custom_notes": [],
+      "lhm_error": null,
+      "last_seen": null
+    },
+    "installed_software": [
+      {
+        "name": "Docker Desktop",
+        "version": "4.41.2",
+        "publisher": "Docker Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Desinstalar Impressora EPSON L3150 Series",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "EPSON L395 Series Printer Uninstall",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Git",
+        "version": "2.50.0",
+        "publisher": "The Git Development Community",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "GrupoKNC",
+        "version": "1.3.8",
+        "publisher": "GrupoKNC",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "KONICA MINOLTA Universal V4 PCL",
+        "version": "Unknown",
+        "publisher": "KONICA MINOLTA",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kyocera Product Library",
+        "version": "6.0.4912",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft OneDrive",
+        "version": "25.159.0817.0003",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "PostgreSQL 16",
+        "version": "16.9-2",
+        "publisher": "PostgreSQL Global Development Group",
+        "install_date": "2025-07-02"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - en-us",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Office LTSC Professional Plus 2021 - pt-br",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Speccy",
+        "version": "1.32",
+        "publisher": "Piriform",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Status Monitor 5",
+        "version": "5.0.9814",
+        "publisher": "KYOCERA Document Solutions Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Tesseract-OCR - open source OCR engine",
+        "version": "5.5.0.20241111",
+        "publisher": "Tesseract-OCR community",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRAR 6.20 (64-bit)",
+        "version": "6.20.0",
+        "publisher": "win.rar GmbH",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Python 3.13.5 Documentation (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Universal CRT Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Python 3.13.5 pip Bootstrap (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VMware Workstation",
+        "version": "17.6.2",
+        "publisher": "VMware, Inc.",
+        "install_date": "2025-03-22"
+      },
+      {
+        "name": "Python 3.13.5 Executables (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit Native Components",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Estudo de aprimoramento de produto para HP LaserJet Pro 4001 4002 4003 4004",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows SDK DirectX x64 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Installer",
+        "version": "3.14.2075.50697",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Office 16 Click-to-Run Licensing Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Extensibility Component",
+        "version": "16.0.14334.20244",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-18"
+      },
+      {
+        "name": "Office 16 Click-to-Run Localization Component",
+        "version": "16.0.14334.20090",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-18"
+      },
+      {
+        "name": "Python 3.13.5 Core Interpreter (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Node.js",
+        "version": "22.17.0",
+        "publisher": "Node.js Foundation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Test Suite (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "VS Script Debugging Common",
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005",
+        "version": "12.0.21005",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Python 3.13.5 Tcl/Tk Support (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Update Health Tools",
+        "version": "4.75.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Epson Customer Research Participation",
+        "version": "1.83.0000",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X64 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python 3.13.5 Development Libraries (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Python 3.13.5 Standard Library (64-bit)",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Application Verifier x64 External Package",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for x64-based Windows Systems (KB5001716)",
+        "version": "8.94.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "EpsonNet Print",
+        "version": "3.3.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "HP LaserJet Pro 4001 4002 4003 4004 Software b\u00e1sico do dispositivo",
+        "version": "54.4.5341.23298",
+        "publisher": "HP Inc.",
+        "install_date": "2025-04-01"
+      },
+      {
+        "name": "Windows Subsystem for Linux Update",
+        "version": "5.10.102.1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-07-07"
+      },
+      {
+        "name": "Ferramentas de Build do Visual Studio 2019",
+        "version": "16.11.48",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Adobe Genuine Service",
+        "version": "9.0.0.29",
+        "publisher": "Adobe Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Epson Scan 2",
+        "version": "Unknown",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Google Chrome",
+        "version": "140.0.7339.128",
+        "publisher": "Google LLC",
+        "install_date": "2025-09-10"
+      },
+      {
+        "name": "HP Laser MFP 131 133 135-138",
+        "version": "1.20 (02/05/2023)",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP MFP Scan",
+        "version": "1.06.68 ()",
+        "publisher": "HP Inc.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "HP Scan Process Machine",
+        "version": "1.03.05.30",
+        "publisher": "HP Development Company, L.P.",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Kaspersky",
+        "version": "21.22.7.466",
+        "publisher": "Kaspersky",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Edge",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Microsoft Edge WebView2 Runtime",
+        "version": "140.0.3485.66",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-09-13"
+      },
+      {
+        "name": "Nmap 7.97",
+        "version": "7.97",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Npcap",
+        "version": "1.82",
+        "publisher": "Nmap Project",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Universal CRT Redistributable",
+        "version": "10.0.26624",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vcpp_crt.redist.clickonce",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Mobile - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_amd64",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Easy Photo Scan",
+        "version": "1.00.0019",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows IoT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Desktop Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Tools x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Signing Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsires",
+        "version": "16.10.31213",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows App Certification Kit SupportedApiList x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_communitymsi",
+        "version": "16.11.34930",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Printer Connection Checker",
+        "version": "3.4.1.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "SDK ARM Additions",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "SP 330_3710_Series Software Uninstall",
+        "version": "1.08.0000",
+        "publisher": "Ricoh Company Limited",
+        "install_date": "2025-03-05"
+      },
+      {
+        "name": "Windows SDK Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "MSI Development Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinAppDeploy",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35208",
+        "version": "14.44.35208",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Software Development Kit - Windows 10.0.19041.5609",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows SDK Modern Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Python Launcher",
+        "version": "3.13.5150.0",
+        "publisher": "Python Software Foundation",
+        "install_date": "2025-06-24"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup Configuration",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_filehandler_x86",
+        "version": "16.11.31503",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Headers Libraries and Sources",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Easy Photo Print 2",
+        "version": "2.8.3.0",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Microsoft Visual C++ 2005 Redistributable",
+        "version": "8.0.61001",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Modern Non-Versioned Developer Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense Desktop - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Metadata",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Kits Configuration Installer",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellinteropmsi",
+        "version": "16.10.31306",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17",
+        "version": "9.0.30729",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Headers",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+        "version": "9.0.30729.6161",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-02-28"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Headers x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Team Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_FileTracker_Singleton",
+        "version": "16.11.34827",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Event Manager",
+        "version": "3.10.0085",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "Adobe Acrobat DC",
+        "version": "20.006.20042",
+        "publisher": "Adobe Systems Incorporated",
+        "install_date": "2025-03-02"
+      },
+      {
+        "name": "Windows SDK for Windows Store Apps DirectX x86 Remote",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense UAP - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsi",
+        "version": "16.11.34902",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows IoT Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2019 X86 Debug Runtime - 14.29.30157",
+        "version": "14.29.30157",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs arm",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft .NET Framework 4 Multi-Targeting Pack",
+        "version": "4.0.30319",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Update for  (KB2504637)",
+        "version": "1",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal General MIDI DLS Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Assistente de Atualiza\u00e7\u00e3o do Windows 10",
+        "version": "1.4.19041.2183",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "Windows Desktop Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Facade Windows WinMD Versioned",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows Mobile Extension SDK Contracts",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK EULA",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporations",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK Desktop Libs x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual Studio Setup WMI Provider",
+        "version": "3.7.2182.35401",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "vs_minshellmsires",
+        "version": "16.10.31303",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK AddOn",
+        "version": "10.1.0.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35208",
+        "version": "14.44.35208.0",
+        "publisher": "Microsoft Corporation",
+        "install_date": "Unknown"
+      },
+      {
+        "name": "WinRT Intellisense IoT - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - en-us",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK for Windows Store Managed Apps Libs",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "WinRT Intellisense PPI - Other Languages",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Epson Software Updater",
+        "version": "4.6.9",
+        "publisher": "Seiko Epson Corporation",
+        "install_date": "2025-08-07"
+      },
+      {
+        "name": "SDK ARM Redistributables",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-04-08"
+      },
+      {
+        "name": "Windows App Certification Kit x64",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Windows SDK ARM Desktop Tools",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      },
+      {
+        "name": "Universal CRT Tools x86",
+        "version": "10.1.19041.5609",
+        "publisher": "Microsoft Corporation",
+        "install_date": "2025-06-26"
+      }
+    ],
+    "usb_devices": [
+      {
+        "name": "USB Composite Device",
+        "device_id": "USB\\VID_2232&PID_1080\\200901010001",
+        "status": "OK"
+      },
+      {
+        "name": "USB Root Hub (USB 3.0)",
+        "device_id": "USB\\ROOT_HUB30\\4&1AEBED92&0&0",
+        "status": "OK"
+      },
+      {
+        "name": "Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)",
+        "device_id": "PCI\\VEN_8086&DEV_9D2F&SUBSYS_C804144D&REV_21\\3&11583659&0&A0",
+        "status": "OK"
+      }
+    ],
+    "power_supply_info": null,
+    "custom_notes": null
+  },
+  "last_seen": "2025-09-16T18:20:20.736619"
+}
+2025-09-16 18:20:23,036 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2025-09-16 18:20:25,892 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /devices/ HTTP/1.1" 500 1101
+2025-09-16 18:20:25,933 - inventory_agent - ERROR - Error reporting data to http://localhost:8000/devices/: 500 Server Error: Internal Server Error for url: http://localhost:8000/devices/
+2025-09-16 18:20:26,015 - inventory_agent - ERROR - Please check if the API server is running at http://localhost:8000
+2025-09-16 18:20:26,017 - inventory_agent - INFO - Failed to report data to server, storing locally...
+2025-09-16 18:20:26,148 - inventory_agent - INFO - Data for device 9f6e196c2f8e2129530732c0a6ff5c28 stored locally
+2025-09-16 18:20:26,250 - inventory_agent - INFO - Agent run finished.
