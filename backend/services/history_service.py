@@ -6,10 +6,10 @@ import json
 import logging
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Any, Tuple
-
 from sqlalchemy.orm import Session
-
-from .. import models, schemas, crud
+import models
+import schemas
+import crud
 from .normalization_service import NormalizationService
 from .notification_service import NotificationService, NotificationChannel
 

@@ -39,7 +39,8 @@ class HardwareDetail(HardwareDetailBase):
 # History Logs
 # ----------------------------
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field, HttpUrl, validator, root_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
+
 import hashlib
 import hmac
 import base64
@@ -78,7 +79,8 @@ class HistoryLogBase(BaseModel):
     evidence: Optional[Dict[str, Any]] = Field(None, description="Evidências da mudança (dados brutos, hashes, etc.)")
     
     # Validação de dados estruturados
-    @validator('old_value', 'new_value', pre=True)
+    
+    @field_validator('old_value', 'new_value', mode="before")
     def validate_json_serializable(cls, v):
         if v is not None and not isinstance(v, (str, int, float, bool, type(None))):
             try:
@@ -118,11 +120,11 @@ class HistoryLogBatchCreate(BaseModel):
         description="Assinatura HMAC-SHA256 dos dados usando a chave secreta do agente"
     )
     
-    @root_validator
-    def validate_signature(cls, values):
+    @model_validator(mode='after')
+    def validate_signature(self):
         # A validação real da assinatura será feita no endpoint
         # usando a chave secreta armazenada no servidor
-        return values
+        return self
     
     model_config = {"from_attributes": True}
 
@@ -309,3 +311,19 @@ class Alert(AlertBase):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+# ----------------------------
+# Paginated Response (Generic)
+# ----------------------------
+from typing import Generic, TypeVar
+from pydantic import BaseModel
+from pydantic.generics import GenericModel
+
+T = TypeVar("T")
+
+class PaginatedResponse(GenericModel, Generic[T]):
+    total: int
+    page: int
+    size: int
+    items: List[T]
+

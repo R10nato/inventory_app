@@ -7,9 +7,10 @@ from datetime import datetime
 from enum import Enum
 
 from sqlalchemy.orm import Session
-
-from .. import models, schemas, crud
-from ..config import settings
+import models
+import schemas
+import crud
+from config import settings
 
 logger = logging.getLogger(__name__)
 

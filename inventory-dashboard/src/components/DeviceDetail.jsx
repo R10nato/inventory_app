@@ -4,12 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
 import DeviceEditDialog from './DeviceEditDialog.jsx'
+import TimelineView from './history/TimelineView'
 import { 
   ArrowLeft, Monitor, Laptop, Smartphone, Printer,
   Cpu, MemoryStick, HardDrive, Wifi, Clock, Thermometer,
-  Package, History, Edit, Info, Usb, User, Activity
+  Package, History, Edit, Info, Usb, User, Activity, AlertCircle
 } from 'lucide-react'
 import { Progress } from '@/components/ui/progress.jsx'
+import { Alert, AlertDescription } from '@/components/ui/alert.jsx'
 
 const API_BASE = "http://localhost:8000"
 
@@ -73,23 +75,20 @@ const DeviceDetail = ({ deviceId, onBack }) => {
   const [hardware, setHardware] = useState({})
   const [historyLogs, setHistoryLogs] = useState([])
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+  const [historyLoading, setHistoryLoading] = useState(true)
+  const [historyError, setHistoryError] = useState(null)
 
   useEffect(() => {
-    const fetchDevice = async () => {
+    const fetchDeviceData = async () => {
       try {
-        const response = await fetch(`${API_BASE}/devices/${deviceId}/full`)
-        if (!response.ok) throw new Error('Erro ao carregar dispositivo')
-        let data = await response.json()
-
-        console.log("📡 Dados recebidos do backend:", data)   // 👈 Adicione isto
-
-        // Normaliza hardware_details
-        let hw = data.hardware_details || {}
-        if (typeof hw === 'string') {
-          try { hw = JSON.parse(hw) } catch { hw = {} }
-        }
-
-        console.log("🖥️ Hardware normalizado:", hw)   // 👈 E isto
+        setHistoryLoading(true)
+        setHistoryError(null)
+        
+        const response = await fetch(`${API_BASE}/devices/${deviceId}`)
+        if (!response.ok) throw new Error('Erro ao buscar dados do dispositivo')
+        
+        const data = await response.json()
+        const hw = data.hardware || {}
 
         // Força arrays e objetos válidos
         hw.cpu_info = hw.cpu_info || {}
@@ -107,6 +106,9 @@ const DeviceDetail = ({ deviceId, onBack }) => {
         setHistoryLogs(Array.isArray(data.history_logs) ? data.history_logs : [])
       } catch (error) {
         console.error('Erro ao buscar dados do dispositivo:', error)
+        setHistoryError('Erro ao carregar o histórico de alterações. Tente novamente mais tarde.')
+      } finally {
+        setHistoryLoading(false)
       }
     }
     fetchDevice()
@@ -406,33 +408,24 @@ const DeviceDetail = ({ deviceId, onBack }) => {
               <CardTitle className="flex items-center gap-2">
                 <History className="h-5 w-5" /> Histórico de Alterações
               </CardTitle>
+              <CardDescription>
+                Visualize o histórico de alterações deste dispositivo
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              {historyLogs && historyLogs.length > 0 ? (
-                <div className="space-y-3 max-h-96 overflow-y-auto">
-                  {historyLogs.map((log, index) => (
-                    <div key={index} className="p-3 border-l-4 border-blue-500 bg-blue-50">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="font-medium text-sm">{log.component || 'N/A'}</p>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            {formatDate(log.timestamp)}
-                          </p>
-                        </div>
-                        <Badge variant="outline" className="text-xs">
-                          {log.change_type || 'Alteração'}
-                        </Badge>
-                      </div>
-                      {log.description && (
-                        <p className="text-sm mt-2">{log.description}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
+              {historyError ? (
+                <Alert variant="destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>
+                    {historyError}
+                  </AlertDescription>
+                </Alert>
               ) : (
-                <p className="text-muted-foreground text-center py-8">
-                  Nenhuma alteração registrada
-                </p>
+                <TimelineView 
+                  deviceId={deviceId} 
+                  initialLogs={historyLogs}
+                  loading={historyLoading}
+                />
               )}
             </CardContent>
           </Card>

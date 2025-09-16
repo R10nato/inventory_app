@@ -153,3 +153,19 @@ def delete_alert(alert_id: int, db: Session = Depends(get_db)):
     if not alert:
         raise HTTPException(status_code=404, detail="Alerta não encontrado.")
     return None
+
+@router.get("/", response_model=schemas.PaginatedResponse[schemas.Alert])
+def list_alerts(
+    db: Session = Depends(get_db),
+    page: int = 1,
+    size: int = 20,
+):
+    skip = (page - 1) * size
+    total, alerts = crud.get_alerts_paginated(db, skip=skip, limit=size)
+    return schemas.PaginatedResponse[schemas.Alert](
+        total=total,
+        page=page,
+        size=size,
+        items=alerts,
+    )
+

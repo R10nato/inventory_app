@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 import models, schemas
 from datetime import datetime, timezone
+from typing import Optional, Tuple
 
 
 # ----------------------------
@@ -19,7 +20,7 @@ def get_device_by_ip(db: Session, ip_address: str):
     return db.query(models.Device).filter(models.Device.ip_address == ip_address).first()
 
 
-def get_device_by_ip_or_mac(db: Session, ip_address: str, mac_address: str | None = None):
+def get_device_by_ip_or_mac(db: Session, ip_address: str, mac_address: Optional[str] = None):
     device = db.query(models.Device).filter(models.Device.ip_address == ip_address).first()
     if not device and mac_address:
         device = db.query(models.Device).filter(models.Device.mac_address == mac_address).first()
@@ -38,37 +39,12 @@ def create_device(db: Session, device: schemas.DeviceCreate):
     existing_device = db.query(models.Device).filter(models.Device.mac_address == device.mac_address).first()
 
     if existing_device:
-        # Atualiza dispositivo existente
-        update_data = device.model_dump(exclude_unset=True)
+        return update_device(db, existing_device.id, device)
 
-        for key, value in update_data.items():
-            if key == "hardware_details" and value is not None:
-                hw_data = (
-                    device.hardware_details.model_dump(exclude_unset=True)
-                    if hasattr(device.hardware_details, "model_dump")
-                    else dict(value)
-                )
-                if existing_device.hardware_details:
-                    for hw_key, hw_value in hw_data.items():
-                        if hw_value is not None:
-                            setattr(existing_device.hardware_details, hw_key, hw_value)
-                else:
-                    db_hardware = models.HardwareDetail(**hw_data, device_id=existing_device.id)
-                    db.add(db_hardware)
-                    existing_device.hardware_details = db_hardware
-            elif hasattr(existing_device, key) and value is not None:
-                setattr(existing_device, key, value)
-
-        existing_device.last_seen = datetime.now(timezone.utc)
-        db.commit()
-        db.refresh(existing_device)
-        return existing_device
-
-    # Criar novo dispositivo
     device_data = device.model_dump(exclude={"hardware_details"})
     db_device = models.Device(**device_data)
     db.add(db_device)
-    db.flush()  # gera ID
+    db.flush()  # garante ID antes de hardware_details
 
     if device.hardware_details:
         hw_data = (
@@ -122,31 +98,8 @@ def create_or_update_device(db: Session, device: schemas.DeviceCreate):
     db_device = get_device_by_ip_or_mac(db, device.ip_address, device.mac_address)
 
     if db_device:
-        update_data = device.model_dump(exclude_unset=True)
-        for key, value in update_data.items():
-            if key == "hardware_details" and value is not None:
-                hw_data = value.model_dump(exclude_unset=True) if hasattr(value, "model_dump") else dict(value)
-                if db_device.hardware_details:
-                    for hw_key, hw_value in hw_data.items():
-                        if hw_value is not None:
-                            setattr(db_device.hardware_details, hw_key, hw_value)
-                else:
-                    db_hardware = models.HardwareDetail(**hw_data, device_id=db_device.id)
-                    db.add(db_hardware)
-                    db_device.hardware_details = db_hardware
-            elif hasattr(db_device, key) and value is not None:
-                setattr(db_device, key, value)
-        db_device.last_seen = datetime.now(timezone.utc)
-    else:
-        db_device = create_device(db, device)
-
-    try:
-        db.commit()
-        db.refresh(db_device)
-    except IntegrityError:
-        db.rollback()
-        raise
-    return db_device
+        return update_device(db, db_device.id, device)
+    return create_device(db, device)
 
 
 def delete_device(db: Session, device_id: int):
@@ -171,27 +124,45 @@ def create_history_log(db: Session, log: schemas.HistoryLogCreate, device_id: in
     return db_log
 
 
-def get_history_logs(db: Session, device_id: int, skip: int = 0, limit: int = 100):
-    """Busca os logs de histórico de um dispositivo específico."""
-    return (
-        db.query(models.HistoryLog)
-        .filter(models.HistoryLog.device_id == device_id)
-        .order_by(models.HistoryLog.timestamp.desc())
+def get_history_logs_paginated(
+    db: Session,
+    skip: int = 0,
+    limit: int = 100,
+    device_id: Optional[int] = None,
+    component: Optional[str] = None,
+    change_type: Optional[schemas.ChangeType] = None,
+    severity: Optional[schemas.SeverityLevel] = None,
+    start_date: Optional[datetime] = None,
+    end_date: Optional[datetime] = None,
+) -> Tuple[int, list]:
+    """
+    Busca logs de histórico com paginação e filtros opcionais.
+    Retorna (total, lista_de_logs).
+    """
+    query = db.query(models.HistoryLog)
+
+    if device_id is not None:
+        query = query.filter(models.HistoryLog.device_id == device_id)
+    if component:
+        query = query.filter(models.HistoryLog.component == component)
+    if change_type:
+        query = query.filter(models.HistoryLog.change_type == change_type)
+    if severity:
+        query = query.filter(models.HistoryLog.severity == severity)
+    if start_date:
+        query = query.filter(models.HistoryLog.timestamp >= start_date)
+    if end_date:
+        query = query.filter(models.HistoryLog.timestamp <= end_date)
+
+    total = query.count()
+    logs = (
+        query.order_by(models.HistoryLog.timestamp.desc())
         .offset(skip)
         .limit(limit)
         .all()
     )
 
-
-def get_all_history_logs(db: Session, skip: int = 0, limit: int = 100):
-    """Busca todos os logs de histórico do sistema (debug/auditoria)."""
-    return (
-        db.query(models.HistoryLog)
-        .order_by(models.HistoryLog.timestamp.desc())
-        .offset(skip)
-        .limit(limit)
-        .all()
-    )
+    return total, logs
 
 
 # ----------------------------
@@ -217,7 +188,6 @@ def get_snapshots(db: Session, skip: int = 0, limit: int = 100):
 
 def create_snapshot(db: Session, snapshot: schemas.SnapshotCreate):
     """Cria um novo snapshot no banco de dados."""
-    # Verifica se já existe um snapshot com o mesmo hash
     existing = get_snapshot_by_hash(db, snapshot.hash_sha256)
     if existing:
         return existing
@@ -230,7 +200,6 @@ def create_snapshot(db: Session, snapshot: schemas.SnapshotCreate):
 
 
 def delete_snapshot(db: Session, snapshot_id: int):
-    """Remove um snapshot do banco de dados."""
     snapshot = get_snapshot(db, snapshot_id)
     if snapshot:
         db.delete(snapshot)
@@ -250,7 +219,6 @@ def get_alerts(db: Session, skip: int = 0, limit: int = 100, unread_only: bool =
     
     if unread_only:
         query = query.filter(models.Alert.is_read == False)
-    
     if unresolved_only:
         query = query.filter(models.Alert.is_resolved == False)
     
@@ -274,7 +242,6 @@ def get_alerts_by_device(db: Session, device_id: int, skip: int = 0, limit: int 
 
 
 def create_alert(db: Session, alert: schemas.AlertCreate):
-    """Cria um novo alerta."""
     db_alert = models.Alert(**alert.model_dump())
     db.add(db_alert)
     db.commit()
@@ -283,14 +250,12 @@ def create_alert(db: Session, alert: schemas.AlertCreate):
 
 
 def update_alert(db: Session, alert_id: int, alert_update: schemas.AlertUpdate):
-    """Atualiza um alerta existente."""
     db_alert = get_alert(db, alert_id)
     if not db_alert:
         return None
     
     update_data = alert_update.model_dump(exclude_unset=True)
     
-    # Se está sendo resolvido, adicionar timestamp
     if update_data.get("is_resolved") and not db_alert.is_resolved:
         update_data["resolved_at"] = datetime.now(timezone.utc)
     
@@ -303,7 +268,6 @@ def update_alert(db: Session, alert_id: int, alert_update: schemas.AlertUpdate):
 
 
 def delete_alert(db: Session, alert_id: int):
-    """Remove um alerta do banco de dados."""
     alert = get_alert(db, alert_id)
     if alert:
         db.delete(alert)
@@ -311,10 +275,8 @@ def delete_alert(db: Session, alert_id: int):
     return alert
 
 
-def mark_all_alerts_as_read(db: Session, device_id: int = None):
-    """Marca todos os alertas como lidos."""
+def mark_all_alerts_as_read(db: Session, device_id: Optional[int] = None):
     query = db.query(models.Alert).filter(models.Alert.is_read == False)
-    
     if device_id:
         query = query.filter(models.Alert.device_id == device_id)
     

@@ -11,7 +11,7 @@ from fastapi import HTTPException, status, Request
 from jose import JWTError, jwt
 from pydantic import ValidationError
 
-from .config import settings
+from config import settings
 
 # Chave secreta para assinatura JWT (deve ser armazenada de forma segura em produção)
 SECRET_KEY = settings.SECRET_KEY

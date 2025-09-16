@@ -4,6 +4,7 @@ from typing import List
 from datetime import datetime, timezone
 
 import crud, schemas, database
+import models, schemas, database, crud
 
 router = APIRouter(
     prefix="/devices",
@@ -180,3 +181,19 @@ def read_device_with_history(device_id: int, db: Session = Depends(get_db)):
     device_data.history_logs = history_logs
 
     return device_data
+
+@router.get("/", response_model=schemas.PaginatedResponse[schemas.Device])
+def list_devices(
+    db: Session = Depends(get_db),
+    page: int = 1,
+    size: int = 20,
+):
+    skip = (page - 1) * size
+    total, devices = crud.get_devices_paginated(db, skip=skip, limit=size)
+    return schemas.PaginatedResponse[schemas.Device](
+        total=total,
+        page=page,
+        size=size,
+        items=devices,
+    )
+
