@@ -45,14 +45,25 @@ const formatChangeValue = (value) => {
 };
 
 const HistoryCard = ({ log }) => {
-  const navigate = useNavigate();
+  let navigate;
+  try {
+    // Try to use navigate, but don't fail if it's not available
+    navigate = useNavigate();
+  } catch (e) {
+    console.warn('Navigation not available:', e.message);
+  }
+  
   const timestamp = new Date(log.timestamp);
   const timeAgo = formatDistanceToNow(timestamp, { addSuffix: true, locale: ptBR });
   const formattedTime = format(timestamp, 'HH:mm:ss');
   const severityClass = getSeverityClass(log.severity);
   
   const handleCardClick = () => {
-    navigate(`/history/${log.id}`);
+    if (navigate) {
+      navigate(`/history/${log.id}`);
+    } else {
+      console.log('Would navigate to:', `/history/${log.id}`);
+    }
   };
 
   return (

@@ -88,7 +88,7 @@ const DeviceDetail = ({ deviceId, onBack }) => {
         if (!response.ok) throw new Error('Erro ao buscar dados do dispositivo')
         
         const data = await response.json()
-        const hw = data.hardware || {}
+        const hw = data.hardware_details || {}  // Corrigido: hardware_details em vez de hardware
 
         // Força arrays e objetos válidos
         hw.cpu_info = hw.cpu_info || {}
@@ -103,15 +103,43 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
         setDevice(data)
         setHardware(hw)
-        setHistoryLogs(Array.isArray(data.history_logs) ? data.history_logs : [])
+        
+        // Buscar histórico do dispositivo separadamente
+        try {
+          console.log('Buscando histórico para device:', deviceId)
+          const historyResponse = await fetch(`${API_BASE}/history_logs/device/${deviceId}?limit=20`)
+          console.log('Resposta do histórico:', historyResponse.status)
+            
+          if (historyResponse.ok) {
+            const historyData = await historyResponse.json()
+            console.log('Dados do histórico recebidos:', historyData)
+            
+            // Handle both formats: direct array or paginated response
+            const logs = Array.isArray(historyData) 
+              ? historyData 
+              : (Array.isArray(historyData?.items) ? historyData.items : [])
+            
+            console.log('Logs processados:', logs.length, 'itens')
+            setHistoryLogs(logs)
+          } else {
+            const errorText = await historyResponse.text()
+            console.warn('Erro ao buscar histórico:', historyResponse.status, errorText)
+            setHistoryError(`Erro ao carregar histórico: ${historyResponse.status} - ${historyResponse.statusText}`)
+            setHistoryLogs([])
+          }
+        } catch (historyErr) {
+          console.error('Não foi possível carregar histórico:', historyErr)
+          setHistoryLogs([])
+        }
+        
       } catch (error) {
         console.error('Erro ao buscar dados do dispositivo:', error)
-        setHistoryError('Erro ao carregar o histórico de alterações. Tente novamente mais tarde.')
+        setHistoryError('Erro ao carregar os dados. Tente novamente mais tarde.')
       } finally {
         setHistoryLoading(false)
       }
     }
-    fetchDevice()
+    fetchDeviceData()
   }, [deviceId])
 
   if (!device) return <div className="flex items-center justify-center h-64 text-muted-foreground">Carregando dispositivo...</div>
@@ -191,11 +219,11 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
           {/** RAM */}
           <ExpandableCard title="Memória RAM" icon={<MemoryStick className="h-5 w-5" />}>
-            <p>Total: {safeNumber(hardware.ram_info.total_gb)} GB</p>
-            <p>Usado: {safeNumber(hardware.ram_info.used_gb)} GB</p>
-            <p>Slots: {hardware.ram_info.slots_used || 0} / {hardware.ram_info.slots_total || 0}</p>
-            <Progress value={(safeNumber(hardware.ram_info.used_gb) / safeNumber(hardware.ram_info.total_gb)) * 100 || 0} className="h-2 my-2" />
-            {hardware.ram_info.modules && hardware.ram_info.modules.map((m, i) => (
+            <p>Total: {safeNumber(hardware?.ram_info?.total_gb)} GB</p>
+            <p>Usado: {safeNumber(hardware?.ram_info?.used_gb)} GB</p>
+            <p>Slots: {hardware?.ram_info?.slots_used || 0} / {hardware?.ram_info?.slots_total || 0}</p>
+            <Progress value={(safeNumber(hardware?.ram_info?.used_gb) / safeNumber(hardware?.ram_info?.total_gb)) * 100 || 0} className="h-2 my-2" />
+            {hardware?.ram_info?.modules && hardware.ram_info.modules.map((m, i) => (
               <div key={i} className="border-t pt-2 mt-2 text-sm">
                 <p>Módulo {i + 1}</p>
                 <p>Capacidade: {safeNumber(m.capacity_gb)} GB</p>
@@ -209,8 +237,7 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
           {/** Discos */}
           <ExpandableCard title="Armazenamento" icon={<HardDrive className="h-5 w-5 text-purple-600" />}>
-            {hardware.disk_info.map((disk, index) => {
-              return (
+            {hardware?.disk_info && hardware.disk_info.length > 0 ? hardware.disk_info.map((disk, index) => (
                 <div key={index} className="p-3 border rounded-lg mb-2">
                   <p className="font-medium">{disk.name || 'N/A'}</p>
                   <p className="text-sm text-muted-foreground">Modelo: {disk.model || 'N/A'}</p>
@@ -243,23 +270,24 @@ const DeviceDetail = ({ deviceId, onBack }) => {
                     <p className="text-sm text-muted-foreground mt-2">Nenhuma partição detectada</p>
                   )}
                 </div>
-              )
-            })}
+            )) : (
+              <p className="text-muted-foreground text-center py-4">Nenhum disco detectado</p>
+            )}
           </ExpandableCard>
 
           {/** GPU */}
           <ExpandableCard title="Placa de Vídeo" icon={<Monitor className="h-5 w-5 text-indigo-600" />}>
-            <p>Modelo: {hardware.gpu_info.model || 'N/A'}</p>
-            <p>Marca: {hardware.gpu_info.brand || 'N/A'}</p>
-            <p>VRAM: {hardware.gpu_info.vram_mb ? `${(safeNumber(hardware.gpu_info.vram_mb)/1024).toFixed(1)} GB` : 'N/A'}</p>
-            <p>Driver: {hardware.gpu_info.driver_version || 'N/A'}</p>
+            <p>Modelo: {hardware?.gpu_info?.model || 'N/A'}</p>
+            <p>Marca: {hardware?.gpu_info?.brand || 'N/A'}</p>
+            <p>VRAM: {hardware?.gpu_info?.vram_mb ? `${(safeNumber(hardware.gpu_info.vram_mb)/1024).toFixed(1)} GB` : 'N/A'}</p>
+            <p>Driver: {hardware?.gpu_info?.driver_version || 'N/A'}</p>
           </ExpandableCard>
 
           {/** Placa-mãe */}
           <ExpandableCard title="Placa-mãe" icon={<Cpu className="h-5 w-5 text-gray-600" />}>
-            <p>Fabricante: {hardware.motherboard_info.manufacturer || 'N/A'}</p>
-            <p>Modelo: {hardware.motherboard_info.model || 'N/A'}</p>
-            <p>Serial: {hardware.motherboard_info.serial_number || 'N/A'}</p>
+            <p>Fabricante: {hardware?.motherboard_info?.manufacturer || 'N/A'}</p>
+            <p>Modelo: {hardware?.motherboard_info?.model || 'N/A'}</p>
+            <p>Serial: {hardware?.motherboard_info?.serial_number || 'N/A'}</p>
           </ExpandableCard>
 
           {/** Temperaturas */}
@@ -403,6 +431,7 @@ const DeviceDetail = ({ deviceId, onBack }) => {
 
         {/* History */}
         <TabsContent value="history" className="space-y-4">
+          {console.log('Renderizando aba histórico:', { deviceId, historyLogs: historyLogs?.length, historyLoading, historyError })}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

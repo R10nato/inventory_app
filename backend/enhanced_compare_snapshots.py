@@ -300,9 +300,9 @@ def save_change_events_to_db(change_events: List[Dict[str, Any]], db: Session) -
                     device_id=db_device.id,
                     timestamp=event["timestamp"],
                     component=event["component"],
-                    change_description=f"{event['change_type'].title()} in {event['component']}",
+                    change_description=f"{event.get('change_type', 'modified').title()} in {event['component']}",
                     change_hash=event["change_hash"],
-                    change_type=event["change_type"],
+                    change_type=event.get("change_type", "modified"),  # Default to "modified" if not specified
                     path=event["path"],
                     old_value=event["old_value"],
                     new_value=event["new_value"],

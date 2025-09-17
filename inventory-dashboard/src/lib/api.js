@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'http://localhost:8000';
 
 /**
  * Busca o histórico de alterações de um dispositivo
@@ -32,7 +32,7 @@ export const fetchDeviceHistory = async (deviceId, filters = {}) => {
     }
     
     const response = await axios.get(
-      `${API_BASE_URL}/devices/${deviceId}/history`, 
+      `${API_BASE_URL}/history_logs/device/${deviceId}`, 
       { params }
     );
     

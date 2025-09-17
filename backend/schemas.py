@@ -3,7 +3,20 @@ from typing import Any, List, Optional
 from datetime import datetime
 from uuid import UUID
 
+# ----------------------------
+# Paginated Response (Generic)
+# ----------------------------
+from typing import Generic, TypeVar
+from pydantic import BaseModel
+from pydantic.generics import GenericModel
 
+T = TypeVar("T")
+
+class PaginatedResponse(GenericModel, Generic[T]):
+    total: int
+    skip: int
+    limit: int
+    items: List[T]
 # ----------------------------
 # Hardware Details
 # ----------------------------
@@ -66,7 +79,6 @@ class HistoryLogBase(BaseModel):
     component: str = Field(..., description="Componente afetado (ex: 'cpu', 'memory', 'disk')")
     change_type: ChangeType = Field(..., description="Tipo de mudança ocorrida")
     change_description: str = Field(..., description="Descrição legível da mudança")
-    severity: SeverityLevel = Field(default=SeverityLevel.INFO, description="Nível de severidade da mudança")
     
     # Detalhes estruturados
     path: Optional[str] = Field(None, description="Caminho do campo alterado (ex: 'hardware.cpu.0.model')")
@@ -74,9 +86,15 @@ class HistoryLogBase(BaseModel):
     new_value: Optional[Any] = Field(None, description="Novo valor (estruturado)")
     
     # Metadados
-    source: Optional[str] = Field(None, description="Fonte da mudança (agente, usuário, sistema)")
+    # source removido - use agent_version para identificar a fonte
     user: Optional[str] = Field(None, description="Usuário responsável pela mudança, se aplicável")
     evidence: Optional[Dict[str, Any]] = Field(None, description="Evidências da mudança (dados brutos, hashes, etc.)")
+    
+    # Campos adicionais do modelo (opcionais para compatibilidade)
+    details_before: Optional[str] = Field(None, description="Detalhes antes da mudança (texto)")
+    details_after: Optional[str] = Field(None, description="Detalhes depois da mudança (texto)")
+    change_hash: Optional[str] = Field(None, description="Hash SHA256 para deduplicação")
+    agent_version: Optional[str] = Field(None, description="Versão do agente que registrou a mudança")
     
     # Validação de dados estruturados
     
@@ -98,7 +116,7 @@ class HistoryLog(HistoryLogBase):
     id: int
     device_id: int
     timestamp: datetime
-    agent_version: Optional[str] = Field(None, description="Versão do agente que reportou a mudança")
+    # agent_version já definido em HistoryLogBase
     
     class Config:
         from_attributes = True
@@ -312,18 +330,5 @@ class Alert(AlertBase):
 
     model_config = {"from_attributes": True}
 
-# ----------------------------
-# Paginated Response (Generic)
-# ----------------------------
-from typing import Generic, TypeVar
-from pydantic import BaseModel
-from pydantic.generics import GenericModel
 
-T = TypeVar("T")
-
-class PaginatedResponse(GenericModel, Generic[T]):
-    total: int
-    page: int
-    size: int
-    items: List[T]
 

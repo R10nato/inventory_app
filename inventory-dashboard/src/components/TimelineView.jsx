@@ -181,7 +181,12 @@ const TimelineView = ({ deviceId = null }) => {
       const snapshotsResponse = await fetch(`${API_BASE}/snapshots/`)
       const snapshotsData = await snapshotsResponse.json()
       
-      setLogs(Array.isArray(logsData) ? logsData : [])
+      // Handle paginated response format {items: [], total: X, skip: Y, limit: Z}
+      const logsArray = logsData && Array.isArray(logsData.items) 
+        ? logsData.items 
+        : (Array.isArray(logsData) ? logsData : [])
+      
+      setLogs(logsArray)
       setSnapshots(Array.isArray(snapshotsData) ? snapshotsData : [])
       setError(null)
     } catch (err) {

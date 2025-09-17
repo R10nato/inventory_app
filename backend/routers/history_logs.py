@@ -64,11 +64,11 @@ async def get_history_logs(
     device_id: Optional[int] = None,
     component: Optional[str] = None,
     change_type: Optional[schemas.ChangeType] = None,
-    severity: Optional[schemas.SeverityLevel] = None,
+    # severity removido - não é um campo de HistoryLog
     start_date: Optional[datetime] = None,
     end_date: Optional[datetime] = None,
-    db: Session = Depends(get_db),
-    current_agent: Dict[str, Any] = Depends(get_current_active_agent)
+    db: Session = Depends(get_db)
+    # current_agent: Dict[str, Any] = Depends(get_current_active_agent)  # Removido temporariamente para frontend
 ):
     """
     Retorna logs de histórico do sistema com suporte a paginação e filtros.
@@ -81,8 +81,9 @@ async def get_history_logs(
         query = query.filter(models.HistoryLog.component.ilike(f"%{component}%"))
     if change_type:
         query = query.filter(models.HistoryLog.change_type == change_type)
-    if severity:
-        query = query.filter(models.HistoryLog.severity == severity)
+    # severity não é um campo de HistoryLog, apenas de Alert
+    # if severity:
+    #     query = query.filter(models.HistoryLog.severity == severity)
     if start_date:
         query = query.filter(models.HistoryLog.timestamp >= start_date)
     if end_date:
@@ -110,11 +111,11 @@ async def get_history_logs_for_device(
     limit: int = 100,
     component: Optional[str] = None,
     change_type: Optional[schemas.ChangeType] = None,
-    severity: Optional[schemas.SeverityLevel] = None,
+    # severity removido - não é um campo de HistoryLog
     start_date: Optional[datetime] = None,
     end_date: Optional[datetime] = None,
-    db: Session = Depends(get_db),
-    current_agent: Dict[str, Any] = Depends(get_current_active_agent)
+    db: Session = Depends(get_db)
+    # current_agent: Dict[str, Any] = Depends(get_current_active_agent)  # Removido temporariamente para frontend
 ):
     """Retorna os logs de histórico para um dispositivo específico."""
     device = crud.get_device(db, device_id=device_id)
@@ -127,8 +128,9 @@ async def get_history_logs_for_device(
         query = query.filter(models.HistoryLog.component.ilike(f"%{component}%"))
     if change_type:
         query = query.filter(models.HistoryLog.change_type == change_type)
-    if severity:
-        query = query.filter(models.HistoryLog.severity == severity)
+    # severity não é um campo de HistoryLog, apenas de Alert
+    # if severity:
+    #     query = query.filter(models.HistoryLog.severity == severity)
     if start_date:
         query = query.filter(models.HistoryLog.timestamp >= start_date)
     if end_date:

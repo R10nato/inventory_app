@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime, timezone
+import logging
 
 import crud, schemas, database
-import models, schemas, database, crud
 
 router = APIRouter(
     prefix="/devices",
@@ -24,9 +24,22 @@ def get_db():
 
 
 # ----------------------------
-# Função auxiliar para logs de alteração
+# Funções auxiliares
 # ----------------------------
+def detect_change_type(change: str) -> str:
+    """Detecta o tipo de alteração com base na descrição."""
+    text = change.lower()
+    if "adicionado" in text or "criado" in text or "novo" in text or "added" in text or "created" in text or "new" in text:
+        return "added"
+    if "removido" in text or "excluído" in text or "deletado" in text or "removed" in text or "deleted" in text:
+        return "removed"
+    if "substituído" in text or "replaced" in text or "trocado" in text:
+        return "replaced"
+    return "modified"
+
+
 def generate_change_logs(old_device, new_device_data: dict):
+    """Compara o estado antigo e novo do dispositivo e gera descrições de alterações."""
     changes = []
 
     # Verificar alterações simples no Device
@@ -56,6 +69,17 @@ def generate_change_logs(old_device, new_device_data: dict):
     return changes
 
 
+def create_history_log_safe(db: Session, device_id: int, component: str, description: str):
+    """Cria log garantindo que `change_type` nunca falte."""
+    change_type = detect_change_type(description)
+    log = schemas.HistoryLogCreate(
+        component=component,
+        change_type=change_type,
+        change_description=description,
+    )
+    return crud.create_history_log(db, log, device_id=device_id)
+
+
 # ----------------------------
 # Endpoints
 # ----------------------------
@@ -79,11 +103,7 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
 
             # Registrar logs
             for change in changes:
-                log = schemas.HistoryLogCreate(
-                    component="device",
-                    change_description=change,
-                )
-                crud.create_history_log(db, log, device_id=db_device.id)
+                create_history_log_safe(db, db_device.id, "device", change)
 
             return updated_device
 
@@ -91,11 +111,7 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
         new_device = crud.create_device(db=db, device=device)
 
         # Registrar log de criação
-        log = schemas.HistoryLogCreate(
-            component="device",
-            change_description="Dispositivo adicionado ao inventário",
-        )
-        crud.create_history_log(db, log, device_id=new_device.id)
+        create_history_log_safe(db, new_device.id, "device", "Dispositivo adicionado ao inventário")
 
         return new_device
     
@@ -106,8 +122,6 @@ def create_or_update_device(device: schemas.DeviceCreate, db: Session = Depends(
         print(error_msg)
         print(f"Traceback: {traceback_msg}")
         
-        # Log detalhado do erro
-        import logging
         logger = logging.getLogger(__name__)
         logger.error(f"{error_msg}\nTraceback: {traceback_msg}")
         
@@ -142,6 +156,7 @@ def update_device(device_id: int, device: schemas.DeviceUpdate, db: Session = De
 def delete_device(device_id: int, db: Session = Depends(get_db)):
     """Remove um dispositivo."""
     if crud.delete_device(db, device_id=device_id):
+        create_history_log_safe(db, device_id, "device", "Dispositivo removido do inventário")
         return {"message": "Device deleted successfully"}
     raise HTTPException(status_code=404, detail="Device not found")
 
@@ -166,21 +181,17 @@ def read_history_logs(device_id: int, skip: int = 0, limit: int = 100, db: Sessi
 
 @router.get("/{device_id}/full", response_model=schemas.DeviceFull)
 def read_device_with_history(device_id: int, db: Session = Depends(get_db)):
-    """
-    Retorna um dispositivo junto com seus logs de histórico.
-    """
+    """Retorna um dispositivo junto com seus logs de histórico."""
     db_device = crud.get_device(db, device_id=device_id)
     if not db_device:
         raise HTTPException(status_code=404, detail="Device not found")
 
-    # Buscar histórico do dispositivo
     history_logs = crud.get_history_logs(db, device_id=device_id)
-
-    # Construir objeto Pydantic DeviceFull
     device_data = schemas.DeviceFull.model_validate(db_device)
     device_data.history_logs = history_logs
 
     return device_data
+
 
 @router.get("/", response_model=schemas.PaginatedResponse[schemas.Device])
 def list_devices(
@@ -196,4 +207,3 @@ def list_devices(
         size=size,
         items=devices,
     )
-

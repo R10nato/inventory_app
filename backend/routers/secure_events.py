@@ -95,7 +95,7 @@ async def receive_change_events(
                     component=event_data.get("component", "unknown"),
                     change_description=f"{event_data.get('change_type', 'unknown').title()} in {event_data.get('component', 'unknown')}",
                     change_hash=event_data.get("change_hash"),
-                    change_type=event_data.get("change_type"),
+                    change_type=event_data.get("change_type", "modified"),  # Default to "modified" if not specified
                     path=event_data.get("path"),
                     old_value=event_data.get("old_value"),
                     new_value=event_data.get("new_value"),

@@ -16,40 +16,40 @@ import {
 
 // Opções de filtro
 const COMPONENT_OPTIONS = [
-  { value: "", label: "Todos os componentes" },
-  { value: "cpu", label: "CPU" },
-  { value: "memory", label: "Memória" },
-  { value: "disk", label: "Disco" },
-  { value: "network", label: "Rede" },
-  { value: "os", label: "Sistema Operacional" },
-  { value: "software", label: "Software" },
-  { value: "hardware", label: "Hardware" },
+  { id: 'all_components', value: 'all', label: 'Todos os componentes' },
+  { id: 'cpu', value: 'cpu', label: 'CPU' },
+  { id: 'memory', value: 'memory', label: 'Memória' },
+  { id: 'disk', value: 'disk', label: 'Disco' },
+  { id: 'network', value: 'network', label: 'Rede' },
+  { id: 'os', value: 'os', label: 'Sistema Operacional' },
+  { id: 'software', value: 'software', label: 'Software' },
+  { id: 'hardware', value: 'hardware', label: 'Hardware' },
 ];
 
 const CHANGE_TYPE_OPTIONS = [
-  { value: "", label: "Todos os tipos" },
-  { value: "adicionado", label: "Adicionado" },
-  { value: "removido", label: "Removido" },
-  { value: "modificado", label: "Modificado" },
-  { value: "erro", label: "Erro" },
+  { id: 'all_types', value: 'all', label: 'Todos os tipos' },
+  { id: 'adicionado', value: 'adicionado', label: 'Adicionado' },
+  { id: 'removido', value: 'removido', label: 'Removido' },
+  { id: 'modificado', value: 'modificado', label: 'Modificado' },
+  { id: 'erro', value: 'erro', label: 'Erro' },
 ];
 
 const SEVERITY_OPTIONS = [
-  { value: "", label: "Todas as severidades" },
-  { value: "info", label: "Informativo" },
-  { value: "low", label: "Baixa" },
-  { value: "medium", label: "Média" },
-  { value: "high", label: "Alta" },
-  { value: "critical", label: "Crítica" },
+  { id: 'all_severities', value: 'all', label: 'Todas as severidades' },
+  { id: 'info', value: 'info', label: 'Informativo' },
+  { id: 'low', value: 'low', label: 'Baixa' },
+  { id: 'medium', value: 'medium', label: 'Média' },
+  { id: 'high', value: 'high', label: 'Alta' },
+  { id: 'critical', value: 'critical', label: 'Crítica' },
 ];
 
 const HistoryFilters = ({ filters, onFilterChange }) => {
   const [localFilters, setLocalFilters] = useState({
-    component: "",
-    changeType: "",
+    component: 'all',
+    changeType: 'all',
     startDate: subDays(new Date(), 30),
     endDate: new Date(),
-    severity: "",
+    severity: 'all',
   });
 
   // Sincroniza os filtros recebidos via props
@@ -94,11 +94,11 @@ const HistoryFilters = ({ filters, onFilterChange }) => {
   // Reseta os filtros
   const handleClear = () => {
     const clearedFilters = {
-      component: "",
-      changeType: "",
+      component: 'all',
+      changeType: 'all',
       startDate: subDays(new Date(), 30),
       endDate: new Date(),
-      severity: "",
+      severity: 'all',
     };
     setLocalFilters(clearedFilters);
     onFilterChange?.(clearedFilters);
@@ -121,8 +121,8 @@ const HistoryFilters = ({ filters, onFilterChange }) => {
               <SelectValue placeholder="Selecione um componente" />
             </SelectTrigger>
             <SelectContent>
-              {COMPONENT_OPTIONS.map(({ value, label }) => (
-                <SelectItem key={value} value={value}>
+              {COMPONENT_OPTIONS.map(({ id, value, label }) => (
+                <SelectItem key={id} value={value}>
                   {label}
                 </SelectItem>
               ))}
@@ -141,8 +141,8 @@ const HistoryFilters = ({ filters, onFilterChange }) => {
               <SelectValue placeholder="Selecione um tipo" />
             </SelectTrigger>
             <SelectContent>
-              {CHANGE_TYPE_OPTIONS.map(({ value, label }) => (
-                <SelectItem key={value} value={value}>
+              {CHANGE_TYPE_OPTIONS.map(({ id, value, label }) => (
+                <SelectItem key={id} value={value}>
                   {label}
                 </SelectItem>
               ))}
@@ -161,8 +161,8 @@ const HistoryFilters = ({ filters, onFilterChange }) => {
               <SelectValue placeholder="Todas as severidades" />
             </SelectTrigger>
             <SelectContent>
-              {SEVERITY_OPTIONS.map(({ value, label }) => (
-                <SelectItem key={value} value={value}>
+              {SEVERITY_OPTIONS.map(({ id, value, label }) => (
+                <SelectItem key={id} value={value}>
                   {label}
                 </SelectItem>
               ))}

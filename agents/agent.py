@@ -248,6 +248,33 @@ RAM_TYPE_MAP = {
     35: "LPDDR5"
 }
 
+def normalize_install_date(raw_date):
+    """Normaliza diferentes formatos de data de instalação do Windows."""
+    if not raw_date:
+        return "Unknown"
+    
+    try:
+        # Caso comum: string "20230915"
+        if raw_date.isdigit() and len(raw_date) == 8:
+            return datetime.datetime.strptime(raw_date, "%Y%m%d").strftime("%Y-%m-%d")
+        
+        # Caso já seja datetime
+        if isinstance(raw_date, datetime.datetime):
+            return raw_date.strftime("%Y-%m-%d")
+        
+        # Caso REG_BINARY convertido para string hex
+        if isinstance(raw_date, (bytes, bytearray)):
+            try:
+                return datetime.datetime.fromtimestamp(int.from_bytes(raw_date, "little")).strftime("%Y-%m-%d")
+            except Exception:
+                return "Unknown"
+        
+        # Última tentativa: manter como string
+        return str(raw_date)
+    
+    except Exception:
+        return "Unknown"
+
 def get_windows_details():
     """Collects hardware details on Windows systems."""
     # Chama a função primeiro
@@ -434,13 +461,8 @@ def get_windows_details():
                                 except:
                                     publisher = "Unknown"
                                 try:
-                                    install_date = winreg.QueryValueEx(subkey, "InstallDate")[0]
-                                    # Converter formato YYYYMMDD para YYYY-MM-DD se possível
-                                    if install_date and len(str(install_date)) == 8:
-                                        install_date = str(install_date)
-                                        install_date = f"{install_date[0:4]}-{install_date[4:6]}-{install_date[6:8]}"
-                                    else:
-                                        install_date = "Unknown"
+                                    install_date_raw = winreg.QueryValueEx(subkey, "InstallDate")[0]
+                                    install_date = normalize_install_date(install_date_raw)
                                 except:
                                     install_date = "Unknown"
                                     
@@ -568,12 +590,12 @@ def get_dns_suffix_for_interface(interface_name):
     Obtém o sufixo DNS específico de uma interface usando `netsh`.
     """
     try:
-        output = subprocess.check_output(["netsh", "interface", "ip", "show", "config"], encoding="utf-8")
+        output = subprocess.check_output(["netsh", "interface", "ip", "show", "config"], encoding="utf-8", errors="ignore")
         # Divide por blocos de interface
         interfaces = output.split("Configurações de interface")
         for block in interfaces:
             if interface_name.lower() in block.lower():
-                match = re.search(r"Sufixo DNS específico de conexão\\s*: (.+)", block)
+                match = re.search(r"Sufixo DNS específico de conexão\s*: (.+)", block)
                 if match:
                     dns_suffix = match.group(1).strip()
                     return dns_suffix if dns_suffix else "N/A"
