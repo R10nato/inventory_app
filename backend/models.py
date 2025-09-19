@@ -153,3 +153,15 @@ class Alert(Base):
     # Relacionamentos
     device = relationship("Device", backref="alerts")
     snapshot = relationship("Snapshot", backref="alerts")
+
+class AlertThreshold(Base):
+    __tablename__ = "alert_thresholds"
+
+    id = Column(Integer, primary_key=True, index=True)
+    device_id = Column(Integer, ForeignKey("devices.id"), nullable=True)  # Null para thresholds globais
+    metric_type = Column(String(50), nullable=False)
+    threshold_value = Column(Float, nullable=False)
+    comparison = Column(String(2), nullable=False)  # '>', '<', '=='
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
